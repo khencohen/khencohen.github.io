@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khen Cohen — Researcher in Quantum Information, Optics & AI</title>
+<meta name="description" content="Khen Cohen — PhD Candidate at Tel Aviv University researching quantum information, quantum optics, and AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1e2433;
+  --ink-soft: #3a4050;
+  --paper: #fcfbf8;
+  --warm: #f5f3ee;
+  --accent: #3d6b8e;
+  --accent-soft: #5a8db0;
+  --accent-bg: rgba(61,107,142,0.05);
+  --muted: #7a8394;
+  --muted-lt: #b0b7c3;
+  --border: #e6e2da;
+  --border-lt: #efece6;
+  --card: #ffffff;
+  --terra: #b07d4f;
+  --terra-soft: rgba(176,125,79,0.08);
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans: 'Outfit', 'Helvetica Neue', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --max-w: 960px;
+  --r: 8px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:16px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
+
+/* subtle texture */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(252,251,248,0.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.scrolled{border-bottom-color:var(--border);box-shadow:0 1px 20px rgba(0,0,0,0.03)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:54px}
+.nav-name{font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{font-size:.76rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-decoration:none;transition:color .25s}
+.nav-links a:hover{color:var(--accent)}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:18px;height:1.5px;background:var(--ink);transition:.3s}
+
+/* ── HERO ── */
+.hero{padding:130px 2rem 70px}
+.hero-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1fr 220px;gap:4rem;align-items:center}
+.hero-text{animation:fadeUp .7s ease both}
+h1{font-family:var(--serif);font-size:3rem;font-weight:400;line-height:1.15;margin-bottom:1rem}
+.hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;max-width:480px;font-weight:300}
+.hero-sub strong{color:var(--ink-soft);font-weight:500}
+.hero-meta{font-size:.88rem;color:var(--muted);margin-bottom:1.8rem;line-height:1.6}
+.hero-btns{display:flex;gap:.5rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.35rem;padding:.45rem 1rem;border:1px solid var(--border);border-radius:5px;font-size:.76rem;font-weight:500;color:var(--ink-soft);text-decoration:none;transition:all .25s;background:transparent}
+.btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg);text-decoration:none}
+.btn svg{width:13px;height:13px}
+.photo-col{animation:fadeUp .7s .1s ease both;position:relative}
+.photo-col img{width:100%;aspect-ratio:1;object-fit:cover;object-position:center top;border-radius:50%;filter:grayscale(5%);border:3px solid var(--border)}
+
+/* ── SECTION BASICS ── */
+.container{max-width:var(--max-w);margin:0 auto;padding:0 2rem}
+section{padding:4rem 0}
+.sec-label{font-family:var(--mono);font-size:.68rem;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:1.2rem}
+h2{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin-bottom:1.2rem;line-height:1.3}
+.sep{border:none;border-top:1px solid var(--border);margin:0}
+
+/* ── ABOUT / RESEARCH ── */
+.about-section{background:var(--warm);border-top:1px solid var(--border-lt);border-bottom:1px solid var(--border-lt)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-bottom:3rem}
+.about-grid p{font-size:.94rem;line-height:1.85;color:var(--ink-soft)}
+
+/* Research diagram SVG */
+.research-diagram{display:flex;justify-content:center;margin-bottom:2.5rem}
+.research-diagram svg{max-width:540px;width:100%}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.pillar{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem;transition:border-color .3s}
+.pillar:hover{border-color:var(--accent-soft)}
+.pillar h3{font-family:var(--serif);font-size:1.05rem;font-weight:500;margin-bottom:.4rem}
+.pillar p{font-size:.82rem;color:var(--muted);line-height:1.55}
+.pillar-icon{margin-bottom:.8rem;height:36px}
+.pillar-icon svg{width:36px;height:36px}
+
+/* ── PUBLICATIONS ── */
+.pub-note{font-size:.88rem;color:var(--muted);margin-bottom:2rem;font-style:italic}
+.pub-group{margin-bottom:2rem}
+.pub-group-head{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding-bottom:.6rem;border-bottom:1px solid var(--border);margin-bottom:.8rem;font-weight:500}
+.pub{padding:.8rem 0;border-bottom:1px solid var(--border-lt);display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start}
+.pub:last-child{border-bottom:none}
+.pub h4{font-family:var(--sans);font-size:.9rem;font-weight:500;line-height:1.45;margin-bottom:.15rem}
+.pub .pub-auth{font-size:.8rem;color:var(--muted)}
+.pub .pub-auth strong{color:var(--ink);font-weight:600}
+.pub .pub-ven{font-size:.78rem;font-style:italic;color:var(--accent)}
+.pub-link{font-family:var(--mono);font-size:.66rem;color:var(--accent);text-decoration:none;padding:.2rem .5rem;border:1px solid var(--border);border-radius:4px;white-space:nowrap;transition:all .25s;align-self:center}
+.pub-link:hover{background:var(--accent);color:white;border-color:var(--accent);text-decoration:none}
+
+/* ── TALKS MAP ── */
+.talks-visual{margin-bottom:2rem;display:flex;justify-content:center}
+.talks-visual svg{max-width:700px;width:100%}
+.talks-list{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+.talk{display:flex;gap:.8rem;padding:.9rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r);align-items:flex-start;transition:border-color .25s}
+.talk:hover{border-color:var(--accent-soft)}
+.talk-yr{font-family:var(--mono);font-size:.7rem;color:var(--accent);white-space:nowrap;padding-top:1px;min-width:34px;font-weight:500}
+.talk h4{font-size:.84rem;font-weight:500;line-height:1.35;margin-bottom:.1rem}
+.talk p{font-size:.78rem;color:var(--muted)}
+.talk-badge{font-family:var(--mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.06em;background:var(--accent-bg);color:var(--accent);padding:.1rem .4rem;border-radius:3px;display:inline-block;margin-bottom:.2rem;font-weight:500}
+
+/* ── PATENTS ── */
+.patents-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.pat{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.1rem 1.2rem;transition:border-color .25s}
+.pat:hover{border-color:var(--accent-soft)}
+.pat .pat-yr{font-family:var(--mono);font-size:.66rem;color:var(--accent);margin-bottom:.3rem;font-weight:500}
+.pat h4{font-size:.82rem;font-weight:500;line-height:1.35;margin-bottom:.2rem}
+.pat .pat-id{font-family:var(--mono);font-size:.66rem;color:var(--muted)}
+.pat a{font-family:var(--mono);font-size:.66rem;color:var(--accent);text-decoration:none}
+.pat a:hover{text-decoration:underline}
+
+/* ── EDUCATION TIMELINE ── */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--border)}
+.tl-item{margin-bottom:2rem;position:relative}
+.tl-item::before{content:'';position:absolute;left:-2rem;top:6px;width:11px;height:11px;background:var(--paper);border:2px solid var(--accent);border-radius:50%;z-index:1}
+.about-section .tl-item::before{background:var(--warm)}
+.tl-yr{font-family:var(--mono);font-size:.72rem;color:var(--accent);margin-bottom:.15rem;font-weight:500}
+.tl-item h3{font-family:var(--serif);font-size:1.1rem;font-weight:500;margin-bottom:.1rem}
+.tl-sub{font-size:.84rem;color:var(--muted);font-style:italic;margin-bottom:.3rem}
+.tl-body{font-size:.84rem;color:var(--muted);line-height:1.6}
+.tl-body strong{color:var(--ink-soft);font-weight:600}
+.tl-awards{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.tl-award{font-size:.7rem;font-weight:500;padding:.2rem .6rem;background:var(--terra-soft);color:var(--terra);border-radius:20px;display:inline-block}
+
+/* ── TEACHING ── */
+.teach-grid{display:grid;gap:.7rem}
+.teach-row{display:flex;gap:1rem;padding:.9rem 1.2rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r);align-items:center}
+.teach-role{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);min-width:80px;font-weight:500}
+.teach-row h4{font-size:.88rem;font-weight:500}
+.teach-row .teach-meta{font-size:.78rem;color:var(--muted)}
+.mentoring-note{margin-top:1.2rem;font-size:.86rem;color:var(--muted);line-height:1.65;font-style:italic}
+
+/* ── EXPERIENCE (minimal) ── */
+.exp-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.exp{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.3rem}
+.exp .exp-yr{font-family:var(--mono);font-size:.68rem;color:var(--accent);margin-bottom:.3rem;font-weight:500}
+.exp h3{font-family:var(--serif);font-size:1rem;font-weight:500;margin-bottom:.1rem}
+.exp .exp-role{font-size:.84rem;color:var(--muted);font-style:italic;margin-bottom:.5rem}
+.exp p{font-size:.82rem;color:var(--muted);line-height:1.55}
+
+/* ── COLLABORATORS ── */
+.collabs{display:flex;flex-wrap:wrap;gap:.5rem}
+.collab{padding:.35rem .85rem;background:var(--card);border:1px solid var(--border);border-radius:20px;font-size:.8rem;font-weight:500;color:var(--ink-soft);transition:all .25s}
+.collab:hover{border-color:var(--accent-soft);background:var(--accent-bg)}
+.collab-aff{font-size:.7rem;color:var(--muted);font-weight:400}
+
+/* ── CONTACT ── */
+.contact-sec{text-align:center;padding:4rem 2rem}
+.contact-sec h2{margin-bottom:.6rem}
+.contact-sec p{color:var(--muted);margin-bottom:1.8rem;font-size:.94rem;max-width:460px;margin-left:auto;margin-right:auto}
+.contact-row{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap}
+.contact-row a{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.1rem;border:1px solid var(--border);border-radius:5px;font-size:.8rem;font-weight:500;color:var(--ink-soft);text-decoration:none;transition:all .25s}
+.contact-row a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+.contact-row a svg{width:14px;height:14px}
+
+footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-size:.74rem;color:var(--muted-lt)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:2rem}
+  .photo-col{max-width:180px;order:-1}
+  h1{font-size:2.4rem}
+  .about-grid{grid-template-columns:1fr}
+  .pillars{grid-template-columns:1fr 1fr}
+  .talks-list{grid-template-columns:1fr}
+  .patents-grid{grid-template-columns:1fr 1fr}
+  .exp-row{grid-template-columns:1fr}
+  .pub{grid-template-columns:1fr}
+  .pub-link{justify-self:start;margin-top:.3rem}
+}
+@media(max-width:600px){
+  h1{font-size:2rem}
+  h2{font-size:1.4rem}
+  section{padding:3rem 0}
+  .hero{padding:100px 1.2rem 50px}
+  .container{padding:0 1.2rem}
+  .pillars{grid-template-columns:1fr}
+  .patents-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:54px;left:0;right:0;background:rgba(252,251,248,0.97);backdrop-filter:blur(16px);padding:1rem 2rem;gap:.8rem;border-bottom:1px solid var(--border)}
+  .hamburger{display:flex}
+  .teach-row{flex-direction:column;gap:.2rem;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-name">Khen Cohen</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Khen Cohen</h1>
+      <p class="hero-sub">
+        I'm a PhD candidate at <strong>Tel Aviv University</strong>, exploring questions at the intersection of 
+        quantum information, photonic hardware, and machine learning theory.
+      </p>
+      <p class="hero-meta">
+        Advised by Prof. Yaron Oz · School of Physics &amp; Astronomy
+      </p>
+      <div class="hero-btns">
+        <a class="btn" href="mailto:khencohen@mail.tau.ac.il">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <a class="btn" href="https://scholar.google.com/citations?user=XXXXXXXX" target="_blank">Scholar</a>
+        <a class="btn" href="https://orcid.org/0000-0002-1802-8146" target="_blank">ORCID</a>
+        <a class="btn" href="https://github.com/khencohen" target="_blank">GitHub</a>
+        <a class="btn" href="Khen_Cohen_CV.pdf" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          CV
+        </a>
+      </div>
+    </div>
+    <div class="photo-col">
+      <img src="profile.jpg" alt="Khen Cohen">
+    </div>
+  </div>
+</header>
+
+<!-- RESEARCH -->
+<div class="about-section">
+<div class="container">
+<section id="research" class="fade-in">
+  <div class="sec-label">Research</div>
+  <h2>What I work on</h2>
+
+  <!-- Research Venn Diagram SVG -->
+  <div class="research-diagram">
+    <svg viewBox="0 0 540 300" xmlns="http://www.w3.org/2000/svg">
+      <!-- connection lines -->
+      <line x1="165" y1="150" x2="270" y2="150" stroke="#d4cfc6" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <line x1="375" y1="150" x2="270" y2="150" stroke="#d4cfc6" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <line x1="165" y1="150" x2="270" y2="265" stroke="#d4cfc6" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <line x1="375" y1="150" x2="270" y2="265" stroke="#d4cfc6" stroke-width="1.5" stroke-dasharray="5,4"/>
+      
+      <!-- Quantum Info circle -->
+      <circle cx="165" cy="150" r="72" fill="rgba(61,107,142,0.06)" stroke="#3d6b8e" stroke-width="1.5"/>
+      <text x="165" y="140" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" fill="#3d6b8e" font-weight="500">Quantum</text>
+      <text x="165" y="158" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" fill="#3d6b8e" font-weight="500">Information</text>
+      <text x="165" y="178" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="#7a8394">MBL · Scrambling</text>
+      <text x="165" y="190" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="#7a8394">Graph States · QKD</text>
+      
+      <!-- Photonics circle -->
+      <circle cx="375" cy="150" r="72" fill="rgba(176,125,79,0.05)" stroke="#b07d4f" stroke-width="1.5"/>
+      <text x="375" y="137" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" fill="#b07d4f" font-weight="500">Quantum Optics</text>
+      <text x="375" y="155" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" fill="#b07d4f" font-weight="500">&amp; Photonics</text>
+      <text x="375" y="178" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="#7a8394">Integrated Circuits</text>
+      <text x="375" y="190" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="#7a8394">Mode Sorting · Gates</text>
+      
+      <!-- ML circle -->
+      <circle cx="270" cy="265" r="72" fill="rgba(90,141,176,0.05)" stroke="#5a8db0" stroke-width="1.5"/>
+      <text x="270" y="255" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" fill="#5a8db0" font-weight="500">AI &amp; Learning</text>
+      <text x="270" y="273" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" fill="#5a8db0" font-weight="500">Theory</text>
+      <text x="270" y="293" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="#7a8394">Optimization · GMMs</text>
+
+      <!-- intersection labels -->
+      <text x="218" y="128" text-anchor="middle" font-family="Outfit, sans-serif" font-size="7.5" fill="#7a8394" transform="rotate(-25 218 128)">Robust Gates</text>
+      <text x="322" y="128" text-anchor="middle" font-family="Outfit, sans-serif" font-size="7.5" fill="#7a8394" transform="rotate(25 322 128)">Optical NNs</text>
+      <text x="270" y="155" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#3d6b8e" font-weight="500">∩</text>
+    </svg>
+  </div>
+
+  <div class="about-grid">
+    <p>
+      I'm drawn to problems that sit at the boundaries between fields. Much of my work focuses on quantum photonic computing —
+      designing robust quantum gates in integrated circuits, building spatial mode transformers, and developing quantum key
+      distribution protocols. I'm particularly interested in how ideas from robust control can make photonic quantum devices
+      practical and scalable.
+    </p>
+    <p>
+      In parallel, I study quantum many-body physics (complexity diagnostics, scrambling, localization transitions) and
+      foundational questions in machine learning theory (why gradient-based learning works, high-dimensional classification).
+      I find that moving between these areas often leads to unexpected connections — methods from one field becoming tools
+      in another.
+    </p>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="7" stroke="#3d6b8e" stroke-width="1.2"/>
+          <circle cx="18" cy="18" r="14" stroke="#3d6b8e" stroke-width="0.8" stroke-dasharray="3,3"/>
+          <circle cx="18" cy="4" r="2" fill="#3d6b8e" opacity="0.4"/>
+          <circle cx="30" cy="25" r="2" fill="#3d6b8e" opacity="0.4"/>
+          <circle cx="6" cy="25" r="2" fill="#3d6b8e" opacity="0.4"/>
+          <circle cx="18" cy="18" r="2.5" fill="#3d6b8e" opacity="0.2"/>
+        </svg>
+      </div>
+      <h3>Quantum Information</h3>
+      <p>Many-body localization, scrambling diagnostics, graph state fusion, and quantum switching protocols.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 18 L14 18" stroke="#b07d4f" stroke-width="1.2"/>
+          <path d="M22 18 L32 18" stroke="#b07d4f" stroke-width="1.2"/>
+          <rect x="14" y="12" width="8" height="12" rx="1" stroke="#b07d4f" stroke-width="1.2" fill="rgba(176,125,79,0.08)"/>
+          <path d="M4 14 L14 14" stroke="#b07d4f" stroke-width="0.8" opacity="0.4"/>
+          <path d="M4 22 L14 22" stroke="#b07d4f" stroke-width="0.8" opacity="0.4"/>
+          <path d="M22 14 L32 14" stroke="#b07d4f" stroke-width="0.8" opacity="0.4"/>
+          <path d="M22 22 L32 22" stroke="#b07d4f" stroke-width="0.8" opacity="0.4"/>
+        </svg>
+      </div>
+      <h3>Quantum Optics &amp; Photonics</h3>
+      <p>Integrated quantum gates, directional couplers, spatial mode sorting, optical neural networks, and hybrid QKD.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="26" r="3" stroke="#5a8db0" stroke-width="1.2" fill="rgba(90,141,176,0.08)"/>
+          <circle cx="26" cy="26" r="3" stroke="#5a8db0" stroke-width="1.2" fill="rgba(90,141,176,0.08)"/>
+          <circle cx="18" cy="10" r="3" stroke="#5a8db0" stroke-width="1.2" fill="rgba(90,141,176,0.08)"/>
+          <line x1="12" y1="24" x2="16" y2="12" stroke="#5a8db0" stroke-width="0.8"/>
+          <line x1="24" y1="24" x2="20" y2="12" stroke="#5a8db0" stroke-width="0.8"/>
+          <line x1="13" y1="26" x2="23" y2="26" stroke="#5a8db0" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <h3>AI &amp; Learning Theory</h3>
+      <p>Linearization principles in neural networks, Gaussian mixture classification, sparse coding, and generative models.</p>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="container">
+<section id="publications" class="fade-in">
+  <div class="sec-label">Publications</div>
+  <h2>Selected papers</h2>
+  <p class="pub-note">A selection of published work and ongoing projects. Full list available on <a href="https://scholar.google.com/citations?user=XXXXXXXX" target="_blank">Google Scholar</a> and in my <a href="Khen_Cohen_CV.pdf" target="_blank">CV</a>.</p>
+
+  <div class="pub-group">
+    <div class="pub-group-head">Published</div>
+
+    <div class="pub"><div><h4>Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems</h4><div class="pub-auth">O. Shem-or, <strong>K. Cohen</strong>, Y. Oz</div><div class="pub-ven">ICLR (2026)</div></div><a class="pub-link" href="https://arxiv.org/abs/2401.04013" target="_blank">arXiv ↗</a></div>
+
+    <div class="pub"><div><h4>Single Plane Spatial Mode Sorter</h4><div class="pub-auth"><strong>K. Cohen</strong>, Y. Yosif-Or, Y. Oz, A. Arie</div><div class="pub-ven">Optics Express (2026)</div></div><a class="pub-link" href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-34-2-1837" target="_blank">Paper ↗</a></div>
+
+    <div class="pub"><div><h4>Generalized Type II Fusion of Graph States</h4><div class="pub-auth">N. Rimok, <strong>K. Cohen</strong>, Y. Oz</div><div class="pub-ven">Phys. Rev. A (2026)</div></div><a class="pub-link" href="https://journals.aps.org/pra/abstract/10.1103/w9w5-2h7r" target="_blank">Paper ↗</a></div>
+
+    <div class="pub"><div><h4>Robust Photonic Quantum Gates With A Large Number of Waveguide Segments</h4><div class="pub-auth"><strong>K. Cohen</strong>, H. Suchowski, Y. Oz</div><div class="pub-ven">Advanced Quantum Technologies (2025)</div></div><a class="pub-link" href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/qute.202500304" target="_blank">Paper ↗</a></div>
+
+    <div class="pub"><div><h4>A Fiber-Optic Traffic Monitoring Network Trained with Video Inputs</h4><div class="pub-auth"><strong>K. Cohen</strong>, L. Hen, A. Lellouch</div><div class="pub-ven">Scientific Reports (2025)</div></div><a class="pub-link" href="https://doi.org/10.1038/s41598-025-14928-7" target="_blank">Paper ↗</a></div>
+
+    <div class="pub"><div><h4>Complexity Measure Diagnostic of Ergodic to Many-Body Localization Transition</h4><div class="pub-auth"><strong>K. Cohen</strong>, Y. Oz, D.-L. Zhong</div><div class="pub-ven">Phys. Rev. B (2024)</div></div><a class="pub-link" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.L180101" target="_blank">Paper ↗</a></div>
+
+    <div class="pub"><div><h4>Temporal Super-Resolution using Multi-Channel Illumination Source</h4><div class="pub-auth"><strong>K. Cohen</strong>, D. Raviv, D. Mendlovic</div><div class="pub-ven">MDPI Sensors (2024)</div></div><a class="pub-link" href="https://www.mdpi.com/1424-8220/24/3/857" target="_blank">Paper ↗</a></div>
+
+    <div class="pub"><div><h4>Illumination-Based Color Reconstruction for the Dynamic Vision Sensor</h4><div class="pub-auth"><strong>K. Cohen</strong>, H. Levy, O. Hershko, D. Mendlovic, D. Raviv</div><div class="pub-ven">MDPI Sensors (2023)</div></div><a class="pub-link" href="https://www.mdpi.com/1424-8220/23/19/8327" target="_blank">Paper ↗</a></div>
+
+    <div class="pub"><div><h4>Hardware Analysis for Motion Estimation Task</h4><div class="pub-auth"><strong>K. Cohen</strong>, G. Hodeda, E. Almog, D. Raviv, D. Mendlovic</div><div class="pub-ven">Applied Optics (2022)</div></div><a class="pub-link" href="https://opg.optica.org/ao/abstract.cfm?uri=ao-61-15-4303" target="_blank">Paper ↗</a></div>
+  </div>
+
+  <div class="pub-group">
+    <div class="pub-group-head">Under Review</div>
+
+    <div class="pub"><div><h4>High-Fidelity Integrated Quantum Photonic Logic Via Robust Directional Couplers</h4><div class="pub-auth"><strong>K. Cohen</strong>*, J. Piasetzky*, Y. Drori, A. Rotem, Y. Warshavsky, Y. Oz, H. Suchowski</div><div class="pub-ven">Submitted to PRL</div></div><a class="pub-link" href="https://arxiv.org/abs/2502.20069" target="_blank">arXiv ↗</a></div>
+
+    <div class="pub"><div><h4>High Fidelity CNOT Gates in Photonic Integrated Circuits</h4><div class="pub-auth">J. Piasetzky, A. Rotem, Y. Warshavsky, Y. Drori, <strong>K. Cohen</strong>, Y. Oz, H. Suchowski</div><div class="pub-ven">Submitted to Nature Communications</div></div><a class="pub-link" href="https://arxiv.org/abs/2509.25505" target="_blank">arXiv ↗</a></div>
+
+    <div class="pub"><div><h4>DANCE in the Latent Space: Distribution Alignment for Noise and Content Extraction</h4><div class="pub-auth">I. N. Hidekel, G. Lifshitz, <strong>K. Cohen</strong>, D. Raviv</div><div class="pub-ven">Submitted to ICLR</div></div></div>
+
+    <div class="pub"><div><h4>Robust Characterization of Integrated Photonics Directional Couplers</h4><div class="pub-auth">J. Piasetzky, Y. Drori, Y. Warshavski, A. Rotem, <strong>K. Cohen</strong>, Y. Oz, H. Suchowski</div><div class="pub-ven">Under review</div></div><a class="pub-link" href="https://arxiv.org/abs/2412.11670" target="_blank">arXiv ↗</a></div>
+
+    <div class="pub"><div><h4>Short-Term Spatiotemporal Photo-Voltaic Power Generation Forecasting</h4><div class="pub-auth">Y. Katz-Danan, <strong>K. Cohen</strong>, J. Ostrometzky</div><div class="pub-ven">Submitted to JSTARS</div></div></div>
+
+    <div class="pub"><div><h4>Classifying Overlapping Gaussian Mixtures in High Dimensions</h4><div class="pub-auth"><strong>K. Cohen</strong>, N. Levy, Y. Oz</div><div class="pub-ven">Under review</div></div><a class="pub-link" href="https://arxiv.org/abs/2405.18427" target="_blank">arXiv ↗</a></div>
+  </div>
+
+  <div class="pub-group">
+    <div class="pub-group-head">Ongoing Work</div>
+
+    <div class="pub"><div><h4>A Single Layer Fully Optical Neural Network</h4><div class="pub-auth">E. Shraga, <strong>K. Cohen</strong>, Y. Oz, A. Baabad</div><div class="pub-ven">In preparation</div></div></div>
+
+    <div class="pub"><div><h4>Universal Spatial Optical Spatial Mode Transformer</h4><div class="pub-auth"><strong>K. Cohen</strong>, E. Shraga, Y. Oz, A. Baabad</div><div class="pub-ven">In preparation</div></div></div>
+
+    <div class="pub"><div><h4>Complex Field Optimization for Binary Sparse Coding</h4><div class="pub-auth"><strong>K. Cohen</strong>, M. Glass, I. Hen, M. Feder, Y. Oz</div><div class="pub-ven">In preparation</div></div></div>
+
+    <div class="pub"><div><h4>Buried Fiber-Optic Geolocalization With Distributed Acoustic Sensing</h4><div class="pub-auth"><strong>K. Cohen</strong>, N. Nisan, O. Nissan, A. Lellouch</div><div class="pub-ven">In preparation</div></div></div>
+
+    <div class="pub"><div><h4>Scrambling-Induced Deterministic Quantum-Switch via Bidirectional Teleportation</h4><div class="pub-auth"><strong>K. Cohen</strong>, T. Schwartzman, Y. Oz</div><div class="pub-ven">In preparation</div></div></div>
+
+    <div class="pub"><div><h4>Hybrid Fiber-Free-Space QKD Using Time-Bin Encoding with Polarization Conversion</h4><div class="pub-auth"><strong>K. Cohen</strong>, T. Nahum, M. Tzukran, Y. Oz, H. Suchowski</div><div class="pub-ven">In preparation</div></div></div>
+
+    <div class="pub"><div><h4>Symmetry Enhancement Diagnostic in XXZ Model Using Lanczos Coefficients</h4><div class="pub-auth"><strong>K. Cohen</strong>, Y. Oz, D.-L. Zhong</div><div class="pub-ven">In preparation</div></div></div>
+
+    <div class="pub"><div><h4>Binary Star Super-Resolution Using Single Spatial Mode Sorter</h4><div class="pub-auth">M. Shalabi, <strong>K. Cohen</strong>, Y. Oz, A. Arie</div><div class="pub-ven">In preparation</div></div></div>
+  </div>
+
+  <div class="sec-label" style="margin-top:2.5rem">Patents</div>
+  <h2>Selected patents</h2>
+  <div class="patents-grid" style="margin-top:1.2rem">
+    <div class="pat"><div class="pat-yr">2026</div><h4>Universal Spatial Optical Mode Transformer</h4><div class="pat-id">US Patent (pending)</div></div>
+    <div class="pat"><div class="pat-yr">2025</div><h4>Single Plane Spatial Mode Sorter</h4><div class="pat-id">US Patent (pending)</div></div>
+    <div class="pat"><div class="pat-yr">2024</div><h4>Robust Coupled Waveguides for Quantum Gates</h4><div class="pat-id">US 63/704,436</div></div>
+    <div class="pat"><div class="pat-yr">2024</div><h4>Traffic Monitoring via CNN with Fiber-Optic Sensing</h4><div class="pat-id">US 63/663,951</div></div>
+    <div class="pat"><div class="pat-yr">2021</div><h4>Person Identification in Video</h4><a href="https://patents.google.com/patent/US12236713B2/en" target="_blank">US12236713B2 ↗</a></div>
+    <div class="pat"><div class="pat-yr">2021</div><h4>Dynamic Vision Sensor Color Camera</h4><a href="https://patents.google.com/patent/US12167153B2/en" target="_blank">US12167153B2 ↗</a></div>
+    <div class="pat"><div class="pat-yr">2021</div><h4>High-Frequency Sensitive Neural Network</h4><a href="https://patents.google.com/patent/US20240281642A1/en" target="_blank">US20240281642A1 ↗</a></div>
+    <div class="pat"><div class="pat-yr">2021</div><h4>Temporal Super-Resolution</h4><a href="https://patents.google.com/patent/US20240264308A1/en" target="_blank">US20240264308A1 ↗</a></div>
+    <div class="pat"><div class="pat-yr">2020</div><h4>Dynamic Identity Authentication</h4><a href="https://patents.google.com/patent/US20230306094A1/en" target="_blank">US20230306094A1 ↗</a></div>
+  </div>
+</section>
+</div>
+
+<hr class="sep">
+
+<!-- TALKS -->
+<div class="container">
+<section id="talks" class="fade-in">
+  <div class="sec-label">Talks &amp; Presentations</div>
+  <h2>Where I've presented</h2>
+
+  <!-- World map SVG -->
+  <div class="talks-visual">
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+      <!-- Simplified world map outline -->
+      <!-- Europe -->
+      <path d="M330 60 Q340 55 350 58 L360 54 Q370 52 375 58 L380 62 Q382 68 378 72 L370 78 Q365 82 358 80 L348 82 Q340 84 336 78 L330 72 Q328 66 330 60Z" fill="rgba(61,107,142,0.06)" stroke="#d4cfc6" stroke-width="0.8"/>
+      <!-- Middle East -->
+      <path d="M378 78 Q385 82 388 90 L392 100 Q390 108 384 110 L376 106 Q372 98 370 90 L370 82Z" fill="rgba(61,107,142,0.06)" stroke="#d4cfc6" stroke-width="0.8"/>
+      <!-- Asia -->
+      <path d="M390 50 Q420 42 450 48 L480 52 Q500 58 510 70 L515 85 Q512 100 500 108 L480 112 Q460 110 445 100 L430 90 Q415 82 400 78 L388 70 Q385 60 390 50Z" fill="rgba(61,107,142,0.06)" stroke="#d4cfc6" stroke-width="0.8"/>
+      <!-- North America -->
+      <path d="M100 50 Q130 40 160 45 L190 52 Q210 60 220 75 L225 90 Q222 105 210 115 L190 120 Q170 118 155 110 L135 100 Q115 88 105 72 L98 60 Q96 54 100 50Z" fill="rgba(61,107,142,0.06)" stroke="#d4cfc6" stroke-width="0.8"/>
+      
+      <!-- Location dots with labels -->
+      <!-- Princeton -->
+      <circle cx="175" cy="75" r="5" fill="#3d6b8e" opacity="0.2"/>
+      <circle cx="175" cy="75" r="2.5" fill="#3d6b8e"/>
+      <text x="175" y="95" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#3d6b8e" font-weight="500">Princeton</text>
+      
+      <!-- Munich -->
+      <circle cx="356" cy="65" r="5" fill="#3d6b8e" opacity="0.2"/>
+      <circle cx="356" cy="65" r="2.5" fill="#3d6b8e"/>
+      <text x="356" y="55" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#3d6b8e" font-weight="500">Munich</text>
+
+      <!-- Israel -->
+      <circle cx="383" cy="95" r="5" fill="#3d6b8e" opacity="0.2"/>
+      <circle cx="383" cy="95" r="2.5" fill="#3d6b8e"/>
+      <text x="383" y="115" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#3d6b8e" font-weight="500">Israel</text>
+      
+      <!-- Singapore -->
+      <circle cx="478" cy="112" r="5" fill="#3d6b8e" opacity="0.2"/>
+      <circle cx="478" cy="112" r="2.5" fill="#3d6b8e"/>
+      <text x="478" y="128" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#3d6b8e" font-weight="500">Singapore</text>
+
+      <!-- Dashed connection arcs -->
+      <path d="M178 75 Q270 20 353 65" fill="none" stroke="#3d6b8e" stroke-width="0.6" stroke-dasharray="3,3" opacity="0.3"/>
+      <path d="M356 68 Q370 80 380 92" fill="none" stroke="#3d6b8e" stroke-width="0.6" stroke-dasharray="3,3" opacity="0.3"/>
+      <path d="M386 98 Q430 100 475 110" fill="none" stroke="#3d6b8e" stroke-width="0.6" stroke-dasharray="3,3" opacity="0.3"/>
+    </svg>
+  </div>
+
+  <div class="talks-list">
+    <div class="talk"><span class="talk-yr">2025</span><div><span class="talk-badge">Oral</span><h4>QERNEL Quantum Conference</h4><p>Bar Ilan University, Israel</p></div></div>
+    <div class="talk"><span class="talk-yr">2024</span><div><span class="talk-badge">Poster</span><h4>ML Theory Summer School</h4><p>Princeton University, USA</p></div></div>
+    <div class="talk"><span class="talk-yr">2024</span><div><span class="talk-badge">Poster</span><h4>Frontiers in Physics Conference</h4><p>LMU Munich, Germany</p></div></div>
+    <div class="talk"><span class="talk-yr">2024</span><div><span class="talk-badge">Invited</span><h4>Global Young Scientists Summit</h4><p>Singapore</p></div></div>
+    <div class="talk"><span class="talk-yr">2024</span><div><span class="talk-badge">Conference</span><h4>ML for Quantum Technology</h4><p>Max Planck Institute, Germany</p></div></div>
+    <div class="talk"><span class="talk-yr">2024</span><div><span class="talk-badge">Oral</span><h4>Quantum Day — Cyber Week</h4><p>Tel Aviv University, Israel</p></div></div>
+  </div>
+</section>
+</div>
+
+<hr class="sep">
+
+<!-- BACKGROUND (Education + Awards woven together) -->
+<div class="container">
+<section id="background" class="fade-in">
+  <div class="sec-label">Background</div>
+  <h2>Education</h2>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-yr">2023 – Present</div>
+      <h3>Ph.D. in Physics — Quantum Information &amp; Technology</h3>
+      <div class="tl-sub">Tel Aviv University · Advisor: Prof. Yaron Oz</div>
+      <div class="tl-awards">
+        <span class="tl-award">VATAT Doctoral Scholarship '25</span>
+        <span class="tl-award">Milner Scholarship '24</span>
+        <span class="tl-award">GYSS Singapore '24</span>
+        <span class="tl-award">Shmeltzer Prize '24</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-yr">2022 – 2023</div>
+      <h3>MBA — Coller School of Management</h3>
+      <div class="tl-sub">Tel Aviv University · Summa Cum Laude</div>
+      <div class="tl-body">Dean's List. San Diego Immersion Program.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-yr">2019 – 2022</div>
+      <h3>M.Sc. in Electrical Engineering</h3>
+      <div class="tl-sub">Tel Aviv University · Summa Cum Laude · Advisor: Prof. David Mendlovic</div>
+      <div class="tl-body">Thesis: <em>Hardware Analysis and Temporal Super Resolution for Motion Estimation.</em></div>
+      <div class="tl-awards">
+        <span class="tl-award">KLA Research Prize '22</span>
+        <span class="tl-award">Electro-optics Prize '21</span>
+        <span class="tl-award">Weinstein Prize '21</span>
+        <span class="tl-award">Faculty Certificate '21</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-yr">2015 – 2019</div>
+      <h3>B.Sc. in Electrical Engineering &amp; B.Sc. in Physics</h3>
+      <div class="tl-sub">Tel Aviv University · Magna Cum Laude · Top 3%</div>
+      <div class="tl-body">Double degree. Research in silicon photonics at the Nano-Femto Lab (Prof. Haim Suchowski).</div>
+      <div class="tl-awards">
+        <span class="tl-award">Dean's List ×4</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience woven in below -->
+  <h2 style="margin-top:3rem">Other experience</h2>
+  <div class="exp-row" style="margin-top:1rem">
+    <div class="exp">
+      <div class="exp-yr">2020 – 2023</div>
+      <h3>DTect Vision Ltd.</h3>
+      <div class="exp-role">Co-Founder · Hardware &amp; Camera Team Lead</div>
+      <p>Co-founded with Prof. David Mendlovic and Dr. Dan Raviv. Led hardware development and patent portfolio. TAU Ventures Accelerator.</p>
+    </div>
+    <div class="exp">
+      <div class="exp-yr">2017 – 2019</div>
+      <h3>Apple Inc.</h3>
+      <div class="exp-role">Student Physical Design Engineer · Herzliya</div>
+      <p>High-performance chip design at Apple's Israel R&amp;D center.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<hr class="sep">
+
+<!-- TEACHING -->
+<div class="container">
+<section id="teaching" class="fade-in">
+  <div class="sec-label">Teaching &amp; Mentoring</div>
+  <h2>Courses</h2>
+  <div class="teach-grid" style="margin-top:1rem">
+    <div class="teach-row"><span class="teach-role">Lecturer</span><div><h4>Imaging Systems and Optical Signal Processing</h4><div class="teach-meta">2025 – Present · Tel Aviv University</div></div></div>
+    <div class="teach-row"><span class="teach-role">TA / Lecturer</span><div><h4>Classical Optics</h4><div class="teach-meta">2021 – Present</div></div></div>
+    <div class="teach-row"><span class="teach-role">TA / Lecturer</span><div><h4>Imaging Systems and Optical Signal Processing</h4><div class="teach-meta">2021 – 2025</div></div></div>
+    <div class="teach-row"><span class="teach-role">TA</span><div><h4>Waves Transmission and Distributed Systems</h4><div class="teach-meta">2019 – 2020</div></div></div>
+  </div>
+  <p class="mentoring-note">I've had the opportunity to supervise and mentor over 60 undergraduate students in their final-year research projects, and I find this one of the most rewarding parts of academic life.</p>
+</section>
+</div>
+
+<hr class="sep">
+
+<!-- COLLABORATORS -->
+<div class="container">
+<section class="fade-in">
+  <div class="sec-label">People</div>
+  <h2>Collaborators</h2>
+  <div class="collabs" style="margin-top:1rem">
+    <div class="collab">Prof. Yaron Oz <span class="collab-aff">· TAU Physics</span></div>
+    <div class="collab">Prof. Haim Suchowski <span class="collab-aff">· TAU Physics</span></div>
+    <div class="collab">Prof. David Mendlovic <span class="collab-aff">· TAU EE</span></div>
+    <div class="collab">Prof. Ady Arie <span class="collab-aff">· TAU EE</span></div>
+    <div class="collab">Prof. Meir Feder <span class="collab-aff">· TAU EE</span></div>
+    <div class="collab">Dr. Dan Raviv <span class="collab-aff">· TAU EE</span></div>
+    <div class="collab">Dr. Ariel Lellouch <span class="collab-aff">· TAU Geophysics</span></div>
+    <div class="collab">Dr. Itay Hen <span class="collab-aff">· USC / ISI</span></div>
+    <div class="collab">Dr. De-Liang Zhong <span class="collab-aff">· TAU Physics</span></div>
+  </div>
+</section>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-sec fade-in">
+  <h2>Get in touch</h2>
+  <p>I'm always happy to chat about research, potential collaborations, or new opportunities. Feel free to reach out.</p>
+  <div class="contact-row">
+    <a href="mailto:khencohen@mail.tau.ac.il">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      khencohen@mail.tau.ac.il
+    </a>
+    <a href="mailto:cohenc3@gmail.com">cohenc3@gmail.com</a>
+    <a href="https://github.com/khencohen" target="_blank">GitHub</a>
+    <a href="https://orcid.org/0000-0002-1802-8146" target="_blank">ORCID</a>
+  </div>
+</section>
+
+<footer>&copy; 2026 Khen Cohen · Tel Aviv University</footer>
+
+<script>
+const nav=document.getElementById('navbar');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>30));
+document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
