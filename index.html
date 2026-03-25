@@ -29,12 +29,18 @@
   --mono: 'JetBrains Mono', monospace;
   --max-w: 960px;
   --r: 8px;
+  /* diagram palette */
+  --d-blue: #2b5f8a;
+  --d-blue-bg: rgba(43,95,138,0.07);
+  --d-amber: #a06b2d;
+  --d-amber-bg: rgba(160,107,45,0.06);
+  --d-teal: #2a7b7b;
+  --d-teal-bg: rgba(42,123,123,0.06);
+  --d-line: #d0cbc2;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:16px;line-height:1.75;font-weight:400;-webkit-font-smoothing:antialiased}
-
-/* subtle texture */
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
@@ -62,7 +68,7 @@ h1{font-family:var(--serif);font-size:3rem;font-weight:400;line-height:1.15;marg
 .btn{display:inline-flex;align-items:center;gap:.35rem;padding:.45rem 1rem;border:1px solid var(--border);border-radius:5px;font-size:.76rem;font-weight:500;color:var(--ink-soft);text-decoration:none;transition:all .25s;background:transparent}
 .btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg);text-decoration:none}
 .btn svg{width:13px;height:13px}
-.photo-col{animation:fadeUp .7s .1s ease both;position:relative}
+.photo-col{animation:fadeUp .7s .1s ease both}
 .photo-col img{width:100%;aspect-ratio:1;object-fit:cover;object-position:center top;border-radius:50%;filter:grayscale(5%);border:3px solid var(--border)}
 
 /* ── SECTION BASICS ── */
@@ -77,9 +83,9 @@ h2{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin-bottom:1.2re
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-bottom:3rem}
 .about-grid p{font-size:.94rem;line-height:1.85;color:var(--ink-soft)}
 
-/* Research diagram SVG */
+/* Research diagram */
 .research-diagram{display:flex;justify-content:center;margin-bottom:2.5rem}
-.research-diagram svg{max-width:540px;width:100%}
+.research-diagram svg{max-width:620px;width:100%}
 
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .pillar{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem;transition:border-color .3s}
@@ -93,16 +99,30 @@ h2{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin-bottom:1.2re
 .pub-note{font-size:.88rem;color:var(--muted);margin-bottom:2rem;font-style:italic}
 .pub-group{margin-bottom:2rem}
 .pub-group-head{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding-bottom:.6rem;border-bottom:1px solid var(--border);margin-bottom:.8rem;font-weight:500}
-.pub{padding:.8rem 0;border-bottom:1px solid var(--border-lt);display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start}
+.pub{padding:.8rem 0;border-bottom:1px solid var(--border-lt);display:grid;grid-template-columns:1fr auto;gap:.8rem;align-items:start}
 .pub:last-child{border-bottom:none}
 .pub h4{font-family:var(--sans);font-size:.9rem;font-weight:500;line-height:1.45;margin-bottom:.15rem}
 .pub .pub-auth{font-size:.8rem;color:var(--muted)}
 .pub .pub-auth strong{color:var(--ink);font-weight:600}
 .pub .pub-ven{font-size:.78rem;font-style:italic;color:var(--accent)}
-.pub-link{font-family:var(--mono);font-size:.66rem;color:var(--accent);text-decoration:none;padding:.2rem .5rem;border:1px solid var(--border);border-radius:4px;white-space:nowrap;transition:all .25s;align-self:center}
+.pub-actions{display:flex;gap:.35rem;flex-wrap:wrap;align-self:center}
+.pub-link{font-family:var(--mono);font-size:.66rem;color:var(--accent);text-decoration:none;padding:.2rem .5rem;border:1px solid var(--border);border-radius:4px;white-space:nowrap;transition:all .25s}
 .pub-link:hover{background:var(--accent);color:white;border-color:var(--accent);text-decoration:none}
+.pub-video-btn{font-family:var(--mono);font-size:.66rem;color:var(--terra);text-decoration:none;padding:.2rem .5rem;border:1px solid var(--terra);border-radius:4px;white-space:nowrap;transition:all .25s;cursor:pointer;background:none;display:inline-flex;align-items:center;gap:.25rem;border-color:rgba(176,125,79,0.35)}
+.pub-video-btn:hover{background:var(--terra);color:white;border-color:var(--terra);text-decoration:none}
+.pub-video-btn svg{width:10px;height:10px}
 
-/* ── TALKS MAP ── */
+/* ── VIDEO MODAL ── */
+.video-overlay{position:fixed;inset:0;background:rgba(20,22,30,0.88);z-index:10000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);cursor:pointer;opacity:0;transition:opacity .3s ease}
+.video-overlay.active{display:flex;opacity:1}
+.video-container{position:relative;width:90%;max-width:780px;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 20px 80px rgba(0,0,0,0.5);cursor:default}
+.video-container video{width:100%;display:block;border-radius:10px}
+.video-close{position:absolute;top:12px;right:14px;width:32px;height:32px;background:rgba(0,0,0,0.5);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:background .2s}
+.video-close:hover{background:rgba(255,255,255,0.2)}
+.video-close svg{width:16px;height:16px;color:white}
+.video-title{position:absolute;bottom:0;left:0;right:0;padding:.8rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,0.7));font-size:.82rem;color:rgba(255,255,255,0.85);font-weight:400;pointer-events:none}
+
+/* ── TALKS ── */
 .talks-visual{margin-bottom:2rem;display:flex;justify-content:center}
 .talks-visual svg{max-width:700px;width:100%}
 .talks-list{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
@@ -123,7 +143,7 @@ h2{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin-bottom:1.2re
 .pat a{font-family:var(--mono);font-size:.66rem;color:var(--accent);text-decoration:none}
 .pat a:hover{text-decoration:underline}
 
-/* ── EDUCATION TIMELINE ── */
+/* ── TIMELINE ── */
 .timeline{position:relative;padding-left:2rem}
 .timeline::before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--border)}
 .tl-item{margin-bottom:2rem;position:relative}
@@ -135,7 +155,7 @@ h2{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin-bottom:1.2re
 .tl-body{font-size:.84rem;color:var(--muted);line-height:1.6}
 .tl-body strong{color:var(--ink-soft);font-weight:600}
 .tl-awards{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
-.tl-award{font-size:.7rem;font-weight:500;padding:.2rem .6rem;background:var(--terra-soft);color:var(--terra);border-radius:20px;display:inline-block}
+.tl-award{font-size:.7rem;font-weight:500;padding:.2rem .6rem;background:var(--terra-soft);color:var(--terra);border-radius:20px}
 
 /* ── TEACHING ── */
 .teach-grid{display:grid;gap:.7rem}
@@ -145,7 +165,7 @@ h2{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin-bottom:1.2re
 .teach-row .teach-meta{font-size:.78rem;color:var(--muted)}
 .mentoring-note{margin-top:1.2rem;font-size:.86rem;color:var(--muted);line-height:1.65;font-style:italic}
 
-/* ── EXPERIENCE (minimal) ── */
+/* ── EXPERIENCE ── */
 .exp-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .exp{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:1.3rem}
 .exp .exp-yr{font-family:var(--mono);font-size:.68rem;color:var(--accent);margin-bottom:.3rem;font-weight:500}
@@ -170,12 +190,10 @@ h2{font-family:var(--serif);font-size:1.7rem;font-weight:400;margin-bottom:1.2re
 
 footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-size:.74rem;color:var(--muted-lt)}
 
-/* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 
-/* ── RESPONSIVE ── */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr;gap:2rem}
   .photo-col{max-width:180px;order:-1}
@@ -186,7 +204,7 @@ footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-
   .patents-grid{grid-template-columns:1fr 1fr}
   .exp-row{grid-template-columns:1fr}
   .pub{grid-template-columns:1fr}
-  .pub-link{justify-self:start;margin-top:.3rem}
+  .pub-actions{justify-self:start;margin-top:.3rem}
 }
 @media(max-width:600px){
   h1{font-size:2rem}
@@ -204,6 +222,17 @@ footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-
 </style>
 </head>
 <body>
+
+<!-- VIDEO MODAL -->
+<div class="video-overlay" id="videoOverlay">
+  <div class="video-container" id="videoContainer">
+    <button class="video-close" id="videoClose" aria-label="Close video">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <video id="videoPlayer" controls playsinline></video>
+    <div class="video-title" id="videoTitle"></div>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav id="navbar">
@@ -260,39 +289,82 @@ footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-
   <div class="sec-label">Research</div>
   <h2>What I work on</h2>
 
-  <!-- Research Venn Diagram SVG -->
+  <!-- ═══ IMPROVED RESEARCH DIAGRAM ═══ -->
   <div class="research-diagram">
-    <svg viewBox="0 0 540 300" xmlns="http://www.w3.org/2000/svg">
-      <!-- connection lines -->
-      <line x1="165" y1="150" x2="270" y2="150" stroke="#d4cfc6" stroke-width="1.5" stroke-dasharray="5,4"/>
-      <line x1="375" y1="150" x2="270" y2="150" stroke="#d4cfc6" stroke-width="1.5" stroke-dasharray="5,4"/>
-      <line x1="165" y1="150" x2="270" y2="265" stroke="#d4cfc6" stroke-width="1.5" stroke-dasharray="5,4"/>
-      <line x1="375" y1="150" x2="270" y2="265" stroke="#d4cfc6" stroke-width="1.5" stroke-dasharray="5,4"/>
-      
-      <!-- Quantum Info circle -->
-      <circle cx="165" cy="150" r="72" fill="rgba(61,107,142,0.06)" stroke="#3d6b8e" stroke-width="1.5"/>
-      <text x="165" y="140" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" fill="#3d6b8e" font-weight="500">Quantum</text>
-      <text x="165" y="158" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" fill="#3d6b8e" font-weight="500">Information</text>
-      <text x="165" y="178" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="#7a8394">MBL · Scrambling</text>
-      <text x="165" y="190" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="#7a8394">Graph States · QKD</text>
-      
-      <!-- Photonics circle -->
-      <circle cx="375" cy="150" r="72" fill="rgba(176,125,79,0.05)" stroke="#b07d4f" stroke-width="1.5"/>
-      <text x="375" y="137" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" fill="#b07d4f" font-weight="500">Quantum Optics</text>
-      <text x="375" y="155" text-anchor="middle" font-family="EB Garamond, serif" font-size="13" fill="#b07d4f" font-weight="500">&amp; Photonics</text>
-      <text x="375" y="178" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="#7a8394">Integrated Circuits</text>
-      <text x="375" y="190" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="#7a8394">Mode Sorting · Gates</text>
-      
-      <!-- ML circle -->
-      <circle cx="270" cy="265" r="72" fill="rgba(90,141,176,0.05)" stroke="#5a8db0" stroke-width="1.5"/>
-      <text x="270" y="255" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" fill="#5a8db0" font-weight="500">AI &amp; Learning</text>
-      <text x="270" y="273" text-anchor="middle" font-family="EB Garamond, serif" font-size="14" fill="#5a8db0" font-weight="500">Theory</text>
-      <text x="270" y="293" text-anchor="middle" font-family="Outfit, sans-serif" font-size="9" fill="#7a8394">Optimization · GMMs</text>
+    <svg viewBox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="8" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+      </defs>
 
-      <!-- intersection labels -->
-      <text x="218" y="128" text-anchor="middle" font-family="Outfit, sans-serif" font-size="7.5" fill="#7a8394" transform="rotate(-25 218 128)">Robust Gates</text>
-      <text x="322" y="128" text-anchor="middle" font-family="Outfit, sans-serif" font-size="7.5" fill="#7a8394" transform="rotate(25 322 128)">Optical NNs</text>
-      <text x="270" y="155" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#3d6b8e" font-weight="500">∩</text>
+      <!-- Connection lines -->
+      <line x1="190" y1="158" x2="310" y2="158" stroke="var(--d-line)" stroke-width="1" stroke-dasharray="6,5" opacity="0.6"/>
+      <line x1="430" y1="158" x2="310" y2="158" stroke="var(--d-line)" stroke-width="1" stroke-dasharray="6,5" opacity="0.6"/>
+      <line x1="190" y1="158" x2="310" y2="290" stroke="var(--d-line)" stroke-width="1" stroke-dasharray="6,5" opacity="0.6"/>
+      <line x1="430" y1="158" x2="310" y2="290" stroke="var(--d-line)" stroke-width="1" stroke-dasharray="6,5" opacity="0.6"/>
+
+      <!-- Intersection labels on lines -->
+      <rect x="224" y="118" width="76" height="16" rx="8" fill="var(--paper)" opacity="0.9"/>
+      <text x="262" y="130" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8.5" fill="var(--muted)" font-weight="400">Robust Gates</text>
+      
+      <rect x="342" y="118" width="72" height="16" rx="8" fill="var(--paper)" opacity="0.9"/>
+      <text x="378" y="130" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8.5" fill="var(--muted)" font-weight="400">Optical NNs</text>
+
+      <rect x="278" y="148" width="64" height="16" rx="8" fill="rgba(43,95,138,0.06)"/>
+      <text x="310" y="160" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8.5" fill="var(--d-blue)" font-weight="500">All three ∩</text>
+
+      <!-- ═══ QUANTUM INFORMATION (left) ═══ -->
+      <circle cx="190" cy="158" r="88" fill="var(--d-blue-bg)" stroke="var(--d-blue)" stroke-width="1.2"/>
+      <!-- atom icon -->
+      <ellipse cx="190" cy="90" rx="14" ry="5" fill="none" stroke="var(--d-blue)" stroke-width="0.9" opacity="0.5" transform="rotate(-30 190 90)"/>
+      <ellipse cx="190" cy="90" rx="14" ry="5" fill="none" stroke="var(--d-blue)" stroke-width="0.9" opacity="0.5" transform="rotate(30 190 90)"/>
+      <ellipse cx="190" cy="90" rx="14" ry="5" fill="none" stroke="var(--d-blue)" stroke-width="0.9" opacity="0.5" transform="rotate(90 190 90)"/>
+      <circle cx="190" cy="90" r="2.5" fill="var(--d-blue)" opacity="0.6"/>
+      <!-- text -->
+      <text x="190" y="120" text-anchor="middle" font-family="EB Garamond, serif" font-size="17" fill="var(--d-blue)" font-weight="500">Quantum</text>
+      <text x="190" y="140" text-anchor="middle" font-family="EB Garamond, serif" font-size="17" fill="var(--d-blue)" font-weight="500">Information</text>
+      <text x="190" y="168" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" fill="var(--muted)">MBL · Scrambling</text>
+      <text x="190" y="182" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" fill="var(--muted)">Graph States · QKD</text>
+
+      <!-- ═══ QUANTUM OPTICS & PHOTONICS (right) ═══ -->
+      <circle cx="430" cy="158" r="88" fill="var(--d-amber-bg)" stroke="var(--d-amber)" stroke-width="1.2"/>
+      <!-- waveguide/lens icon -->
+      <path d="M413 85 L420 85 Q430 85 430 92 Q430 99 440 99 L447 99" fill="none" stroke="var(--d-amber)" stroke-width="1" opacity="0.5"/>
+      <path d="M413 99 L420 99 Q430 99 430 92 Q430 85 440 85 L447 85" fill="none" stroke="var(--d-amber)" stroke-width="1" opacity="0.5"/>
+      <circle cx="430" cy="92" r="3" fill="none" stroke="var(--d-amber)" stroke-width="1" opacity="0.5"/>
+      <line x1="407" y1="82" x2="407" y2="102" stroke="var(--d-amber)" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+      <line x1="453" y1="82" x2="453" y2="102" stroke="var(--d-amber)" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+      <!-- text -->
+      <text x="430" y="123" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="var(--d-amber)" font-weight="500">Quantum Optics</text>
+      <text x="430" y="142" text-anchor="middle" font-family="EB Garamond, serif" font-size="16" fill="var(--d-amber)" font-weight="500">&amp; Photonics</text>
+      <text x="430" y="168" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" fill="var(--muted)">Integrated Circuits</text>
+      <text x="430" y="182" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" fill="var(--muted)">Mode Sorting · Gates</text>
+
+      <!-- ═══ AI & LEARNING THEORY (bottom) ═══ -->
+      <circle cx="310" cy="290" r="88" fill="var(--d-teal-bg)" stroke="var(--d-teal)" stroke-width="1.2"/>
+      <!-- neural net icon -->
+      <circle cx="298" cy="222" r="2.5" fill="var(--d-teal)" opacity="0.4"/>
+      <circle cx="322" cy="222" r="2.5" fill="var(--d-teal)" opacity="0.4"/>
+      <circle cx="290" cy="236" r="2.5" fill="var(--d-teal)" opacity="0.4"/>
+      <circle cx="310" cy="236" r="2.5" fill="var(--d-teal)" opacity="0.4"/>
+      <circle cx="330" cy="236" r="2.5" fill="var(--d-teal)" opacity="0.4"/>
+      <circle cx="302" cy="250" r="2.5" fill="var(--d-teal)" opacity="0.4"/>
+      <circle cx="318" cy="250" r="2.5" fill="var(--d-teal)" opacity="0.4"/>
+      <line x1="298" y1="224" x2="290" y2="234" stroke="var(--d-teal)" stroke-width="0.6" opacity="0.3"/>
+      <line x1="298" y1="224" x2="310" y2="234" stroke="var(--d-teal)" stroke-width="0.6" opacity="0.3"/>
+      <line x1="322" y1="224" x2="310" y2="234" stroke="var(--d-teal)" stroke-width="0.6" opacity="0.3"/>
+      <line x1="322" y1="224" x2="330" y2="234" stroke="var(--d-teal)" stroke-width="0.6" opacity="0.3"/>
+      <line x1="290" y1="238" x2="302" y2="248" stroke="var(--d-teal)" stroke-width="0.6" opacity="0.3"/>
+      <line x1="310" y1="238" x2="302" y2="248" stroke="var(--d-teal)" stroke-width="0.6" opacity="0.3"/>
+      <line x1="310" y1="238" x2="318" y2="248" stroke="var(--d-teal)" stroke-width="0.6" opacity="0.3"/>
+      <line x1="330" y1="238" x2="318" y2="248" stroke="var(--d-teal)" stroke-width="0.6" opacity="0.3"/>
+      <!-- text -->
+      <text x="310" y="275" text-anchor="middle" font-family="EB Garamond, serif" font-size="17" fill="var(--d-teal)" font-weight="500">AI &amp; Learning</text>
+      <text x="310" y="295" text-anchor="middle" font-family="EB Garamond, serif" font-size="17" fill="var(--d-teal)" font-weight="500">Theory</text>
+      <text x="310" y="318" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" fill="var(--muted)">Optimization · GMMs</text>
+      <text x="310" y="332" text-anchor="middle" font-family="Outfit, sans-serif" font-size="10" fill="var(--muted)">Linearization · Sparse Coding</text>
     </svg>
   </div>
 
@@ -315,12 +387,12 @@ footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-
     <div class="pillar">
       <div class="pillar-icon">
         <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="18" r="7" stroke="#3d6b8e" stroke-width="1.2"/>
-          <circle cx="18" cy="18" r="14" stroke="#3d6b8e" stroke-width="0.8" stroke-dasharray="3,3"/>
-          <circle cx="18" cy="4" r="2" fill="#3d6b8e" opacity="0.4"/>
-          <circle cx="30" cy="25" r="2" fill="#3d6b8e" opacity="0.4"/>
-          <circle cx="6" cy="25" r="2" fill="#3d6b8e" opacity="0.4"/>
-          <circle cx="18" cy="18" r="2.5" fill="#3d6b8e" opacity="0.2"/>
+          <circle cx="18" cy="18" r="7" stroke="var(--d-blue)" stroke-width="1.2"/>
+          <circle cx="18" cy="18" r="14" stroke="var(--d-blue)" stroke-width="0.8" stroke-dasharray="3,3"/>
+          <circle cx="18" cy="4" r="2" fill="var(--d-blue)" opacity="0.4"/>
+          <circle cx="30" cy="25" r="2" fill="var(--d-blue)" opacity="0.4"/>
+          <circle cx="6" cy="25" r="2" fill="var(--d-blue)" opacity="0.4"/>
+          <circle cx="18" cy="18" r="2.5" fill="var(--d-blue)" opacity="0.2"/>
         </svg>
       </div>
       <h3>Quantum Information</h3>
@@ -329,13 +401,13 @@ footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-
     <div class="pillar">
       <div class="pillar-icon">
         <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 18 L14 18" stroke="#b07d4f" stroke-width="1.2"/>
-          <path d="M22 18 L32 18" stroke="#b07d4f" stroke-width="1.2"/>
-          <rect x="14" y="12" width="8" height="12" rx="1" stroke="#b07d4f" stroke-width="1.2" fill="rgba(176,125,79,0.08)"/>
-          <path d="M4 14 L14 14" stroke="#b07d4f" stroke-width="0.8" opacity="0.4"/>
-          <path d="M4 22 L14 22" stroke="#b07d4f" stroke-width="0.8" opacity="0.4"/>
-          <path d="M22 14 L32 14" stroke="#b07d4f" stroke-width="0.8" opacity="0.4"/>
-          <path d="M22 22 L32 22" stroke="#b07d4f" stroke-width="0.8" opacity="0.4"/>
+          <path d="M4 18 L14 18" stroke="var(--d-amber)" stroke-width="1.2"/>
+          <path d="M22 18 L32 18" stroke="var(--d-amber)" stroke-width="1.2"/>
+          <rect x="14" y="12" width="8" height="12" rx="1" stroke="var(--d-amber)" stroke-width="1.2" fill="var(--d-amber-bg)"/>
+          <path d="M4 14 L14 14" stroke="var(--d-amber)" stroke-width="0.8" opacity="0.4"/>
+          <path d="M4 22 L14 22" stroke="var(--d-amber)" stroke-width="0.8" opacity="0.4"/>
+          <path d="M22 14 L32 14" stroke="var(--d-amber)" stroke-width="0.8" opacity="0.4"/>
+          <path d="M22 22 L32 22" stroke="var(--d-amber)" stroke-width="0.8" opacity="0.4"/>
         </svg>
       </div>
       <h3>Quantum Optics &amp; Photonics</h3>
@@ -344,12 +416,12 @@ footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-
     <div class="pillar">
       <div class="pillar-icon">
         <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="10" cy="26" r="3" stroke="#5a8db0" stroke-width="1.2" fill="rgba(90,141,176,0.08)"/>
-          <circle cx="26" cy="26" r="3" stroke="#5a8db0" stroke-width="1.2" fill="rgba(90,141,176,0.08)"/>
-          <circle cx="18" cy="10" r="3" stroke="#5a8db0" stroke-width="1.2" fill="rgba(90,141,176,0.08)"/>
-          <line x1="12" y1="24" x2="16" y2="12" stroke="#5a8db0" stroke-width="0.8"/>
-          <line x1="24" y1="24" x2="20" y2="12" stroke="#5a8db0" stroke-width="0.8"/>
-          <line x1="13" y1="26" x2="23" y2="26" stroke="#5a8db0" stroke-width="0.8"/>
+          <circle cx="10" cy="26" r="3" stroke="var(--d-teal)" stroke-width="1.2" fill="var(--d-teal-bg)"/>
+          <circle cx="26" cy="26" r="3" stroke="var(--d-teal)" stroke-width="1.2" fill="var(--d-teal-bg)"/>
+          <circle cx="18" cy="10" r="3" stroke="var(--d-teal)" stroke-width="1.2" fill="var(--d-teal-bg)"/>
+          <line x1="12" y1="24" x2="16" y2="12" stroke="var(--d-teal)" stroke-width="0.8"/>
+          <line x1="24" y1="24" x2="20" y2="12" stroke="var(--d-teal)" stroke-width="0.8"/>
+          <line x1="13" y1="26" x2="23" y2="26" stroke="var(--d-teal)" stroke-width="0.8"/>
         </svg>
       </div>
       <h3>AI &amp; Learning Theory</h3>
@@ -370,39 +442,39 @@ footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-
   <div class="pub-group">
     <div class="pub-group-head">Published</div>
 
-    <div class="pub"><div><h4>Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems</h4><div class="pub-auth">O. Shem-or, <strong>K. Cohen</strong>, Y. Oz</div><div class="pub-ven">ICLR (2026)</div></div><a class="pub-link" href="https://arxiv.org/abs/2401.04013" target="_blank">arXiv ↗</a></div>
+    <div class="pub"><div><h4>Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems</h4><div class="pub-auth">O. Shem-or, <strong>K. Cohen</strong>, Y. Oz</div><div class="pub-ven">ICLR (2026)</div></div><div class="pub-actions"><a class="pub-link" href="https://arxiv.org/abs/2401.04013" target="_blank">arXiv ↗</a><button class="pub-video-btn" onclick="openVideo('videos/weakcorr.mp4','Weak Correlations as the Underlying Principle for Linearization')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
 
-    <div class="pub"><div><h4>Single Plane Spatial Mode Sorter</h4><div class="pub-auth"><strong>K. Cohen</strong>, Y. Yosif-Or, Y. Oz, A. Arie</div><div class="pub-ven">Optics Express (2026)</div></div><a class="pub-link" href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-34-2-1837" target="_blank">Paper ↗</a></div>
+    <div class="pub"><div><h4>Single Plane Spatial Mode Sorter</h4><div class="pub-auth"><strong>K. Cohen</strong>, Y. Yosif-Or, Y. Oz, A. Arie</div><div class="pub-ven">Optics Express (2026)</div></div><div class="pub-actions"><a class="pub-link" href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-34-2-1837" target="_blank">Paper ↗</a></div></div>
 
-    <div class="pub"><div><h4>Generalized Type II Fusion of Graph States</h4><div class="pub-auth">N. Rimok, <strong>K. Cohen</strong>, Y. Oz</div><div class="pub-ven">Phys. Rev. A (2026)</div></div><a class="pub-link" href="https://journals.aps.org/pra/abstract/10.1103/w9w5-2h7r" target="_blank">Paper ↗</a></div>
+    <div class="pub"><div><h4>Generalized Type II Fusion of Graph States</h4><div class="pub-auth">N. Rimok, <strong>K. Cohen</strong>, Y. Oz</div><div class="pub-ven">Phys. Rev. A (2026)</div></div><div class="pub-actions"><a class="pub-link" href="https://journals.aps.org/pra/abstract/10.1103/w9w5-2h7r" target="_blank">Paper ↗</a><button class="pub-video-btn" onclick="openVideo('videos/GeneralizedTypeIIFusion.mp4','Generalized Type II Fusion of Graph States')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
 
-    <div class="pub"><div><h4>Robust Photonic Quantum Gates With A Large Number of Waveguide Segments</h4><div class="pub-auth"><strong>K. Cohen</strong>, H. Suchowski, Y. Oz</div><div class="pub-ven">Advanced Quantum Technologies (2025)</div></div><a class="pub-link" href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/qute.202500304" target="_blank">Paper ↗</a></div>
+    <div class="pub"><div><h4>Robust Photonic Quantum Gates With A Large Number of Waveguide Segments</h4><div class="pub-auth"><strong>K. Cohen</strong>, H. Suchowski, Y. Oz</div><div class="pub-ven">Advanced Quantum Technologies (2025)</div></div><div class="pub-actions"><a class="pub-link" href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/qute.202500304" target="_blank">Paper ↗</a><button class="pub-video-btn" onclick="openVideo('videos/UWG.mp4','Robust Photonic Quantum Gates With A Large Number of Waveguide Segments')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
 
-    <div class="pub"><div><h4>A Fiber-Optic Traffic Monitoring Network Trained with Video Inputs</h4><div class="pub-auth"><strong>K. Cohen</strong>, L. Hen, A. Lellouch</div><div class="pub-ven">Scientific Reports (2025)</div></div><a class="pub-link" href="https://doi.org/10.1038/s41598-025-14928-7" target="_blank">Paper ↗</a></div>
+    <div class="pub"><div><h4>A Fiber-Optic Traffic Monitoring Network Trained with Video Inputs</h4><div class="pub-auth"><strong>K. Cohen</strong>, L. Hen, A. Lellouch</div><div class="pub-ven">Scientific Reports (2025)</div></div><div class="pub-actions"><a class="pub-link" href="https://doi.org/10.1038/s41598-025-14928-7" target="_blank">Paper ↗</a><a class="pub-link" href="https://arxiv.org/abs/2511.21325" target="_blank">arXiv ↗</a><button class="pub-video-btn" onclick="openVideo('videos/sonar.mp4','A Fiber-Optic Traffic Monitoring Network (SONAR)')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
 
-    <div class="pub"><div><h4>Complexity Measure Diagnostic of Ergodic to Many-Body Localization Transition</h4><div class="pub-auth"><strong>K. Cohen</strong>, Y. Oz, D.-L. Zhong</div><div class="pub-ven">Phys. Rev. B (2024)</div></div><a class="pub-link" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.L180101" target="_blank">Paper ↗</a></div>
+    <div class="pub"><div><h4>Complexity Measure Diagnostic of Ergodic to Many-Body Localization Transition</h4><div class="pub-auth"><strong>K. Cohen</strong>, Y. Oz, D.-L. Zhong</div><div class="pub-ven">Phys. Rev. B (2024)</div></div><div class="pub-actions"><a class="pub-link" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.L180101" target="_blank">Paper ↗</a><button class="pub-video-btn" onclick="openVideo('videos/mblPT.mp4','Complexity Measure Diagnostic of MBL Transition')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
 
-    <div class="pub"><div><h4>Temporal Super-Resolution using Multi-Channel Illumination Source</h4><div class="pub-auth"><strong>K. Cohen</strong>, D. Raviv, D. Mendlovic</div><div class="pub-ven">MDPI Sensors (2024)</div></div><a class="pub-link" href="https://www.mdpi.com/1424-8220/24/3/857" target="_blank">Paper ↗</a></div>
+    <div class="pub"><div><h4>Temporal Super-Resolution using Multi-Channel Illumination Source</h4><div class="pub-auth"><strong>K. Cohen</strong>, D. Raviv, D. Mendlovic</div><div class="pub-ven">MDPI Sensors (2024)</div></div><div class="pub-actions"><a class="pub-link" href="https://www.mdpi.com/1424-8220/24/3/857" target="_blank">Paper ↗</a><button class="pub-video-btn" onclick="openVideo('videos/TSR.mp4','Temporal Super-Resolution using Multi-Channel Illumination')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
 
-    <div class="pub"><div><h4>Illumination-Based Color Reconstruction for the Dynamic Vision Sensor</h4><div class="pub-auth"><strong>K. Cohen</strong>, H. Levy, O. Hershko, D. Mendlovic, D. Raviv</div><div class="pub-ven">MDPI Sensors (2023)</div></div><a class="pub-link" href="https://www.mdpi.com/1424-8220/23/19/8327" target="_blank">Paper ↗</a></div>
+    <div class="pub"><div><h4>Illumination-Based Color Reconstruction for the Dynamic Vision Sensor</h4><div class="pub-auth"><strong>K. Cohen</strong>, H. Levy, O. Hershko, D. Mendlovic, D. Raviv</div><div class="pub-ven">MDPI Sensors (2023)</div></div><div class="pub-actions"><a class="pub-link" href="https://www.mdpi.com/1424-8220/23/19/8327" target="_blank">Paper ↗</a><button class="pub-video-btn" onclick="openVideo('videos/DVSCR.mp4','Illumination-Based Color Reconstruction for DVS')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
 
-    <div class="pub"><div><h4>Hardware Analysis for Motion Estimation Task</h4><div class="pub-auth"><strong>K. Cohen</strong>, G. Hodeda, E. Almog, D. Raviv, D. Mendlovic</div><div class="pub-ven">Applied Optics (2022)</div></div><a class="pub-link" href="https://opg.optica.org/ao/abstract.cfm?uri=ao-61-15-4303" target="_blank">Paper ↗</a></div>
+    <div class="pub"><div><h4>Hardware Analysis for Motion Estimation Task</h4><div class="pub-auth"><strong>K. Cohen</strong>, G. Hodeda, E. Almog, D. Raviv, D. Mendlovic</div><div class="pub-ven">Applied Optics (2022)</div></div><div class="pub-actions"><a class="pub-link" href="https://opg.optica.org/ao/abstract.cfm?uri=ao-61-15-4303" target="_blank">Paper ↗</a><button class="pub-video-btn" onclick="openVideo('videos/cfos.mp4','Hardware Analysis for Motion Estimation Task')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
   </div>
 
   <div class="pub-group">
     <div class="pub-group-head">Under Review</div>
 
-    <div class="pub"><div><h4>High-Fidelity Integrated Quantum Photonic Logic Via Robust Directional Couplers</h4><div class="pub-auth"><strong>K. Cohen</strong>*, J. Piasetzky*, Y. Drori, A. Rotem, Y. Warshavsky, Y. Oz, H. Suchowski</div><div class="pub-ven">Submitted to PRL</div></div><a class="pub-link" href="https://arxiv.org/abs/2502.20069" target="_blank">arXiv ↗</a></div>
+    <div class="pub"><div><h4>High-Fidelity Integrated Quantum Photonic Logic Via Robust Directional Couplers</h4><div class="pub-auth"><strong>K. Cohen</strong>*, J. Piasetzky*, Y. Drori, A. Rotem, Y. Warshavsky, Y. Oz, H. Suchowski</div><div class="pub-ven">Submitted to PRL</div></div><div class="pub-actions"><a class="pub-link" href="https://arxiv.org/abs/2502.20069" target="_blank">arXiv ↗</a><button class="pub-video-btn" onclick="openVideo('videos/robust.mp4','High-Fidelity Integrated Quantum Photonic Logic')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
 
-    <div class="pub"><div><h4>High Fidelity CNOT Gates in Photonic Integrated Circuits</h4><div class="pub-auth">J. Piasetzky, A. Rotem, Y. Warshavsky, Y. Drori, <strong>K. Cohen</strong>, Y. Oz, H. Suchowski</div><div class="pub-ven">Submitted to Nature Communications</div></div><a class="pub-link" href="https://arxiv.org/abs/2509.25505" target="_blank">arXiv ↗</a></div>
+    <div class="pub"><div><h4>High Fidelity CNOT Gates in Photonic Integrated Circuits</h4><div class="pub-auth">J. Piasetzky, A. Rotem, Y. Warshavsky, Y. Drori, <strong>K. Cohen</strong>, Y. Oz, H. Suchowski</div><div class="pub-ven">Submitted to Nature Communications</div></div><div class="pub-actions"><a class="pub-link" href="https://arxiv.org/abs/2509.25505" target="_blank">arXiv ↗</a><button class="pub-video-btn" onclick="openVideo('videos/RobustCNOT.mp4','High Fidelity CNOT Gates in Photonic Integrated Circuits')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
 
     <div class="pub"><div><h4>DANCE in the Latent Space: Distribution Alignment for Noise and Content Extraction</h4><div class="pub-auth">I. N. Hidekel, G. Lifshitz, <strong>K. Cohen</strong>, D. Raviv</div><div class="pub-ven">Submitted to ICLR</div></div></div>
 
-    <div class="pub"><div><h4>Robust Characterization of Integrated Photonics Directional Couplers</h4><div class="pub-auth">J. Piasetzky, Y. Drori, Y. Warshavski, A. Rotem, <strong>K. Cohen</strong>, Y. Oz, H. Suchowski</div><div class="pub-ven">Under review</div></div><a class="pub-link" href="https://arxiv.org/abs/2412.11670" target="_blank">arXiv ↗</a></div>
+    <div class="pub"><div><h4>Robust Characterization of Integrated Photonics Directional Couplers</h4><div class="pub-auth">J. Piasetzky, Y. Drori, Y. Warshavski, A. Rotem, <strong>K. Cohen</strong>, Y. Oz, H. Suchowski</div><div class="pub-ven">Under review</div></div><div class="pub-actions"><a class="pub-link" href="https://arxiv.org/abs/2412.11670" target="_blank">arXiv ↗</a><button class="pub-video-btn" onclick="openVideo('videos/robustmeasurement.mp4','Robust Characterization of Integrated Photonics Directional Couplers')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
 
     <div class="pub"><div><h4>Short-Term Spatiotemporal Photo-Voltaic Power Generation Forecasting</h4><div class="pub-auth">Y. Katz-Danan, <strong>K. Cohen</strong>, J. Ostrometzky</div><div class="pub-ven">Submitted to JSTARS</div></div></div>
 
-    <div class="pub"><div><h4>Classifying Overlapping Gaussian Mixtures in High Dimensions</h4><div class="pub-auth"><strong>K. Cohen</strong>, N. Levy, Y. Oz</div><div class="pub-ven">Under review</div></div><a class="pub-link" href="https://arxiv.org/abs/2405.18427" target="_blank">arXiv ↗</a></div>
+    <div class="pub"><div><h4>Classifying Overlapping Gaussian Mixtures in High Dimensions</h4><div class="pub-auth"><strong>K. Cohen</strong>, N. Levy, Y. Oz</div><div class="pub-ven">Under review</div></div><div class="pub-actions"><a class="pub-link" href="https://arxiv.org/abs/2405.18427" target="_blank">arXiv ↗</a><button class="pub-video-btn" onclick="openVideo('videos/GaussianOverlapping.mp4','Classifying Overlapping Gaussian Mixtures in High Dimensions')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Video</button></div></div>
   </div>
 
   <div class="sec-label" style="margin-top:2.5rem">Patents</div>
@@ -429,41 +501,20 @@ footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-
   <div class="sec-label">Talks &amp; Presentations</div>
   <h2>Where I've presented</h2>
 
-  <!-- World map SVG -->
   <div class="talks-visual">
     <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
-      <!-- Simplified world map outline -->
-      <!-- Europe -->
       <path d="M330 60 Q340 55 350 58 L360 54 Q370 52 375 58 L380 62 Q382 68 378 72 L370 78 Q365 82 358 80 L348 82 Q340 84 336 78 L330 72 Q328 66 330 60Z" fill="rgba(61,107,142,0.06)" stroke="#d4cfc6" stroke-width="0.8"/>
-      <!-- Middle East -->
       <path d="M378 78 Q385 82 388 90 L392 100 Q390 108 384 110 L376 106 Q372 98 370 90 L370 82Z" fill="rgba(61,107,142,0.06)" stroke="#d4cfc6" stroke-width="0.8"/>
-      <!-- Asia -->
       <path d="M390 50 Q420 42 450 48 L480 52 Q500 58 510 70 L515 85 Q512 100 500 108 L480 112 Q460 110 445 100 L430 90 Q415 82 400 78 L388 70 Q385 60 390 50Z" fill="rgba(61,107,142,0.06)" stroke="#d4cfc6" stroke-width="0.8"/>
-      <!-- North America -->
       <path d="M100 50 Q130 40 160 45 L190 52 Q210 60 220 75 L225 90 Q222 105 210 115 L190 120 Q170 118 155 110 L135 100 Q115 88 105 72 L98 60 Q96 54 100 50Z" fill="rgba(61,107,142,0.06)" stroke="#d4cfc6" stroke-width="0.8"/>
-      
-      <!-- Location dots with labels -->
-      <!-- Princeton -->
-      <circle cx="175" cy="75" r="5" fill="#3d6b8e" opacity="0.2"/>
-      <circle cx="175" cy="75" r="2.5" fill="#3d6b8e"/>
+      <circle cx="175" cy="75" r="5" fill="#3d6b8e" opacity="0.2"/><circle cx="175" cy="75" r="2.5" fill="#3d6b8e"/>
       <text x="175" y="95" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#3d6b8e" font-weight="500">Princeton</text>
-      
-      <!-- Munich -->
-      <circle cx="356" cy="65" r="5" fill="#3d6b8e" opacity="0.2"/>
-      <circle cx="356" cy="65" r="2.5" fill="#3d6b8e"/>
+      <circle cx="356" cy="65" r="5" fill="#3d6b8e" opacity="0.2"/><circle cx="356" cy="65" r="2.5" fill="#3d6b8e"/>
       <text x="356" y="55" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#3d6b8e" font-weight="500">Munich</text>
-
-      <!-- Israel -->
-      <circle cx="383" cy="95" r="5" fill="#3d6b8e" opacity="0.2"/>
-      <circle cx="383" cy="95" r="2.5" fill="#3d6b8e"/>
+      <circle cx="383" cy="95" r="5" fill="#3d6b8e" opacity="0.2"/><circle cx="383" cy="95" r="2.5" fill="#3d6b8e"/>
       <text x="383" y="115" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#3d6b8e" font-weight="500">Israel</text>
-      
-      <!-- Singapore -->
-      <circle cx="478" cy="112" r="5" fill="#3d6b8e" opacity="0.2"/>
-      <circle cx="478" cy="112" r="2.5" fill="#3d6b8e"/>
+      <circle cx="478" cy="112" r="5" fill="#3d6b8e" opacity="0.2"/><circle cx="478" cy="112" r="2.5" fill="#3d6b8e"/>
       <text x="478" y="128" text-anchor="middle" font-family="Outfit, sans-serif" font-size="8" fill="#3d6b8e" font-weight="500">Singapore</text>
-
-      <!-- Dashed connection arcs -->
       <path d="M178 75 Q270 20 353 65" fill="none" stroke="#3d6b8e" stroke-width="0.6" stroke-dasharray="3,3" opacity="0.3"/>
       <path d="M356 68 Q370 80 380 92" fill="none" stroke="#3d6b8e" stroke-width="0.6" stroke-dasharray="3,3" opacity="0.3"/>
       <path d="M386 98 Q430 100 475 110" fill="none" stroke="#3d6b8e" stroke-width="0.6" stroke-dasharray="3,3" opacity="0.3"/>
@@ -483,12 +534,11 @@ footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-
 
 <hr class="sep">
 
-<!-- BACKGROUND (Education + Awards woven together) -->
+<!-- BACKGROUND -->
 <div class="container">
 <section id="background" class="fade-in">
   <div class="sec-label">Background</div>
   <h2>Education</h2>
-
   <div class="timeline">
     <div class="tl-item">
       <div class="tl-yr">2023 – Present</div>
@@ -524,13 +574,10 @@ footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-
       <h3>B.Sc. in Electrical Engineering &amp; B.Sc. in Physics</h3>
       <div class="tl-sub">Tel Aviv University · Magna Cum Laude · Top 3%</div>
       <div class="tl-body">Double degree. Research in silicon photonics at the Nano-Femto Lab (Prof. Haim Suchowski).</div>
-      <div class="tl-awards">
-        <span class="tl-award">Dean's List ×4</span>
-      </div>
+      <div class="tl-awards"><span class="tl-award">Dean's List ×4</span></div>
     </div>
   </div>
 
-  <!-- Experience woven in below -->
   <h2 style="margin-top:3rem">Other experience</h2>
   <div class="exp-row" style="margin-top:1rem">
     <div class="exp">
@@ -605,12 +652,39 @@ footer{text-align:center;padding:1.5rem;border-top:1px solid var(--border);font-
 <footer>&copy; 2026 Khen Cohen · Tel Aviv University</footer>
 
 <script>
+// Nav
 const nav=document.getElementById('navbar');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>30));
 document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
 document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+// Scroll reveal
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.08});
 document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+// Video modal
+const overlay=document.getElementById('videoOverlay');
+const player=document.getElementById('videoPlayer');
+const vTitle=document.getElementById('videoTitle');
+const vContainer=document.getElementById('videoContainer');
+
+function openVideo(src,title){
+  player.src=src;
+  vTitle.textContent=title;
+  overlay.style.display='flex';
+  requestAnimationFrame(()=>{overlay.classList.add('active')});
+  player.play().catch(()=>{});
+}
+function closeVideo(){
+  player.pause();
+  player.src='';
+  overlay.classList.remove('active');
+  setTimeout(()=>{overlay.style.display='none'},300);
+}
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeVideo()});
+document.getElementById('videoClose').addEventListener('click',closeVideo);
+vContainer.addEventListener('click',e=>e.stopPropagation());
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
 </script>
 </body>
 </html>
