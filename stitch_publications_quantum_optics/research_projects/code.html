@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Research | Observational Plane</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#008ea1",
+                        "inverse-on-surface": "#283044",
+                        "surface-container-high": "#222a3d",
+                        "on-background": "#dae2fd",
+                        "primary-fixed-dim": "#2fd9f4",
+                        "tertiary-fixed": "#d4e4fa",
+                        "secondary-fixed": "#e9ddff",
+                        "surface-container-highest": "#2d3449",
+                        "secondary": "#d0bcff",
+                        "on-tertiary": "#233143",
+                        "on-primary-fixed-variant": "#004e5a",
+                        "on-secondary-container": "#c4abff",
+                        "tertiary-container": "#081828",
+                        "surface": "#0b1326",
+                        "surface-dim": "#0b1326",
+                        "secondary-container": "#571bc1",
+                        "surface-variant": "#2d3449",
+                        "on-primary-fixed": "#001f25",
+                        "outline-variant": "#45464d",
+                        "on-error": "#690005",
+                        "surface-container-low": "#131b2e",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#006877",
+                        "surface-bright": "#31394d",
+                        "surface-container": "#171f33",
+                        "outline": "#909097",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#c6c6cd",
+                        "tertiary": "#b9c8de",
+                        "on-secondary-fixed": "#23005c",
+                        "surface-tint": "#2fd9f4",
+                        "on-tertiary-container": "#738296",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "primary-container": "#001b20",
+                        "on-tertiary-fixed-variant": "#39485a",
+                        "on-tertiary-fixed": "#0d1c2d",
+                        "primary-fixed": "#a2eeff",
+                        "surface-container-lowest": "#060e20",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "on-secondary": "#3c0091",
+                        "inverse-surface": "#dae2fd",
+                        "background": "#0b1326",
+                        "tertiary-fixed-dim": "#b9c8de",
+                        "error-container": "#93000a",
+                        "on-primary": "#00363e",
+                        "error": "#ffb4ab",
+                        "primary": "#2fd9f4"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+        .glass-card {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(20px);
+        }
+        .interference-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(47, 217, 244, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary/30 selection:text-primary">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto bg-[#0b1326]/60 backdrop-blur-xl">
+<div class="font-serif text-2xl italic tracking-tighter text-[#2fd9f4]">Observational Plane</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">Home</a>
+<a class="text-[#2fd9f4] border-b-2 border-[#2fd9f4] pb-1 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">Research</a>
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">Publications</a>
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">About</a>
+</div>
+<button class="text-[#2fd9f4]">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<header class="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<p class="font-label text-primary uppercase tracking-[0.3em] text-xs mb-4">Laboratory of Quantum Metrology</p>
+<h1 class="font-headline text-6xl md:text-8xl tracking-tight text-on-surface">Active <span class="italic font-light text-primary">Inquiry</span></h1>
+</div>
+<div class="flex items-center gap-4 border-l border-outline-variant/20 pl-8 h-fit">
+<span class="font-label text-4xl text-on-tertiary-container">04</span>
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant leading-tight">Ongoing<br/>Phases</span>
+</div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-x-12">
+<section class="md:col-span-8 group">
+<div class="relative overflow-hidden bg-surface-container-low mb-8 aspect-[16/9]">
+<img alt="Experimental Setup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" data-alt="Intricate laboratory setup with blue laser beams reflecting through prisms and optical fibers on a dark steel table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyOm-fscsJ37LVNErlL33Bn3bxuIQykVdrsjBd9DLO-XT3Ru7ry3j-7XFE6NWiV6j2or0Z6AAC98lQEuIglsJ2yCgsM9wMa1NyaBAbI-rAXQ_lfN1ziBRyRL5VflMkT-7vrpNm_7QSEo6kKWpFge8c7e3E-mZGCJ-HvH_oHDwO05agQU0c-qWejYhzELi2KBNEoFlwNbyGzDTzUNyfJV4RNJeD9E8pmONmy6XydeOKjtTCJrQL5amGGpJuTgBFSvPlilnlVeXTr3by"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="flex flex-col md:flex-row gap-6">
+<div class="md:w-1/4">
+<span class="font-label text-[10px] text-primary uppercase tracking-[0.2em]">Project P-82</span>
+</div>
+<div class="md:w-3/4">
+<h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-6">Advancing Bell's inequality tests via photonic entanglement</h2>
+<p class="font-body text-on-surface-variant leading-relaxed mb-8 max-w-xl">
+                            Exploring the boundaries of local realism through high-fidelity photon pair generation. Our current phase focuses on closing the detection loophole using superconducting nanowire single-photon detectors.
+                        </p>
+<a class="inline-flex items-center gap-3 text-primary font-label text-sm uppercase tracking-widest hover:gap-6 transition-all" href="#">
+                            Explore Technical Details
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<aside class="md:col-span-4 flex flex-col justify-between">
+<div class="p-8 bg-surface-container-lowest border-l-2 border-primary/20 interference-pattern">
+<h3 class="font-headline text-xl italic text-on-surface mb-4">Theoretical Framework</h3>
+<p class="text-xs font-body text-on-surface-variant leading-relaxed mb-6">
+                        "The observational plane is not a witness, but a participant. In quantum optics, the act of measurement is the final stroke of the cosmic brush."
+                    </p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-[1px] bg-outline-variant"></div>
+<span class="font-label text-[10px] uppercase tracking-widest text-primary">Research Note 2024.01</span>
+</div>
+</div>
+</aside>
+<section class="md:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+<div class="bg-surface-container-low p-1 group">
+<div class="relative aspect-video mb-8 overflow-hidden">
+<img alt="Quantum State" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-70" data-alt="Scientific abstract visualization of a glowing geometric sphere representing quantum state superposition in deep violet and cyan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAneseRuO69bLqc4S0bR39fbkSOylGvhGzIv1w7GZ60dQXlLwTh0g47Hj24YatStLwQS8E3Hmf_XAX99u0QC5MpTkUY8-7A3inA1xRvB9XoH-O7jgq_HMXlka9Z1IKIAelgHfLpvJTujb2zG55hBFkjQ8dQwaZVY2uSSM2tF5l3E3k2F8mWf4BJukxd9CeQcaKzxAlOqN0CAysPv3QHNht2odlVMTVI2SuofSTrRMMMrSCQH-AMvFbclXpMVAqB0j6OgyXgR7a_Fa5z"/>
+</div>
+<div class="px-6 pb-8">
+<div class="flex items-center gap-4 mb-4">
+<span class="font-label text-[10px] text-on-tertiary-container px-2 py-1 bg-tertiary-container rounded">THEORETICAL</span>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-4">Hyper-entangled state topology</h3>
+<p class="text-sm text-on-surface-variant mb-6 line-clamp-2">Mapping high-dimensional Hilbert spaces using orbital angular momentum of light for secure communication protocols.</p>
+<a class="text-primary font-label text-xs uppercase tracking-widest flex items-center gap-2" href="#">
+                            View Abstract
+                            <span class="material-symbols-outlined text-xs" data-icon="open_in_new">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="bg-surface-container-low p-1 group">
+<div class="relative aspect-video mb-8 overflow-hidden">
+<img alt="Sensor Research" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-70" data-alt="Macro photography of a specialized microchip sensor with gold circuits glowing under soft laboratory lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACfBfSWHOhkSK5pPMJ3YJ31Qx7WyzbyXp5URNzUsqSuEYrgYoewZ5QpqEA7hxmQ33Wp4ANNrHFKHdYjE7itZIDJ315tvVB1gU3TGPH-IISUYBx-y0Z88RxyVZx6Jl7iiNn_nhcy2054vMs2rp2KSmd-DQVquySil7Z4S2J_mXnL2wBd7oEelaTeszS9ShIU28fTFjY-Ja3RZ1OmCaexl3rGC0gYX_reji3t9_i7GgXx9vHfmxtdJTxS2wzW7lzpVL82le_lTEUgrBe"/>
+</div>
+<div class="px-6 pb-8">
+<div class="flex items-center gap-4 mb-4">
+<span class="font-label text-[10px] text-[#2fd9f4] px-2 py-1 bg-[#001b20] rounded">EXPERIMENTAL</span>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-4">Cryogenic sensor calibration</h3>
+<p class="text-sm text-on-surface-variant mb-6 line-clamp-2">Noise reduction strategies for 4K environments using custom-designed SQUID interfaces and topological insulators.</p>
+<a class="text-primary font-label text-xs uppercase tracking-widest flex items-center gap-2" href="#">
+                            View Data Sets
+                            <span class="material-symbols-outlined text-xs" data-icon="monitoring">monitoring</span>
+</a>
+</div>
+</div>
+</section>
+<section class="md:col-span-12 flex flex-col md:flex-row items-center gap-12 mt-24 p-12 bg-primary-container/30 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<div class="relative z-10 md:w-1/2">
+<h2 class="font-headline text-4xl text-on-surface mb-4 italic">Collaborative Syntropy</h2>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        We are actively seeking doctoral candidates with backgrounds in non-linear optics and statistical mechanics. Join our pursuit of the infinitesimal.
+                    </p>
+</div>
+<div class="relative z-10 md:w-1/2 flex justify-end">
+<button class="bg-primary text-on-primary-fixed font-label text-sm px-10 py-5 uppercase tracking-widest hover:bg-primary-fixed-dim transition-colors">
+                        Inquire for Research
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<footer class="mt-24 py-12 px-12 bg-[#0b1326] flex flex-col md:flex-row justify-between items-center w-full max-w-screen-2xl mx-auto opacity-60">
+<div class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-400">
+            © 2024 Quantum Optics Research Group
+        </div>
+<div class="flex gap-12 mt-8 md:mt-0">
+<a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300" href="#">Google Scholar</a>
+<a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300" href="#">LinkedIn</a>
+<a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300" href="#">University Affiliation</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#008ea1",
+              "inverse-on-surface": "#283044",
+              "surface-container-high": "#222a3d",
+              "on-background": "#dae2fd",
+              "primary-fixed-dim": "#2fd9f4",
+              "tertiary-fixed": "#d4e4fa",
+              "secondary-fixed": "#e9ddff",
+              "surface-container-highest": "#2d3449",
+              "secondary": "#d0bcff",
+              "on-tertiary": "#233143",
+              "on-primary-fixed-variant": "#004e5a",
+              "on-secondary-container": "#c4abff",
+              "tertiary-container": "#081828",
+              "surface": "#0b1326",
+              "surface-dim": "#0b1326",
+              "secondary-container": "#571bc1",
+              "surface-variant": "#2d3449",
+              "on-primary-fixed": "#001f25",
+              "outline-variant": "#45464d",
+              "on-error": "#690005",
+              "surface-container-low": "#131b2e",
+              "on-error-container": "#ffdad6",
+              "inverse-primary": "#006877",
+              "surface-bright": "#31394d",
+              "surface-container": "#171f33",
+              "outline": "#909097",
+              "on-surface": "#dae2fd",
+              "on-surface-variant": "#c6c6cd",
+              "tertiary": "#b9c8de",
+              "on-secondary-fixed": "#23005c",
+              "surface-tint": "#2fd9f4",
+              "on-tertiary-container": "#738296",
+              "on-secondary-fixed-variant": "#5516be",
+              "primary-container": "#001b20",
+              "on-tertiary-fixed-variant": "#39485a",
+              "on-tertiary-fixed": "#0d1c2d",
+              "primary-fixed": "#a2eeff",
+              "surface-container-lowest": "#060e20",
+              "secondary-fixed-dim": "#d0bcff",
+              "on-secondary": "#3c0091",
+              "inverse-surface": "#dae2fd",
+              "background": "#0b1326",
+              "tertiary-fixed-dim": "#b9c8de",
+              "error-container": "#93000a",
+              "on-primary": "#00363e",
+              "error": "#ffb4ab",
+              "primary": "#2fd9f4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(11, 19, 38, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .interference-pattern {
+            background-image: repeating-linear-gradient(45deg, rgba(47, 217, 244, 0.03) 0px, rgba(47, 217, 244, 0.03) 1px, transparent 1px, transparent 10px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-primary">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto bg-[#0b1326]/60 backdrop-blur-xl no-border tonal-shift bg-slate-900/40">
+<div class="font-serif text-2xl italic tracking-tighter text-[#2fd9f4]">Observational Plane</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">Home</a>
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">Research</a>
+<a class="text-[#2fd9f4] border-b-2 border-[#2fd9f4] pb-1 font-sans tracking-wide uppercase text-xs" href="#">Publications</a>
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#2fd9f4] opacity-80 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto min-h-screen">
+<header class="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<div class="font-label text-primary text-xs tracking-[0.3em] uppercase mb-4">Scholarly Archive</div>
+<h1 class="font-headline text-5xl md:text-7xl font-light tracking-tight leading-none mb-6">Publications</h1>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed">
+                    A comprehensive record of peer-reviewed contributions to the fields of quantum optics, entanglement theory, and nanophotonic structures.
+                </p>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right hidden md:block">
+<div class="font-label text-[10px] text-outline tracking-widest uppercase">Citations</div>
+<div class="font-headline text-3xl italic text-primary">2.4k+</div>
+</div>
+<div class="h-12 w-[1px] bg-outline-variant/30 hidden md:block"></div>
+<div class="text-right hidden md:block">
+<div class="font-label text-[10px] text-outline tracking-widest uppercase">H-Index</div>
+<div class="font-headline text-3xl italic text-primary">28</div>
+</div>
+</div>
+</header>
+<section class="mb-16">
+<div class="bg-surface-container-low p-2 flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="relative w-full md:w-96 group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input class="w-full bg-surface-container-highest border-none text-on-surface font-body text-sm py-3 pl-12 focus:ring-0 focus:border-b-2 border-primary transition-all" placeholder="Search by title, keyword, or journal..." type="text"/>
+</div>
+<div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
+<button class="bg-surface-container-highest text-on-surface text-xs font-label px-4 py-2 hover:bg-primary/20 hover:text-primary transition-colors whitespace-nowrap">All Topics</button>
+<button class="text-on-surface-variant text-xs font-label px-4 py-2 hover:text-white transition-colors whitespace-nowrap">Quantum Optics</button>
+<button class="text-on-surface-variant text-xs font-label px-4 py-2 hover:text-white transition-colors whitespace-nowrap">Materials Science</button>
+<button class="text-on-surface-variant text-xs font-label px-4 py-2 hover:text-white transition-colors whitespace-nowrap">Theoretical Physics</button>
+</div>
+</div>
+</section>
+<div class="space-y-12">
+<div class="relative">
+<div class="sticky top-24 z-10 py-2 mb-8 border-b border-outline-variant/10 bg-background/80 backdrop-blur-sm">
+<h2 class="font-headline text-2xl italic tracking-tighter text-outline-variant">2024</h2>
+</div>
+<div class="space-y-16">
+<article class="grid grid-cols-1 md:grid-cols-12 gap-6 group">
+<div class="md:col-span-1 hidden md:block">
+<span class="font-label text-[10px] text-outline-variant tracking-widest uppercase mt-2 block">Paper 042</span>
+</div>
+<div class="md:col-span-8">
+<h3 class="font-headline text-2xl md:text-3xl text-on-surface leading-snug mb-3 group-hover:text-primary transition-colors cursor-pointer">Deterministic generation of entangled photonic clusters in nanophotonic circuits</h3>
+<p class="font-body text-on-surface-variant text-sm mb-4 leading-relaxed">
+                                J. Schmidt, <span class="text-primary font-medium">E. Vance</span>, L. Thorne, H. Nakamura, and M. Weiss
+                            </p>
+<div class="flex flex-wrap gap-x-6 gap-y-2">
+<div class="flex items-center gap-2">
+<span class="font-label text-[10px] text-outline tracking-widest uppercase">Journal</span>
+<span class="font-headline italic text-lg text-secondary">Nature Photonics</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label text-[10px] text-outline tracking-widest uppercase">Volume</span>
+<span class="text-sm font-body">18, 442–449</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-3 flex md:flex-col justify-start md:items-end gap-3">
+<a class="flex items-center gap-2 text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">
+                                DOI: 10.1038/s41566
+                                <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</a>
+<a class="flex items-center gap-2 text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span>
+                                PDF (2.4MB)
+                            </a>
+</div>
+</article>
+<article class="grid grid-cols-1 md:grid-cols-12 gap-6 group">
+<div class="md:col-span-1 hidden md:block">
+<span class="font-label text-[10px] text-outline-variant tracking-widest uppercase mt-2 block">Paper 041</span>
+</div>
+<div class="md:col-span-8">
+<h3 class="font-headline text-2xl md:text-3xl text-on-surface leading-snug mb-3 group-hover:text-primary transition-colors cursor-pointer">Observation of Topological Protected Edge States in Rydberg Atom Arrays</h3>
+<p class="font-body text-on-surface-variant text-sm mb-4 leading-relaxed">
+                                A. Gupta, S. Miller, and <span class="text-primary font-medium">E. Vance</span>
+</p>
+<div class="flex flex-wrap gap-x-6 gap-y-2">
+<div class="flex items-center gap-2">
+<span class="font-label text-[10px] text-outline tracking-widest uppercase">Journal</span>
+<span class="font-headline italic text-lg text-secondary">Physical Review Letters</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label text-[10px] text-outline tracking-widest uppercase">Volume</span>
+<span class="text-sm font-body">132, 103602</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-3 flex md:flex-col justify-start md:items-end gap-3">
+<a class="flex items-center gap-2 text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">
+                                DOI: 10.1103/PhysRevLett
+                                <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</a>
+<a class="flex items-center gap-2 text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span>
+                                PDF (1.8MB)
+                            </a>
+</div>
+</article>
+</div>
+</div>
+<div class="relative pt-8">
+<div class="sticky top-24 z-10 py-2 mb-8 border-b border-outline-variant/10 bg-background/80 backdrop-blur-sm">
+<h2 class="font-headline text-2xl italic tracking-tighter text-outline-variant">2023</h2>
+</div>
+<div class="space-y-16">
+<article class="grid grid-cols-1 md:grid-cols-12 gap-6 group">
+<div class="md:col-span-1 hidden md:block">
+<span class="font-label text-[10px] text-outline-variant tracking-widest uppercase mt-2 block">Paper 039</span>
+</div>
+<div class="md:col-span-8">
+<h3 class="font-headline text-2xl md:text-3xl text-on-surface leading-snug mb-3 group-hover:text-primary transition-colors cursor-pointer">Strong Light-Matter Coupling in Hybrid Van der Waals Heterostructures</h3>
+<p class="font-body text-on-surface-variant text-sm mb-4 leading-relaxed">
+<span class="text-primary font-medium">E. Vance</span>, K. Patel, and R. Sterling
+                            </p>
+<div class="flex flex-wrap gap-x-6 gap-y-2">
+<div class="flex items-center gap-2">
+<span class="font-label text-[10px] text-outline tracking-widest uppercase">Journal</span>
+<span class="font-headline italic text-lg text-secondary">Science Advances</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label text-[10px] text-outline tracking-widest uppercase">Volume</span>
+<span class="text-sm font-body">9, eadj4521</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-3 flex md:flex-col justify-start md:items-end gap-3">
+<a class="flex items-center gap-2 text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">
+                                DOI: 10.1126/sciadv
+                                <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</a>
+<a class="flex items-center gap-2 text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span>
+                                PDF (4.1MB)
+                            </a>
+</div>
+</article>
+</div>
+</div>
+</div>
+<section class="mt-32 p-12 relative overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 interference-pattern opacity-40"></div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="max-w-md">
+<h4 class="font-headline text-3xl italic mb-4">Request Pre-prints</h4>
+<p class="font-body text-on-surface-variant text-sm">Working on something new? Access manuscripts currently under review or early-stage research drafts.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary font-label text-xs uppercase tracking-widest px-8 py-4 hover:opacity-90 transition-opacity">Contact Laboratory</button>
+<button class="bg-surface-container-highest text-on-surface font-label text-xs uppercase tracking-widest px-8 py-4 hover:bg-surface-bright transition-colors">ArXiv Profile</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#0b1326] mt-24 py-12 px-12 opacity-60">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-2xl mx-auto">
+<div class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-400">© 2024 Quantum Optics Research Group</div>
+<div class="flex gap-8 mt-6 md:mt-0">
+<a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300 hover:translate-y-[-1px] transition-transform" href="#">Google Scholar</a>
+<a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300 hover:translate-y-[-1px] transition-transform" href="#">LinkedIn</a>
+<a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300 hover:translate-y-[-1px] transition-transform" href="#">University Affiliation</a>
+</div>
+</div>
+</footer>
+<div class="fixed bottom-12 right-12 z-40 md:hidden">
+<button class="w-14 h-14 bg-primary text-on-primary flex items-center justify-center rounded-full shadow-2xl">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</body></html>
