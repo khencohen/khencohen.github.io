@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#008ea1",
+              "inverse-on-surface": "#283044",
+              "surface-container-high": "#222a3d",
+              "on-background": "#dae2fd",
+              "primary-fixed-dim": "#2fd9f4",
+              "tertiary-fixed": "#d4e4fa",
+              "secondary-fixed": "#e9ddff",
+              "surface-container-highest": "#2d3449",
+              "secondary": "#d0bcff",
+              "on-tertiary": "#233143",
+              "on-primary-fixed-variant": "#004e5a",
+              "on-secondary-container": "#c4abff",
+              "tertiary-container": "#081828",
+              "surface": "#0b1326",
+              "surface-dim": "#0b1326",
+              "secondary-container": "#571bc1",
+              "surface-variant": "#2d3449",
+              "on-primary-fixed": "#001f25",
+              "outline-variant": "#45464d",
+              "on-error": "#690005",
+              "surface-container-low": "#131b2e",
+              "on-error-container": "#ffdad6",
+              "inverse-primary": "#006877",
+              "surface-bright": "#31394d",
+              "surface-container": "#171f33",
+              "outline": "#909097",
+              "on-surface": "#dae2fd",
+              "on-surface-variant": "#c6c6cd",
+              "tertiary": "#b9c8de",
+              "on-secondary-fixed": "#23005c",
+              "surface-tint": "#2fd9f4",
+              "on-tertiary-container": "#738296",
+              "on-secondary-fixed-variant": "#5516be",
+              "primary-container": "#001b20",
+              "on-tertiary-fixed-variant": "#39485a",
+              "on-tertiary-fixed": "#0d1c2d",
+              "primary-fixed": "#a2eeff",
+              "surface-container-lowest": "#060e20",
+              "secondary-fixed-dim": "#d0bcff",
+              "on-secondary": "#3c0091",
+              "inverse-surface": "#dae2fd",
+              "background": "#0b1326",
+              "tertiary-fixed-dim": "#b9c8de",
+              "error-container": "#93000a",
+              "on-primary": "#00363e",
+              "error": "#ffb4ab",
+              "primary": "#2fd9f4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        background: rgba(11, 19, 38, 0.6);
+      }
+      .interference-pattern {
+        background-image: radial-gradient(circle at 2px 2px, rgba(47, 217, 244, 0.05) 1px, transparent 0);
+        background-size: 24px 24px;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30 selection:text-primary">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto bg-[#0b1326]/60 backdrop-blur-xl">
+<div class="font-serif text-2xl italic tracking-tighter text-[#2fd9f4]">
+            Observational Plane
+        </div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="text-[#2fd9f4] border-b-2 border-[#2fd9f4] pb-1 font-sans tracking-wide uppercase text-xs" href="#">Home</a>
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">Research</a>
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">Publications</a>
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">About</a>
+</div>
+<div class="text-[#2fd9f4] flex items-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</div>
+</nav>
+<main class="pt-32 interference-pattern">
+<!-- Hero Section -->
+<section class="max-w-screen-2xl mx-auto px-12 pb-32">
+<div class="flex flex-col md:grid md:grid-cols-12 gap-12 items-end">
+<div class="md:col-span-7 lg:col-span-8">
+<h1 class="font-headline text-6xl md:text-8xl tracking-tight leading-[0.9] text-on-surface mb-12 italic">
+                        The architecture of <span class="text-primary not-italic">quantum coherence</span> in complex optical systems.
+                    </h1>
+<div class="max-w-xl">
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
+                            Dr. Elias Thorne’s research group bridges the gap between fundamental light-matter interaction and the scalable deployment of Entanglement-Based Networks. We observe the invisible boundaries where quantum states resolve into classical information.
+                        </p>
+<div class="flex gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-fixed-dim text-on-primary-fixed px-8 py-4 font-label font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all">
+                                Current Projects
+                            </button>
+<button class="glass-effect text-on-surface px-8 py-4 font-label font-bold uppercase tracking-widest text-xs hover:bg-surface-container-highest transition-all">
+                                Lab Tour
+                            </button>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 lg:col-span-4 w-full">
+<div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low group">
+<img alt="Quantum Researcher Portrait" class="object-cover w-full h-full opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract cinematic portrait of a researcher in a dark laboratory, soft cyan light reflecting on glass lenses and technical optical components" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrEEDg5dONwblG0mcGYFJWoTXxt3JJcw9e0mNT-Ikkhcw7jXzNu4B7BfIP71RsWon5lSNGTXChp_IrNdBXBnTVW29Yloqq80U-SqwFRNQlP5zs-LL1UKGbxglnhfLRdlnN4ssyDrM19EfAt3xwg5wZ7FR57pS8vmOFz_6TRYIojRvF8bV4dTyBOiWnXHBDtEx23FZcI-fUqTDfVeyOgBl0wviy7MBuTeR-8ZNoR04orRel1VQGzVJN1PTr5irXedPpzTSO7WzHXJ2i"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="font-label text-xs tracking-tighter uppercase text-primary mb-1 block">Principal Investigator</span>
+<span class="font-headline text-2xl italic">Dr. Elias Thorne</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Research Interests -->
+<section class="max-w-screen-2xl mx-auto px-12 mb-40">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Large Feature -->
+<div class="md:col-span-2 bg-surface-container-low p-12 flex flex-col justify-between min-h-[400px]">
+<div>
+<span class="font-label text-primary text-xs tracking-widest uppercase mb-4 block">Primary Focus</span>
+<h3 class="font-headline text-4xl text-on-surface italic leading-tight">Entanglement-Based Networks</h3>
+</div>
+<p class="font-body text-on-surface-variant max-w-xs">
+                        Engineering robust protocols for long-distance quantum state transfer using solid-state defect centers and photonic cavities.
+                    </p>
+</div>
+<!-- Small Feature 1 -->
+<div class="bg-surface-container-high p-8 flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="blur_on">blur_on</span>
+<div>
+<h4 class="font-label text-sm font-bold uppercase tracking-widest mb-2">Optical Lattices</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+                            Simulation of many-body dynamics in cold-atom arrays with sub-wavelength resolution.
+                        </p>
+</div>
+</div>
+<!-- Small Feature 2 -->
+<div class="bg-surface-container-highest p-8 flex flex-col justify-between border-l border-primary/20">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="hub">hub</span>
+<div>
+<h4 class="font-label text-sm font-bold uppercase tracking-widest mb-2">Non-Linear Optics</h4>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+                            Generating high-flux squeezed light for precision sensing beyond the standard quantum limit.
+                        </p>
+</div>
+</div>
+<!-- Medium Feature -->
+<div class="md:col-span-4 bg-gradient-to-r from-primary-container to-surface-container-low p-12 flex items-center justify-between">
+<div class="max-w-2xl">
+<h3 class="font-headline text-3xl mb-4 italic">Recent Breakthrough: Silicon-Vacancy Fidelity</h3>
+<p class="font-body text-on-surface-variant">
+                            Our team achieved 99.8% entanglement fidelity over 15km of telecom-grade optical fiber using the newly developed phase-stable interferometer.
+                        </p>
+</div>
+<div class="hidden md:block">
+<span class="font-label text-7xl font-extrabold opacity-10">0.998</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Publications -->
+<section class="max-w-screen-2xl mx-auto px-12 mb-32">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="font-label text-primary text-xs tracking-widest uppercase mb-2 block">Archive</span>
+<h2 class="font-headline text-5xl italic">Latest Publications</h2>
+</div>
+<a class="font-label text-xs uppercase tracking-widest text-on-surface-variant border-b border-outline-variant pb-1 hover:text-primary transition-colors" href="#">View All Papers</a>
+</div>
+<div class="space-y-0">
+<!-- Pub 1 -->
+<div class="group py-10 flex flex-col md:grid md:grid-cols-12 gap-8 items-start hover:bg-surface-container-low px-8 transition-all duration-500">
+<div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">
+                        MAY 2024
+                    </div>
+<div class="md:col-span-7">
+<h4 class="font-headline text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Scalable Quantum Error Correction in Diamond Nanophotonic Waveguides</h4>
+<p class="font-body text-sm text-on-surface-variant">Thorne, E., Chen, L., et al. | <span class="italic">Nature Photonics</span></p>
+</div>
+<div class="md:col-span-3 flex justify-end">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+<!-- Pub 2 -->
+<div class="group py-10 flex flex-col md:grid md:grid-cols-12 gap-8 items-start hover:bg-surface-container-low px-8 transition-all duration-500">
+<div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">
+                        JAN 2024
+                    </div>
+<div class="md:col-span-7">
+<h4 class="font-headline text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Observation of Rydberg Blockade in Dense Optical Lattices</h4>
+<p class="font-body text-sm text-on-surface-variant">Patel, R., Thorne, E. | <span class="italic">Physical Review Letters</span></p>
+</div>
+<div class="md:col-span-3 flex justify-end">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+<!-- Pub 3 -->
+<div class="group py-10 flex flex-col md:grid md:grid-cols-12 gap-8 items-start hover:bg-surface-container-low px-8 transition-all duration-500">
+<div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">
+                        OCT 2023
+                    </div>
+<div class="md:col-span-7">
+<h4 class="font-headline text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Anomalous Diffusion in 2D Topological Insulators</h4>
+<p class="font-body text-sm text-on-surface-variant">Wang, S., et al. | <span class="italic">Science</span></p>
+</div>
+<div class="md:col-span-3 flex justify-end">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0b1326] py-12 px-12 mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-2xl mx-auto opacity-60">
+<div class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-400">
+                © 2024 Quantum Optics Research Group
+            </div>
+<div class="flex gap-8 mt-6 md:mt-0">
+<a class="text-slate-500 font-sans text-[10px] tracking-[0.2em] uppercase hover:text-[#2fd9f4] transition-colors duration-300 hover:translate-y-[-1px] transition-transform" href="#">Google Scholar</a>
+<a class="text-slate-500 font-sans text-[10px] tracking-[0.2em] uppercase hover:text-[#2fd9f4] transition-colors duration-300 hover:translate-y-[-1px] transition-transform" href="#">LinkedIn</a>
+<a class="text-slate-500 font-sans text-[10px] tracking-[0.2em] uppercase hover:text-[#2fd9f4] transition-colors duration-300 hover:translate-y-[-1px] transition-transform" href="#">University Affiliation</a>
+</div>
+</div>
+</footer>
+</body></html>

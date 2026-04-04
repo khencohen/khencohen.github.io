@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#008ea1",
+              "inverse-on-surface": "#283044",
+              "surface-container-high": "#222a3d",
+              "on-background": "#dae2fd",
+              "primary-fixed-dim": "#2fd9f4",
+              "tertiary-fixed": "#d4e4fa",
+              "secondary-fixed": "#e9ddff",
+              "surface-container-highest": "#2d3449",
+              "secondary": "#d0bcff",
+              "on-tertiary": "#233143",
+              "on-primary-fixed-variant": "#004e5a",
+              "on-secondary-container": "#c4abff",
+              "tertiary-container": "#081828",
+              "surface": "#0b1326",
+              "surface-dim": "#0b1326",
+              "secondary-container": "#571bc1",
+              "surface-variant": "#2d3449",
+              "on-primary-fixed": "#001f25",
+              "outline-variant": "#45464d",
+              "on-error": "#690005",
+              "surface-container-low": "#131b2e",
+              "on-error-container": "#ffdad6",
+              "inverse-primary": "#006877",
+              "surface-bright": "#31394d",
+              "surface-container": "#171f33",
+              "outline": "#909097",
+              "on-surface": "#dae2fd",
+              "on-surface-variant": "#c6c6cd",
+              "tertiary": "#b9c8de",
+              "on-secondary-fixed": "#23005c",
+              "surface-tint": "#2fd9f4",
+              "on-tertiary-container": "#738296",
+              "on-secondary-fixed-variant": "#5516be",
+              "primary-container": "#001b20",
+              "on-tertiary-fixed-variant": "#39485a",
+              "on-tertiary-fixed": "#0d1c2d",
+              "primary-fixed": "#a2eeff",
+              "surface-container-lowest": "#060e20",
+              "secondary-fixed-dim": "#d0bcff",
+              "on-secondary": "#3c0091",
+              "inverse-surface": "#dae2fd",
+              "background": "#0b1326",
+              "tertiary-fixed-dim": "#b9c8de",
+              "error-container": "#93000a",
+              "on-primary": "#00363e",
+              "error": "#ffb4ab",
+              "primary": "#2fd9f4"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+        .glass-panel {
+            background: rgba(45, 52, 73, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto bg-[#0b1326]/60 backdrop-blur-xl">
+<div class="font-serif text-2xl italic tracking-tighter text-[#2fd9f4]">Observational Plane</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">Home</a>
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">Research</a>
+<a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300" href="#">Publications</a>
+<a class="text-[#2fd9f4] border-b-2 border-[#2fd9f4] pb-1 font-sans tracking-wide uppercase text-xs" href="#">About</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#2fd9f4]" data-icon="menu">menu</span>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-32">
+<div class="lg:col-span-7">
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl tracking-tight mb-8">Dr. Elena Thorne</h1>
+<p class="font-label text-primary text-sm tracking-[0.2em] uppercase mb-12">Quantum Optics &amp; Nanophotonic Systems</p>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg font-body">
+<p>My research operates at the intersection of coherent light-matter interaction and scalable quantum architectures. Currently based at the Max Planck Institute for the Science of Light, my work focuses on developing high-fidelity entanglement gates within semiconductor nanophotonic circuits.</p>
+<p>Prior to my current appointment, I completed my postdoctoral fellowship at MIT, where I explored topological photonics for robust quantum information transport. I am deeply interested in the emergence of non-classical correlations in open quantum systems and the practical limitations of decoherence in near-term quantum devices.</p>
+</div>
+<div class="mt-12 flex flex-wrap gap-4">
+<a class="bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed px-8 py-3 rounded-none font-label text-sm tracking-widest flex items-center gap-2 group transition-all" href="#">
+                        DOWNLOAD FULL CV
+                        <span class="material-symbols-outlined text-lg group-hover:translate-y-1 transition-transform" data-icon="download">download</span>
+</a>
+<a class="glass-panel border border-outline-variant/20 px-8 py-3 rounded-none font-label text-sm tracking-widest hover:bg-surface-container-highest transition-colors" href="#">
+                        GET IN TOUCH
+                    </a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] bg-surface-container-low relative overflow-hidden">
+<img alt="Academic Portrait" class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-1000" data-alt="Professional portrait of a female scientist in a dark modern office with soft ambient light, thoughtful expression, scholarly and premium atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQqFN70yhAgEjcMe78iunU4NZIEaDuuFaY2f7U3Om7l0uIKMji7WH-Mc1RJR8sKpMS-BH4y3epRHf4Doo2_vc0C1poZUgHwKW8bdDX5lj8P77C0hsH5ivjibCTQK9hd7-pUhcrzs1VzyRoAR-_w6RwwbG6G-xT4HO7ckGsH_gKM06kjro47v1-9cwS4RWnfG_Bxq4zPPyPqHGldZ5Nwkg789c7KL_oDtnLDywH8-ykQHJECSJ0l0Sn7qH_UlTZrrGTkh2Jcnh93MlW"/>
+<div class="absolute inset-0 border-[20px] border-surface/40 pointer-events-none"></div>
+</div>
+<div class="absolute -bottom-6 -left-6 glass-panel p-6 max-w-xs hidden md:block">
+<p class="font-label text-[10px] tracking-[0.2em] text-primary uppercase mb-2">CURRENT AFFILIATION</p>
+<p class="font-headline italic text-lg leading-tight">Senior Research Fellow, Quantum Information Group</p>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
+<div class="space-y-12">
+<div>
+<h2 class="font-headline text-3xl mb-8 flex items-center gap-4">
+<span class="h-[1px] w-12 bg-primary"></span>
+                        Education
+                    </h2>
+<div class="space-y-8">
+<div class="group">
+<p class="font-label text-xs text-primary mb-1">2014 — 2018</p>
+<h3 class="text-xl font-bold">PhD in Physics</h3>
+<p class="text-on-surface-variant">ETH Zürich, Switzerland</p>
+<p class="text-sm italic mt-2 text-on-tertiary-container">Dissertation: "Coherent Control of Solid-State Emitters in Photonic Crystals"</p>
+</div>
+<div class="group">
+<p class="font-label text-xs text-primary mb-1">2012 — 2014</p>
+<h3 class="text-xl font-bold">MSc in Theoretical Physics</h3>
+<p class="text-on-surface-variant">University of Cambridge, UK</p>
+</div>
+<div class="group">
+<p class="font-label text-xs text-primary mb-1">2009 — 2012</p>
+<h3 class="text-xl font-bold">BSc in Physics &amp; Mathematics</h3>
+<p class="text-on-surface-variant">University of Toronto, Canada</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 lg:p-16">
+<h2 class="font-headline text-3xl mb-8">Selected Honors</h2>
+<div class="space-y-6">
+<div class="flex gap-6 items-start">
+<span class="font-label text-primary text-xl">01</span>
+<div>
+<h4 class="font-bold">Marie Skłodowska-Curie Fellowship</h4>
+<p class="text-sm text-on-surface-variant">European Research Council, 2022</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<span class="font-label text-primary text-xl">02</span>
+<div>
+<h4 class="font-bold">Young Investigator Award</h4>
+<p class="text-sm text-on-surface-variant">American Physical Society (APS), 2020</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<span class="font-label text-primary text-xl">03</span>
+<div>
+<h4 class="font-bold">PhD Thesis Distinction</h4>
+<p class="text-sm text-on-surface-variant">ETH Medal for Outstanding Doctoral Thesis, 2018</p>
+</div>
+</div>
+</div>
+<div class="mt-16">
+<h2 class="font-headline text-3xl mb-8">Service</h2>
+<ul class="space-y-4 text-on-surface-variant">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="circle" data-weight="fill">circle</span>
+<span>Referee: Nature Photonics, Physical Review Letters</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="circle" data-weight="fill">circle</span>
+<span>Program Committee, CLEO Europe 2023</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="circle" data-weight="fill">circle</span>
+<span>Board Member, Women in Physics Initiative</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="mb-32">
+<div class="relative py-24 px-12 overflow-hidden bg-surface-container">
+<div class="absolute inset-0 opacity-10">
+<svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
+<defs>
+<pattern height="10" id="grid" patternunits="userSpaceOnUse" width="10">
+<path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.1"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<div class="relative z-10 max-w-3xl">
+<h2 class="font-headline text-4xl mb-6 italic italic tracking-tight">"In the observational plane, the boundary between the researcher and the experiment dissolves into a spectrum of probabilities."</h2>
+<p class="font-label text-primary tracking-widest text-xs uppercase">Recent Abstract: Phase-space dynamics in non-Hermitian photonics</p>
+</div>
+</div>
+</section>
+<section>
+<h2 class="font-headline text-3xl mb-12">Academic Network</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-low p-8 text-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
+<p class="font-label text-[10px] tracking-[0.2em]">MAX PLANCK</p>
+</div>
+<div class="bg-surface-container-low p-8 text-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
+<p class="font-label text-[10px] tracking-[0.2em]">MIT PHYSICS</p>
+</div>
+<div class="bg-surface-container-low p-8 text-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
+<p class="font-label text-[10px] tracking-[0.2em]">ETH ZÜRICH</p>
+</div>
+<div class="bg-surface-container-low p-8 text-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-default">
+<p class="font-label text-[10px] tracking-[0.2em]">APS PHYSICS</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#0b1326] mt-24 py-12 px-12">
+<div class="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-2xl mx-auto opacity-60">
+<p class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-400">© 2024 Quantum Optics Research Group</p>
+<div class="flex gap-8 mt-6 md:mt-0">
+<a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300" href="#">Google Scholar</a>
+<a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300" href="#">LinkedIn</a>
+<a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300" href="#">University Affiliation</a>
+</div>
+</div>
+</footer>
+</body></html>
