@@ -135,10 +135,6 @@ body { background-color: #faf9f7; color: #1a1c1b; }
 .research-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#536256; transform:scaleX(0); transition:transform 0.35s ease; }
 .research-card.active::after { transform:scaleX(1); }
 .research-card.active { background: #e9e8e6 !important; }
-
-/* Word cloud */
-.wc-term { background:none; border:0; padding:0; cursor:pointer; line-height:1; transition:color .25s ease, transform .25s ease; }
-.wc-term:hover { color:#536256; transform:translateY(-2px); }
 </style>
 </head>
 <body class="font-body antialiased selection:bg-secondary-container selection:text-on-secondary-container">
@@ -298,40 +294,7 @@ body { background-color: #faf9f7; color: #1a1c1b; }
       </p>
     </div>
   </div>
-  <div class="mt-14 mb-8">
-    <span class="font-label text-secondary text-xs tracking-[0.25em] uppercase mb-6 block text-center">Topics &amp; Keywords</span>
-    <div class="flex flex-wrap justify-center items-baseline gap-x-5 gap-y-2 max-w-4xl mx-auto">
-      <button class="wc-term font-headline text-3xl md:text-4xl font-medium text-on-surface" data-filter="qi" onclick="pickTopic('qi')">Quantum information</button>
-      <button class="wc-term font-headline text-xl md:text-2xl text-on-surface-variant" data-filter="qo" onclick="pickTopic('qo')">Directional couplers</button>
-      <button class="wc-term font-headline text-3xl md:text-4xl font-medium text-on-surface" data-filter="ai" onclick="pickTopic('ai')">Machine learning theory</button>
-      <button class="wc-term font-headline text-2xl md:text-3xl text-secondary" data-filter="qi" onclick="pickTopic('qi')">Quantum scrambling</button>
-      <button class="wc-term font-headline text-lg text-outline" data-filter="qo" onclick="pickTopic('qo')">Silicon photonics</button>
-      <button class="wc-term font-headline text-3xl md:text-4xl font-medium text-on-surface" data-filter="qo" onclick="pickTopic('qo')">Photonic computing</button>
-      <button class="wc-term font-headline text-xl md:text-2xl text-on-surface-variant" data-filter="qi" onclick="pickTopic('qi')">Many-body localization</button>
-      <button class="wc-term font-headline text-2xl md:text-3xl text-secondary" data-filter="qo" onclick="pickTopic('qo')">Distributed acoustic sensing</button>
-      <button class="wc-term font-headline text-xl md:text-2xl text-on-surface-variant" data-filter="qo" onclick="pickTopic('qo')">CNOT gates</button>
-      <button class="wc-term font-headline text-3xl md:text-4xl font-medium text-on-surface" data-filter="qo" onclick="pickTopic('qo')">Quantum optics</button>
-      <button class="wc-term font-headline text-xl md:text-2xl text-on-surface-variant" data-filter="ai" onclick="pickTopic('ai')">Deepfake detection</button>
-      <button class="wc-term font-headline text-2xl md:text-3xl text-secondary" data-filter="qi" onclick="pickTopic('qi')">Boson sampling</button>
-      <button class="wc-term font-headline text-lg text-outline" data-filter="qi" onclick="pickTopic('qi')">Complexity measures</button>
-      <button class="wc-term font-headline text-xl md:text-2xl text-on-surface-variant" data-filter="qo" onclick="pickTopic('qo')">Spatial mode sorting</button>
-      <button class="wc-term font-headline text-2xl md:text-3xl text-secondary" data-filter="ai" onclick="pickTopic('ai')">Neural-network linearization</button>
-      <button class="wc-term font-headline text-xl md:text-2xl text-on-surface-variant" data-filter="qi" onclick="pickTopic('qi')">Graph states</button>
-      <button class="wc-term font-headline text-lg text-outline" data-filter="qo" onclick="pickTopic('qo')">Traffic monitoring</button>
-      <button class="wc-term font-headline text-2xl md:text-3xl text-secondary" data-filter="qo" onclick="pickTopic('qo')">Integrated quantum gates</button>
-      <button class="wc-term font-headline text-xl md:text-2xl text-on-surface-variant" data-filter="ai" onclick="pickTopic('ai')">Gaussian mixtures</button>
-      <button class="wc-term font-headline text-lg text-outline" data-filter="qo" onclick="pickTopic('qo')">Super-resolution</button>
-      <button class="wc-term font-headline text-2xl md:text-3xl text-secondary" data-filter="qo" onclick="pickTopic('qo')">Quantum key distribution</button>
-      <button class="wc-term font-headline text-xl md:text-2xl text-on-surface-variant" data-filter="qi" onclick="pickTopic('qi')">Integrable models</button>
-      <button class="wc-term font-headline text-lg text-outline" data-filter="qo" onclick="pickTopic('qo')">Thermal imaging</button>
-      <button class="wc-term font-headline text-xl md:text-2xl text-on-surface-variant" data-filter="qo" onclick="pickTopic('qo')">Fiber-optic sensing</button>
-      <button class="wc-term font-headline text-lg text-outline" data-filter="ai" onclick="pickTopic('ai')">Generative models</button>
-      <button class="wc-term font-headline text-xl md:text-2xl text-on-surface-variant" data-filter="qo" onclick="pickTopic('qo')">Robust control</button>
-      <button class="wc-term font-headline text-lg text-outline" data-filter="qo" onclick="pickTopic('qo')">Dynamic vision sensor</button>
-      <button class="wc-term font-headline text-lg text-outline" data-filter="ai" onclick="pickTopic('ai')">Sparse coding</button>
-    </div>
-  </div>
-  <p class="text-xs text-on-tertiary-container text-center italic">Click a research area or keyword to filter the publications below</p>
+  <p class="text-xs text-on-tertiary-container text-center italic">Click a research area to filter publications below</p>
 </section>
 
 <!-- Divider -->
@@ -903,6 +866,21 @@ body { background-color: #faf9f7; color: #1a1c1b; }
   </div>
 </section>
 
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant/40"></div>
+
+<!-- ═══ TOPICS / WORD CLOUD ═══ -->
+<section id="topics" class="py-16 md:py-24">
+  <div class="mb-6 text-center">
+    <span class="font-label text-secondary text-xs tracking-[0.25em] uppercase mb-4 block">Research Fingerprint</span>
+    <h2 class="font-headline text-3xl md:text-4xl font-medium tracking-tight">Topics &amp; Keywords</h2>
+  </div>
+  <div id="wcWrap" class="max-w-4xl mx-auto">
+    <canvas id="wordcloud" class="w-full block"></canvas>
+  </div>
+  <p class="text-xs text-on-tertiary-container text-center italic mt-4">Click a topic to explore the related papers</p>
+</section>
+
 </main>
 
 <!-- ═══ CONTACT ═══ -->
@@ -940,6 +918,7 @@ body { background-color: #faf9f7; color: #1a1c1b; }
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.js"></script>
 <script>
 // Mobile nav toggle
 document.getElementById('hamburger').addEventListener('click', () => {
@@ -1052,6 +1031,43 @@ imgOverlay.addEventListener('click', e => { if (e.target !== imgViewer) closeIma
 document.getElementById('imgClose').addEventListener('click', closeImage);
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeVideo(); closeImage(); } });
+
+// ═══ WORD CLOUD ═══
+const wcList = [
+  ['Quantum information',10,'qi'],['Photonic computing',10,'qo'],['Machine learning theory',9.5,'ai'],['Quantum optics',9.5,'qo'],
+  ['Integrated quantum gates',7.5,'qo'],['Quantum scrambling',7,'qi'],['Boson sampling',7,'qi'],['Distributed acoustic sensing',7,'qo'],
+  ['Neural-network linearization',6.5,'ai'],['Quantum key distribution',6.5,'qo'],
+  ['Directional couplers',5,'qo'],['Many-body localization',5,'qi'],['Spatial mode sorting',5,'qo'],['Deepfake detection',5,'ai'],
+  ['Gaussian mixtures',5,'ai'],['Integrable models',5,'qi'],['CNOT gates',5,'qo'],['Graph states',5,'qi'],['Fiber-optic sensing',5,'qo'],['Robust control',4.5,'qo'],
+  ['Silicon photonics',3.5,'qo'],['Complexity measures',3.5,'qi'],['Traffic monitoring',3.5,'qo'],['Super-resolution',3.5,'qo'],
+  ['Dynamic vision sensor',3.5,'qo'],['Thermal imaging',3.5,'qo'],['Generative models',3.5,'ai'],['Sparse coding',3.5,'ai'],
+];
+function drawCloud() {
+  if (typeof WordCloud === 'undefined') return;
+  const canvas = document.getElementById('wordcloud'), wrap = document.getElementById('wcWrap');
+  if (!canvas || !wrap) return;
+  const w = wrap.clientWidth || 800;
+  const h = Math.max(340, Math.round(w * (w < 640 ? 1.0 : 0.58)));
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = w * dpr; canvas.height = h * dpr;
+  canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+  const scale = (w / 860) * dpr;
+  WordCloud(canvas, {
+    list: wcList.map(x => [x[0], x[1]]),
+    gridSize: Math.max(4, Math.round(6 * scale)),
+    weightFactor: wt => wt * 8.5 * scale,
+    fontFamily: 'EB Garamond, serif', fontWeight: '500',
+    color: (word, weight) => weight >= 9 ? '#1a1c1b' : weight >= 6.4 ? '#536256' : weight >= 4.4 ? '#5b5f5e' : '#918c7e',
+    rotateRatio: 0.26, rotationSteps: 2, minRotation: -Math.PI / 2, maxRotation: 0,
+    backgroundColor: 'transparent', drawOutOfBound: false, shrinkToFit: true,
+    click: item => { const t = wcList.find(x => x[0] === item[0]); if (t) pickTopic(t[2]); },
+    hover: item => { canvas.style.cursor = item ? 'pointer' : 'default'; },
+  });
+}
+let _wcTO;
+window.addEventListener('resize', () => { clearTimeout(_wcTO); _wcTO = setTimeout(drawCloud, 180); });
+if (document.fonts && document.fonts.ready) { document.fonts.ready.then(drawCloud); }
+else { window.addEventListener('load', drawCloud); }
 </script>
 </body>
 </html>
