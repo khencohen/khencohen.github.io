@@ -118,6 +118,14 @@ body { background-color: #faf9f7; color: #1a1c1b; }
 .video-close svg { width:16px;height:16px;color:white }
 .video-title { position:absolute;bottom:0;left:0;right:0;padding:.8rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,0.7));font-size:.82rem;color:rgba(255,255,255,0.9);pointer-events:none }
 
+/* Image lightbox */
+.img-overlay { position:fixed;inset:0;background:rgba(26,28,27,0.88);z-index:10000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);cursor:pointer;opacity:0;transition:opacity .3s ease;padding:24px }
+.img-overlay.active { display:flex;opacity:1 }
+.img-overlay img { max-width:94%;max-height:86vh;border-radius:8px;box-shadow:0 20px 80px rgba(0,0,0,0.5);cursor:default }
+.img-caption { position:absolute;bottom:18px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.9);font-size:.82rem;padding:0 24px;pointer-events:none }
+.img-close { position:absolute;top:18px;right:22px;width:36px;height:36px;background:rgba(0,0,0,0.5);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;line-height:1;transition:background .2s }
+.img-close:hover { background:rgba(255,255,255,0.2) }
+
 /* Interactive filter styles */
 .filter-btn { transition: all 0.3s ease; cursor: pointer; }
 .filter-btn.active { background: #1a1c1b !important; color: #ffffff !important; border-color: #1a1c1b !important; }
@@ -142,6 +150,13 @@ body { background-color: #faf9f7; color: #1a1c1b; }
     <video id="videoPlayer" controls playsinline></video>
     <div class="video-title" id="videoTitle"></div>
   </div>
+</div>
+
+<!-- IMAGE LIGHTBOX -->
+<div class="img-overlay" id="imgOverlay">
+  <button class="img-close" id="imgClose" aria-label="Close image">&times;</button>
+  <img id="imgViewer" alt=""/>
+  <div class="img-caption" id="imgCaption"></div>
 </div>
 
 <!-- NAV -->
@@ -498,6 +513,53 @@ body { background-color: #faf9f7; color: #1a1c1b; }
     <div class="space-y-0">
 
       <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo qi" data-type="theory experiment">
+        <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">arXiv</div>
+        <div class="md:col-span-7">
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Boson Sampling as a Probe of Chaotic and Integrable Quantum Dynamics in a Photonic Chip</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2">Y. Zhan, <span class="text-on-surface font-medium">K. Cohen</span>, N. Koo, K. H. Lim, H. Zhang, L. Wan, S. Chae, A. Q. Liu, V. Bastidas, Y. Oz, L.-C. Kwek &middot; <span class="italic">arXiv preprint (2026)</span></p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Quantum Info</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Theory</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
+          </div>
+        </div>
+        <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2605.25398" target="_blank">arXiv</a>
+        </div>
+      </div>
+
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="ai" data-type="theory">
+        <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">arXiv</div>
+        <div class="md:col-span-7">
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Implicit Binarization via Complex Phase Dynamics in Combinatorial Optimization</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>, M. Glass, M. Feder, Y. Oz &middot; <span class="italic">arXiv preprint (2026)</span></p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">AI</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Theory</span>
+          </div>
+        </div>
+        <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2605.24502" target="_blank">arXiv</a>
+        </div>
+      </div>
+
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo" data-type="theory">
+        <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">arXiv</div>
+        <div class="md:col-span-7">
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Distributed Acoustic Sensing for Urban Monitoring: Coverage Thresholds and Percolation</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>, A. Lellouch &middot; <span class="italic">arXiv preprint (2026)</span></p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Theory</span>
+          </div>
+        </div>
+        <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2606.17018" target="_blank">arXiv</a>
+        </div>
+      </div>
+
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo qi" data-type="theory experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">PRL</div>
         <div class="md:col-span-7">
           <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">High-Fidelity Integrated Quantum Photonic Logic Via Robust Directional Couplers</h4>
@@ -662,6 +724,14 @@ body { background-color: #faf9f7; color: #1a1c1b; }
     <span class="font-label text-secondary text-xs tracking-[0.25em] uppercase mb-4 block">Presentations</span>
     <h2 class="font-headline text-3xl md:text-4xl font-medium tracking-tight">Talks &amp; Conferences</h2>
   </div>
+  <div class="mb-6 flex flex-col sm:flex-row gap-6 items-center bg-surface-container-low border border-outline-variant/30 rounded-xl organic-shadow p-6">
+    <img src="figures/withHaldane.jpeg" alt="Khen Cohen with Prof. Duncan Haldane in Singapore" loading="lazy" onclick="openImage('figures/withHaldane.jpeg','With Prof. F. Duncan M. Haldane — Nobel Laureate in Physics (2016) — at the Global Young Scientists Summit, Singapore (2024)')" class="w-40 sm:w-44 aspect-[9/16] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"/>
+    <div>
+      <span class="font-label text-[10px] text-secondary uppercase tracking-widest mb-2 block">Global Young Scientists Summit &middot; Singapore</span>
+      <h3 class="font-headline text-2xl font-medium text-on-surface mb-2">With a Nobel Laureate</h3>
+      <p class="font-body text-sm text-on-surface-variant leading-relaxed">A memorable conversation with Prof. F. Duncan M. Haldane &mdash; Nobel Laureate in Physics (2016) &mdash; during the Global Young Scientists Summit in Singapore, 2024.</p>
+    </div>
+  </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div class="group bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-secondary text-sm font-semibold min-w-[40px]">2025</span><div><span class="font-label text-[10px] text-on-secondary-container px-2.5 py-1 bg-secondary-container rounded-full uppercase tracking-widest mb-2 inline-block">Oral</span><h4 class="font-body font-medium text-on-surface">QERNEL Quantum Conference</h4><p class="text-sm text-on-surface-variant">Bar Ilan University, Israel</p></div></div>
     <div class="group bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-secondary text-sm font-semibold min-w-[40px]">2025</span><div><span class="font-label text-[10px] text-on-surface-variant px-2.5 py-1 bg-surface-container-highest rounded-full uppercase tracking-widest mb-2 inline-block">Poster</span><h4 class="font-body font-medium text-on-surface">Sensing with Quantum Light</h4><p class="text-sm text-on-surface-variant">Bad Honnef, Germany</p></div></div>
@@ -704,8 +774,56 @@ body { background-color: #faf9f7; color: #1a1c1b; }
           <div class="flex gap-4 items-center"><span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest min-w-[80px]">TA / Lect.</span><div><h4 class="font-body font-medium text-on-surface text-sm">Imaging Systems and Optical Signal Processing</h4><p class="text-xs text-on-surface-variant">2021 &ndash; 2025</p></div></div>
           <div class="flex gap-4 items-center"><span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest min-w-[80px]">TA</span><div><h4 class="font-body font-medium text-on-surface text-sm">Waves Transmission and Distributed Systems</h4><p class="text-xs text-on-surface-variant">2019 &ndash; 2020</p></div></div>
         </div>
-        <p class="text-sm text-on-surface-variant mt-8 italic leading-relaxed">I've had the opportunity to supervise and mentor over 60 undergraduate students in their final-year research projects, and I find this one of the most rewarding parts of academic life.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant/40"></div>
+
+<!-- ═══ MENTORING / STUDENT PROJECTS ═══ -->
+<section id="mentoring" class="py-16 md:py-24">
+  <div class="mb-10">
+    <span class="font-label text-secondary text-xs tracking-[0.25em] uppercase mb-4 block">Mentoring</span>
+    <h2 class="font-headline text-3xl md:text-4xl font-medium tracking-tight">Student Projects I've Supervised</h2>
+    <p class="font-body text-on-surface-variant leading-relaxed mt-4 max-w-3xl">
+      Mentoring students is one of the most rewarding parts of academic life. I've supervised over 60 undergraduate final-year projects &mdash; several of which placed among the top 3 out of ~200 across the faculty. A selection below (click any poster to enlarge).
+    </p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <button onclick="openImage('figures/p6.jpg','Single-Qubit Calibration with an AI Agent — N. Bar Yosef &amp; E. Elzweig (Advisors: K. Cohen, G. Sivan), 2025')" class="group text-left bg-surface-container-low border border-outline-variant/30 rounded-xl organic-shadow overflow-hidden hover:-translate-y-1 transition-all duration-500">
+      <div class="aspect-[1400/979] overflow-hidden bg-surface-container"><img src="figures/p6.jpg" alt="Single-Qubit Calibration with an AI Agent poster" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+      <div class="p-5"><h3 class="font-headline text-lg font-medium text-on-surface group-hover:text-secondary transition-colors leading-snug">Single-Qubit Calibration with an AI Agent</h3><p class="font-body text-xs text-on-surface-variant mt-1">N. Bar Yosef &amp; E. Elzweig &middot; 2025</p></div>
+    </button>
+    <button onclick="openImage('figures/p1.jpg','Implementation of a Free-Space Quantum Key Distribution Protocol — R. Bar-On &amp; A. Erez (Advisor: K. Cohen), 2024')" class="group text-left bg-surface-container-low border border-outline-variant/30 rounded-xl organic-shadow overflow-hidden hover:-translate-y-1 transition-all duration-500">
+      <div class="aspect-[1400/979] overflow-hidden bg-surface-container"><img src="figures/p1.jpg" alt="Free-Space Quantum Key Distribution poster" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+      <div class="p-5"><h3 class="font-headline text-lg font-medium text-on-surface group-hover:text-secondary transition-colors leading-snug">Free-Space Quantum Key Distribution</h3><p class="font-body text-xs text-on-surface-variant mt-1">R. Bar-On &amp; A. Erez &middot; 2024</p></div>
+    </button>
+    <button onclick="openImage('figures/p2.jpg','Automated Fiber-Optic &amp; Camera Calibration for Distributed Acoustic Sensing — O. Nissan &amp; N. Nissan (Advisors: K. Cohen, A. Lellouch), 2023')" class="group text-left bg-surface-container-low border border-outline-variant/30 rounded-xl organic-shadow overflow-hidden hover:-translate-y-1 transition-all duration-500">
+      <div class="aspect-[1400/979] overflow-hidden bg-surface-container"><img src="figures/p2.jpg" alt="Automated FOS and Camera Calibration poster" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+      <div class="p-5"><h3 class="font-headline text-lg font-medium text-on-surface group-hover:text-secondary transition-colors leading-snug">Automated Fiber &amp; Camera Calibration for DAS</h3><p class="font-body text-xs text-on-surface-variant mt-1">O. Nissan &amp; N. Nissan &middot; 2023</p></div>
+    </button>
+    <button onclick="openImage('figures/p3.jpg','Single-Camera Laser Calibration via Deep Learning &amp; Speckle Imaging — A. Asher &amp; B. Zahavi (Advisors: K. Cohen, O. Kfir), 2022')" class="group text-left bg-surface-container-low border border-outline-variant/30 rounded-xl organic-shadow overflow-hidden hover:-translate-y-1 transition-all duration-500">
+      <div class="aspect-[1400/979] overflow-hidden bg-surface-container"><img src="figures/p3.jpg" alt="Laser Calibration poster" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+      <div class="p-5"><h3 class="font-headline text-lg font-medium text-on-surface group-hover:text-secondary transition-colors leading-snug">Single-Camera Laser Calibration via Deep Learning</h3><p class="font-body text-xs text-on-surface-variant mt-1">A. Asher &amp; B. Zahavi &middot; 2022</p></div>
+    </button>
+    <button onclick="openImage('figures/p4.jpg','Traffic Monitoring with Fiber-Optic Seismology — O. Matoki &amp; R. Mazuz (Advisors: A. Lellouch, K. Cohen), 2021')" class="group text-left bg-surface-container-low border border-outline-variant/30 rounded-xl organic-shadow overflow-hidden hover:-translate-y-1 transition-all duration-500">
+      <div class="aspect-[1400/979] overflow-hidden bg-surface-container"><img src="figures/p4.jpg" alt="Traffic monitoring with fiber-optic seismology poster" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+      <div class="p-5"><h3 class="font-headline text-lg font-medium text-on-surface group-hover:text-secondary transition-colors leading-snug">Traffic Monitoring with Fiber-Optic Seismology</h3><p class="font-body text-xs text-on-surface-variant mt-1">O. Matoki &amp; R. Mazuz &middot; 2021</p></div>
+    </button>
+    <button onclick="openImage('figures/p5.jpg','Improvement of Thermal Imaging Quality and Mapping to RGB — S. Moshe &amp; B. Hacham (Advisor: K. Cohen), 2021')" class="group text-left bg-surface-container-low border border-outline-variant/30 rounded-xl organic-shadow overflow-hidden hover:-translate-y-1 transition-all duration-500">
+      <div class="aspect-[1400/979] overflow-hidden bg-surface-container"><img src="figures/p5.jpg" alt="Thermal imaging to RGB poster" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"/></div>
+      <div class="p-5"><h3 class="font-headline text-lg font-medium text-on-surface group-hover:text-secondary transition-colors leading-snug">Thermal-to-RGB Image Translation</h3><p class="font-body text-xs text-on-surface-variant mt-1">S. Moshe &amp; B. Hacham &middot; 2021</p></div>
+    </button>
+  </div>
+
+  <div class="mt-8 flex flex-col sm:flex-row gap-6 items-center bg-surface-container-low border border-outline-variant/30 rounded-xl organic-shadow p-6">
+    <img src="figures/fresnelLens.jpeg" alt="Explaining a Fresnel lens to my son" loading="lazy" onclick="openImage('figures/fresnelLens.jpeg','Where it starts — explaining a Fresnel lens to my son')" class="w-full sm:w-52 aspect-square object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"/>
+    <div>
+      <span class="font-label text-[10px] text-secondary uppercase tracking-widest mb-2 block">Outreach</span>
+      <h3 class="font-headline text-2xl font-medium text-on-surface mb-2">Where it starts</h3>
+      <p class="font-body text-sm text-on-surface-variant leading-relaxed">My son, exploring a Fresnel lens right after I tried to explain how it works. The same curiosity that first pulled me toward optics &mdash; and the reason teaching matters to me.</p>
     </div>
   </div>
 </section>
@@ -851,7 +969,27 @@ function closeVideo() {
 overlay.addEventListener('click', e => { if (e.target === overlay) closeVideo(); });
 document.getElementById('videoClose').addEventListener('click', closeVideo);
 vContainer.addEventListener('click', e => e.stopPropagation());
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVideo(); });
+
+// Image lightbox
+const imgOverlay = document.getElementById('imgOverlay');
+const imgViewer = document.getElementById('imgViewer');
+const imgCaption = document.getElementById('imgCaption');
+
+function openImage(src, caption) {
+  imgViewer.src = src;
+  imgViewer.alt = caption || '';
+  imgCaption.textContent = caption || '';
+  imgOverlay.style.display = 'flex';
+  setTimeout(() => { imgOverlay.classList.add('active'); }, 10);
+}
+function closeImage() {
+  imgOverlay.classList.remove('active');
+  setTimeout(() => { imgOverlay.style.display = 'none'; imgViewer.src = ''; }, 300);
+}
+imgOverlay.addEventListener('click', e => { if (e.target !== imgViewer) closeImage(); });
+document.getElementById('imgClose').addEventListener('click', closeImage);
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeVideo(); closeImage(); } });
 </script>
 </body>
 </html>
