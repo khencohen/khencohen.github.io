@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -15,14 +15,14 @@
 <meta property="og:title" content="Khen Cohen — Researcher in Quantum Information, Optics & AI">
 <meta property="og:description" content="PhD Candidate at Tel Aviv University. Research in quantum information, quantum optics, photonic computing, and machine learning theory.">
 <meta property="og:url" content="https://khencohen.github.io/">
-<meta property="og:image" content="https://khencohen.github.io/profile.jpg">
+<meta property="og:image" content="https://khencohen.github.io/figures/profile.jpg">
 <meta property="og:site_name" content="Khen Cohen">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Khen Cohen — Researcher in Quantum Information, Optics & AI">
 <meta name="twitter:description" content="PhD Candidate at Tel Aviv University. Research in quantum information, quantum optics, photonic computing, and machine learning theory.">
-<meta name="twitter:image" content="https://khencohen.github.io/profile.jpg">
+<meta name="twitter:image" content="https://khencohen.github.io/figures/profile.jpg">
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -31,7 +31,7 @@
   "@type": "Person",
   "name": "Khen Cohen",
   "url": "https://khencohen.github.io",
-  "image": "https://khencohen.github.io/profile.jpg",
+  "image": "https://khencohen.github.io/figures/profile.jpg",
   "jobTitle": "PhD Candidate in Physics",
   "worksFor": {
     "@type": "Organization",
@@ -51,49 +51,46 @@
 }
 </script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script>
 tailwind.config = {
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        "on-primary-container": "#008ea1",
-        "surface-container-high": "#222a3d",
-        "on-background": "#dae2fd",
-        "primary-fixed-dim": "#2fd9f4",
-        "surface-container-highest": "#2d3449",
-        "secondary": "#d0bcff",
-        "on-tertiary": "#233143",
-        "on-secondary-container": "#c4abff",
-        "tertiary-container": "#081828",
-        "surface": "#0b1326",
-        "surface-container-low": "#131b2e",
-        "surface-bright": "#31394d",
-        "surface-container": "#171f33",
-        "outline": "#909097",
-        "on-surface": "#dae2fd",
-        "on-surface-variant": "#c6c6cd",
-        "tertiary": "#b9c8de",
-        "surface-tint": "#2fd9f4",
-        "on-tertiary-container": "#738296",
-        "primary-container": "#001b20",
-        "primary-fixed": "#a2eeff",
-        "surface-container-lowest": "#060e20",
-        "outline-variant": "#45464d",
-        "on-primary": "#00363e",
-        "on-primary-fixed": "#001f25",
-        "on-primary-fixed-variant": "#004e5a",
-        "background": "#0b1326",
-        "primary": "#2fd9f4"
+        "background": "#faf9f7",
+        "surface": "#faf9f7",
+        "surface-container-lowest": "#ffffff",
+        "surface-container-low": "#f4f3f1",
+        "surface-container": "#efeeec",
+        "surface-container-high": "#e9e8e6",
+        "surface-container-highest": "#e3e2e0",
+        "surface-dim": "#dadad8",
+        "on-surface": "#1a1c1b",
+        "on-surface-variant": "#444748",
+        "on-tertiary-container": "#86847e",
+        "inverse-surface": "#2f3130",
+        "inverse-on-surface": "#f1f1ef",
+        "outline": "#747878",
+        "outline-variant": "#c4c7c7",
+        "primary": "#1a1c1b",
+        "on-primary": "#ffffff",
+        "primary-fixed-dim": "#c8c6c5",
+        "secondary": "#536256",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#d6e7d7",
+        "on-secondary-container": "#3c4a3f",
+        "tertiary": "#7a6a58",
+        "tertiary-container": "#e6e2db"
       },
       fontFamily: {
-        "headline": ["Newsreader"],
-        "body": ["Inter"],
-        "label": ["Space Grotesk"]
+        "headline": ["EB Garamond", "serif"],
+        "body": ["Inter", "sans-serif"],
+        "label": ["Inter", "sans-serif"]
       },
-      borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+      borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1.25rem", "full": "9999px"},
     },
   },
 }
@@ -103,35 +100,38 @@ tailwind.config = {
   font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
   vertical-align: middle;
 }
-body { background-color: #0b1326; color: #dae2fd; }
-.glass-effect { backdrop-filter: blur(20px); background: rgba(11, 19, 38, 0.6); }
-.interference-pattern {
-  background-image: radial-gradient(circle at 2px 2px, rgba(47, 217, 244, 0.05) 1px, transparent 0);
-  background-size: 24px 24px;
+body { background-color: #faf9f7; color: #1a1c1b; }
+.noise-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none; z-index: 60; opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
+.organic-shadow { box-shadow: 0 10px 40px -12px rgba(26, 26, 26, 0.08); }
 
 /* Video modal */
-.video-overlay { position:fixed;inset:0;background:rgba(6,14,32,0.92);z-index:10000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);cursor:pointer;opacity:0;transition:opacity .3s ease }
+.video-overlay { position:fixed;inset:0;background:rgba(26,28,27,0.82);z-index:10000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(8px);cursor:pointer;opacity:0;transition:opacity .3s ease }
 .video-overlay.active { display:flex;opacity:1 }
-.video-container { position:relative;width:90%;max-width:780px;background:#000;border-radius:8px;overflow:hidden;box-shadow:0 20px 80px rgba(0,0,0,0.6);cursor:default }
+.video-container { position:relative;width:90%;max-width:780px;background:#000;border-radius:12px;overflow:hidden;box-shadow:0 20px 80px rgba(0,0,0,0.4);cursor:default }
 .video-container video { width:100%;display:block }
 .video-close { position:absolute;top:12px;right:14px;width:32px;height:32px;background:rgba(0,0,0,0.5);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:background .2s }
 .video-close:hover { background:rgba(255,255,255,0.2) }
 .video-close svg { width:16px;height:16px;color:white }
-.video-title { position:absolute;bottom:0;left:0;right:0;padding:.8rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,0.7));font-size:.82rem;color:rgba(255,255,255,0.85);pointer-events:none }
+.video-title { position:absolute;bottom:0;left:0;right:0;padding:.8rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,0.7));font-size:.82rem;color:rgba(255,255,255,0.9);pointer-events:none }
 
 /* Interactive filter styles */
 .filter-btn { transition: all 0.3s ease; cursor: pointer; }
-.filter-btn.active { background: #2fd9f4 !important; color: #001f25 !important; border-color: #2fd9f4 !important; }
+.filter-btn.active { background: #1a1c1b !important; color: #ffffff !important; border-color: #1a1c1b !important; }
 .pub-row { transition: opacity 0.4s ease, transform 0.3s ease; }
-.pub-row.dimmed { opacity: 0.12; pointer-events: none; transform: scale(0.98); }
-.research-card { cursor: pointer; transition: all 0.4s ease; position: relative; overflow: hidden; }
-.research-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#2fd9f4; transform:scaleX(0); transition:transform 0.3s ease; }
+.pub-row.dimmed { opacity: 0.25; pointer-events: none; }
+.research-card { cursor: pointer; transition: all 0.35s ease; position: relative; overflow: hidden; }
+.research-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:#536256; transform:scaleX(0); transition:transform 0.35s ease; }
 .research-card.active::after { transform:scaleX(1); }
-.research-card.active { background: #171f33 !important; }
+.research-card.active { background: #e9e8e6 !important; }
 </style>
 </head>
-<body class="font-body selection:bg-primary/30 selection:text-primary">
+<body class="font-body antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+
+<div class="noise-overlay"></div>
 
 <!-- VIDEO MODAL -->
 <div class="video-overlay" id="videoOverlay">
@@ -145,73 +145,75 @@ body { background-color: #0b1326; color: #dae2fd; }
 </div>
 
 <!-- NAV -->
-<nav id="navbar" class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 py-5 bg-[#0b1326]/60 backdrop-blur-xl transition-all duration-300">
-  <a href="#" class="font-headline text-2xl italic tracking-tighter text-[#2fd9f4] no-underline hover:no-underline">Khen Cohen</a>
-  <div class="hidden md:flex gap-10 items-center" id="navLinks">
-    <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300 no-underline" href="#research">Research</a>
-    <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300 no-underline" href="#publications">Publications</a>
-    <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300 no-underline" href="#news">News</a>
-    <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300 no-underline" href="#talks">Talks</a>
-    <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300 no-underline" href="#background">Background</a>
-    <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors duration-300 no-underline" href="#contact">Contact</a>
+<nav id="navbar" class="sticky top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/50">
+  <div class="max-w-[1280px] mx-auto flex justify-between items-center px-5 md:px-16 h-20">
+    <a href="#" class="font-headline text-2xl font-medium tracking-tight text-on-surface no-underline hover:no-underline">Khen Cohen</a>
+    <div class="hidden md:flex gap-8 items-center" id="navLinks">
+      <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors duration-300 no-underline" href="#research">Research</a>
+      <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors duration-300 no-underline" href="#publications">Publications</a>
+      <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors duration-300 no-underline" href="#news">News</a>
+      <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors duration-300 no-underline" href="#talks">Talks</a>
+      <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors duration-300 no-underline" href="#background">Background</a>
+      <a class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label text-sm hover:bg-on-surface-variant transition-colors duration-300 no-underline" href="Khen_Cohen_CV.pdf" target="_blank">Curriculum Vitae</a>
+    </div>
+    <button class="text-on-surface md:hidden flex items-center" id="hamburger">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
   </div>
-  <button class="text-[#2fd9f4] md:hidden" id="hamburger">
-    <span class="material-symbols-outlined">menu</span>
-  </button>
 </nav>
 
 <!-- MOBILE NAV -->
-<div id="mobileNav" class="fixed top-[60px] left-0 right-0 z-40 bg-[#0b1326]/95 backdrop-blur-xl hidden md:hidden flex-col gap-4 px-8 py-6 border-b border-outline-variant/10">
-  <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors no-underline" href="#research">Research</a>
-  <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors no-underline" href="#publications">Publications</a>
-  <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors no-underline" href="#news">News</a>
-  <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors no-underline" href="#talks">Talks</a>
-  <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors no-underline" href="#background">Background</a>
-  <a class="text-slate-400 font-sans tracking-wide uppercase text-xs hover:text-white transition-colors no-underline" href="#contact">Contact</a>
+<div id="mobileNav" class="sticky top-20 z-40 bg-surface/95 backdrop-blur-xl hidden md:hidden flex-col gap-4 px-6 py-6 border-b border-outline-variant/40">
+  <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors no-underline" href="#research">Research</a>
+  <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors no-underline" href="#publications">Publications</a>
+  <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors no-underline" href="#news">News</a>
+  <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors no-underline" href="#talks">Talks</a>
+  <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors no-underline" href="#background">Background</a>
+  <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors no-underline" href="#contact">Contact</a>
+  <a class="font-label text-sm text-on-surface-variant hover:text-on-surface transition-colors no-underline" href="Khen_Cohen_CV.pdf" target="_blank">Curriculum Vitae</a>
 </div>
 
-<main class="pt-32 interference-pattern">
+<main class="max-w-[1280px] mx-auto px-5 md:px-16">
 
 <!-- ═══ HERO ═══ -->
-<section class="max-w-screen-xl mx-auto px-6 md:px-12 pb-28">
-  <div class="flex flex-col md:grid md:grid-cols-12 gap-12 items-center">
-    <div class="md:col-span-7 lg:col-span-8">
-      <h1 class="font-headline text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.05] text-on-surface mb-10 italic">
-        Quantum <span class="text-primary not-italic">information</span>, optics &amp; learning theory.
-      </h1>
-      <div class="max-w-xl">
-        <p class="font-body text-lg text-on-surface-variant leading-relaxed mb-4">
-          I'm a PhD candidate at <span class="text-primary font-medium">Tel Aviv University</span>, exploring questions at the intersection of quantum information, photonic hardware, and machine learning theory.
-        </p>
-        <p class="font-body text-sm text-on-tertiary-container leading-relaxed mb-8">
-          Advised by Prof. Yaron Oz &middot; School of Physics &amp; Astronomy
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <a href="mailto:khencohen@mail.tau.ac.il" class="bg-gradient-to-br from-primary to-primary-fixed-dim text-on-primary-fixed px-7 py-3 font-label font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all no-underline flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm">mail</span> Email
-          </a>
-          <a href="https://scholar.google.com/citations?user=XXXXXXXX" target="_blank" class="glass-effect text-on-surface px-6 py-3 font-label uppercase tracking-widest text-xs hover:bg-surface-container-highest transition-all no-underline border border-outline-variant/20">Scholar</a>
-          <a href="https://orcid.org/0000-0002-1802-8146" target="_blank" class="glass-effect text-on-surface px-6 py-3 font-label uppercase tracking-widest text-xs hover:bg-surface-container-highest transition-all no-underline border border-outline-variant/20">ORCID</a>
-          <a href="https://github.com/khencohen" target="_blank" class="glass-effect text-on-surface px-6 py-3 font-label uppercase tracking-widest text-xs hover:bg-surface-container-highest transition-all no-underline border border-outline-variant/20">GitHub</a>
-          <a href="Khen_Cohen_CV.pdf" target="_blank" class="glass-effect text-on-surface px-6 py-3 font-label uppercase tracking-widest text-xs hover:bg-surface-container-highest transition-all no-underline border border-outline-variant/20 flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm">download</span> CV
-          </a>
-        </div>
-      </div>
+<section class="py-12 md:py-20 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+  <div class="flex-1 order-2 md:order-1">
+    <span class="inline-flex items-center rounded-full bg-secondary-container/60 px-4 py-2 font-label text-xs text-on-secondary-container w-max mb-7 border border-secondary/20">
+      <span class="material-symbols-outlined mr-2 text-[16px]">science</span>
+      Quantum Information &middot; Optics &middot; Learning Theory
+    </span>
+    <h1 class="font-headline text-4xl md:text-5xl lg:text-[3.4rem] font-medium tracking-tight leading-[1.1] text-on-surface mb-7">
+      Quantum <span class="italic text-secondary">information</span>, optics &amp; learning theory.
+    </h1>
+    <p class="font-body text-lg text-on-surface-variant leading-relaxed mb-4 max-w-xl">
+      I'm a PhD candidate at <span class="text-on-surface font-medium">Tel Aviv University</span>, exploring questions at the intersection of quantum information, photonic hardware, and machine learning theory.
+    </p>
+    <p class="font-body text-sm text-on-tertiary-container leading-relaxed mb-8">
+      Advised by Prof. Yaron Oz &middot; School of Physics &amp; Astronomy
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <a href="mailto:khencohen@mail.tau.ac.il" class="bg-primary text-on-primary px-7 py-3.5 rounded-lg font-label text-sm hover:bg-on-surface-variant transition-colors no-underline flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">mail</span> Email
+      </a>
+      <a href="https://scholar.google.com/citations?user=XXXXXXXX" target="_blank" class="bg-surface-container text-on-surface px-6 py-3.5 rounded-lg font-label text-sm hover:bg-surface-container-high transition-colors no-underline border border-outline-variant/40">Scholar</a>
+      <a href="https://orcid.org/0000-0002-1802-8146" target="_blank" class="bg-surface-container text-on-surface px-6 py-3.5 rounded-lg font-label text-sm hover:bg-surface-container-high transition-colors no-underline border border-outline-variant/40">ORCID</a>
+      <a href="https://github.com/khencohen" target="_blank" class="bg-surface-container text-on-surface px-6 py-3.5 rounded-lg font-label text-sm hover:bg-surface-container-high transition-colors no-underline border border-outline-variant/40">GitHub</a>
     </div>
-    <div class="md:col-span-5 lg:col-span-4 w-full max-w-xs md:max-w-none">
-      <div class="relative aspect-square overflow-hidden rounded-full border-2 border-outline-variant/20">
-        <img alt="Khen Cohen" class="object-cover object-top w-full h-full opacity-90 hover:opacity-100 transition-opacity duration-700" src="profile.jpg"/>
-      </div>
-    </div>
+  </div>
+  <div class="flex-1 order-1 md:order-2 w-full max-w-xs md:max-w-sm relative group">
+    <div class="absolute inset-0 bg-secondary-container/50 rounded-2xl transform translate-x-4 translate-y-4 -z-10 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6"></div>
+    <img alt="Khen Cohen" class="w-full h-auto aspect-[4/5] object-cover object-top rounded-2xl border border-outline-variant/30 organic-shadow transition-transform duration-500 group-hover:-translate-y-1" src="figures/profile.jpg"/>
   </div>
 </section>
 
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant/40 my-6"></div>
+
 <!-- ═══ RESEARCH ═══ -->
-<section id="research" class="max-w-screen-xl mx-auto px-6 md:px-12 mb-32">
-  <div class="mb-12">
-    <span class="font-label text-primary text-xs tracking-[0.3em] uppercase mb-4 block">Research</span>
-    <h2 class="font-headline text-4xl md:text-5xl italic">What I work on</h2>
+<section id="research" class="py-16 md:py-24">
+  <div class="mb-10">
+    <span class="font-label text-secondary text-xs tracking-[0.25em] uppercase mb-4 block">Research</span>
+    <h2 class="font-headline text-3xl md:text-4xl font-medium tracking-tight">What I work on</h2>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 text-on-surface-variant leading-relaxed">
@@ -231,36 +233,36 @@ body { background-color: #0b1326; color: #dae2fd; }
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-    <div class="research-card bg-surface-container-low p-10 flex flex-col justify-between min-h-[280px] group" data-filter="qi" onclick="toggleFilter('qi')">
+    <div class="research-card bg-surface-container-low border border-outline-variant/30 rounded-xl organic-shadow p-9 flex flex-col justify-between min-h-[280px] group" data-filter="qi" onclick="toggleFilter('qi')">
       <div>
-        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">blur_on</span>
-        <h3 class="font-headline text-2xl text-on-surface italic mb-3">Quantum Information</h3>
-        <span class="font-label text-[10px] text-secondary px-2 py-0.5 bg-secondary/10 uppercase tracking-widest">Theory</span>
+        <span class="material-symbols-outlined text-secondary text-3xl mb-4 block">blur_on</span>
+        <h3 class="font-headline text-2xl font-medium text-on-surface mb-3">Quantum Information</h3>
+        <span class="font-label text-[10px] text-on-secondary-container px-2.5 py-1 bg-secondary-container rounded-full uppercase tracking-widest">Theory</span>
       </div>
       <p class="font-body text-sm text-on-surface-variant leading-relaxed mt-4">
         Many-body localization, quantum scrambling, symmetry enhancement in integrable models, graph state fusion, and quantum switching protocols.
       </p>
     </div>
-    <div class="research-card bg-surface-container-high p-10 flex flex-col justify-between min-h-[280px] border-l border-primary/20 group" data-filter="qo" onclick="toggleFilter('qo')">
+    <div class="research-card bg-surface-container border border-outline-variant/30 rounded-xl organic-shadow p-9 flex flex-col justify-between min-h-[280px] group" data-filter="qo" onclick="toggleFilter('qo')">
       <div>
         <span class="material-symbols-outlined text-secondary text-3xl mb-4 block">lens_blur</span>
-        <h3 class="font-headline text-2xl text-on-surface italic mb-3">Quantum Optics &amp; Photonics</h3>
+        <h3 class="font-headline text-2xl font-medium text-on-surface mb-3">Quantum Optics &amp; Photonics</h3>
         <div class="flex gap-2">
-          <span class="font-label text-[10px] text-secondary px-2 py-0.5 bg-secondary/10 uppercase tracking-widest">Theory</span>
-          <span class="font-label text-[10px] text-primary px-2 py-0.5 bg-primary/10 uppercase tracking-widest">Experiment</span>
+          <span class="font-label text-[10px] text-on-secondary-container px-2.5 py-1 bg-secondary-container rounded-full uppercase tracking-widest">Theory</span>
+          <span class="font-label text-[10px] text-on-surface-variant px-2.5 py-1 bg-surface-container-highest rounded-full uppercase tracking-widest">Experiment</span>
         </div>
       </div>
       <p class="font-body text-sm text-on-surface-variant leading-relaxed mt-4">
         Integrated quantum gates, directional couplers, spatial mode sorting, optical neural networks, and hybrid QKD.
       </p>
     </div>
-    <div class="research-card bg-surface-container-low p-10 flex flex-col justify-between min-h-[280px] group" data-filter="ai" onclick="toggleFilter('ai')">
+    <div class="research-card bg-surface-container-low border border-outline-variant/30 rounded-xl organic-shadow p-9 flex flex-col justify-between min-h-[280px] group" data-filter="ai" onclick="toggleFilter('ai')">
       <div>
-        <span class="material-symbols-outlined text-tertiary text-3xl mb-4 block">hub</span>
-        <h3 class="font-headline text-2xl text-on-surface italic mb-3">AI &amp; Learning Theory</h3>
+        <span class="material-symbols-outlined text-secondary text-3xl mb-4 block">hub</span>
+        <h3 class="font-headline text-2xl font-medium text-on-surface mb-3">AI &amp; Learning Theory</h3>
         <div class="flex gap-2">
-          <span class="font-label text-[10px] text-secondary px-2 py-0.5 bg-secondary/10 uppercase tracking-widest">Theory</span>
-          <span class="font-label text-[10px] text-primary px-2 py-0.5 bg-primary/10 uppercase tracking-widest">Experiment</span>
+          <span class="font-label text-[10px] text-on-secondary-container px-2.5 py-1 bg-secondary-container rounded-full uppercase tracking-widest">Theory</span>
+          <span class="font-label text-[10px] text-on-surface-variant px-2.5 py-1 bg-surface-container-highest rounded-full uppercase tracking-widest">Experiment</span>
         </div>
       </div>
       <p class="font-body text-sm text-on-surface-variant leading-relaxed mt-4">
@@ -271,212 +273,215 @@ body { background-color: #0b1326; color: #dae2fd; }
   <p class="text-xs text-on-tertiary-container text-center italic">Click a research area to filter publications below</p>
 </section>
 
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant/40"></div>
+
 <!-- ═══ PUBLICATIONS ═══ -->
-<section id="publications" class="max-w-screen-xl mx-auto px-6 md:px-12 mb-32">
+<section id="publications" class="py-16 md:py-24">
   <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
     <div>
-      <span class="font-label text-primary text-xs tracking-[0.3em] uppercase mb-4 block">Scholarly Archive</span>
-      <h2 class="font-headline text-4xl md:text-5xl italic">Publications</h2>
+      <span class="font-label text-secondary text-xs tracking-[0.25em] uppercase mb-4 block">Scholarly Archive</span>
+      <h2 class="font-headline text-3xl md:text-4xl font-medium tracking-tight">Publications</h2>
     </div>
     <p class="font-body text-sm text-on-surface-variant">
-      Full list on <a href="https://scholar.google.com/citations?user=XXXXXXXX" target="_blank" class="text-primary hover:underline">Google Scholar</a> and in my <a href="Khen_Cohen_CV.pdf" target="_blank" class="text-primary hover:underline">CV</a>.
+      Full list on <a href="https://scholar.google.com/citations?user=XXXXXXXX" target="_blank" class="text-secondary underline underline-offset-4 hover:text-on-surface">Google Scholar</a> and in my <a href="Khen_Cohen_CV.pdf" target="_blank" class="text-secondary underline underline-offset-4 hover:text-on-surface">CV</a>.
     </p>
   </div>
 
   <!-- Filter bar -->
   <div class="flex flex-wrap gap-2 mb-10 items-center">
     <span class="font-label text-[10px] text-outline uppercase tracking-widest mr-2">Filter:</span>
-    <button class="filter-btn font-label text-[10px] uppercase tracking-widest px-4 py-2 bg-surface-container-highest border border-outline-variant/20 text-on-surface-variant hover:text-primary" data-filter="all" onclick="toggleFilter('all')">All</button>
-    <button class="filter-btn font-label text-[10px] uppercase tracking-widest px-4 py-2 bg-surface-container-highest border border-outline-variant/20 text-on-surface-variant hover:text-primary" data-filter="qi" onclick="toggleFilter('qi')">Quantum Info</button>
-    <button class="filter-btn font-label text-[10px] uppercase tracking-widest px-4 py-2 bg-surface-container-highest border border-outline-variant/20 text-on-surface-variant hover:text-primary" data-filter="qo" onclick="toggleFilter('qo')">Quantum Optics</button>
-    <button class="filter-btn font-label text-[10px] uppercase tracking-widest px-4 py-2 bg-surface-container-highest border border-outline-variant/20 text-on-surface-variant hover:text-primary" data-filter="ai" onclick="toggleFilter('ai')">AI / ML</button>
-    <span class="w-px h-6 bg-outline-variant/30 mx-2 hidden md:block"></span>
-    <button class="filter-btn font-label text-[10px] uppercase tracking-widest px-4 py-2 bg-surface-container-highest border border-outline-variant/20 text-on-surface-variant hover:text-primary" data-filter="theory" onclick="toggleFilter('theory')">Theory</button>
-    <button class="filter-btn font-label text-[10px] uppercase tracking-widest px-4 py-2 bg-surface-container-highest border border-outline-variant/20 text-on-surface-variant hover:text-primary" data-filter="experiment" onclick="toggleFilter('experiment')">Experiment</button>
+    <button class="filter-btn font-label text-[11px] uppercase tracking-widest px-4 py-2 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant hover:text-on-surface" data-filter="all" onclick="toggleFilter('all')">All</button>
+    <button class="filter-btn font-label text-[11px] uppercase tracking-widest px-4 py-2 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant hover:text-on-surface" data-filter="qi" onclick="toggleFilter('qi')">Quantum Info</button>
+    <button class="filter-btn font-label text-[11px] uppercase tracking-widest px-4 py-2 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant hover:text-on-surface" data-filter="qo" onclick="toggleFilter('qo')">Quantum Optics</button>
+    <button class="filter-btn font-label text-[11px] uppercase tracking-widest px-4 py-2 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant hover:text-on-surface" data-filter="ai" onclick="toggleFilter('ai')">AI / ML</button>
+    <span class="w-px h-6 bg-outline-variant/50 mx-2 hidden md:block"></span>
+    <button class="filter-btn font-label text-[11px] uppercase tracking-widest px-4 py-2 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant hover:text-on-surface" data-filter="theory" onclick="toggleFilter('theory')">Theory</button>
+    <button class="filter-btn font-label text-[11px] uppercase tracking-widest px-4 py-2 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant hover:text-on-surface" data-filter="experiment" onclick="toggleFilter('experiment')">Experiment</button>
   </div>
 
   <!-- Published -->
   <div class="mb-16">
-    <div class="sticky top-20 z-10 py-3 mb-6 border-b border-outline-variant/10 bg-background/80 backdrop-blur-sm">
-      <h3 class="font-headline text-2xl italic tracking-tighter text-outline">Published</h3>
+    <div class="sticky top-20 z-10 py-3 mb-6 border-b border-outline-variant/40 bg-background/85 backdrop-blur-sm">
+      <h3 class="font-headline text-2xl font-medium tracking-tight text-outline">Published</h3>
     </div>
     <div class="space-y-0">
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="ai" data-type="theory">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="ai" data-type="theory">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">2026</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2">O. Shem-or, <span class="text-primary font-medium">K. Cohen</span>, Y. Oz &middot; <span class="italic">ICLR (2026)</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2">O. Shem-or, <span class="text-on-surface font-medium">K. Cohen</span>, Y. Oz &middot; <span class="italic">ICLR (2026)</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-tertiary/10 text-tertiary uppercase tracking-widest">AI</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Theory</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">AI</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Theory</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2401.04013" target="_blank">arXiv</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/weakcorr.mp4','Weak Correlations as the Underlying Principle for Linearization')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2401.04013" target="_blank">arXiv</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/weakcorr.mp4','Weak Correlations as the Underlying Principle for Linearization')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="ai" data-type="experiment">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="ai" data-type="experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">2026</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">SONAR: Spectral-Contrastive Audio Residuals for Generalizable Deepfake Detection</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2">I. N. Hidekel, G. Lifshitz, <span class="text-primary font-medium">K. Cohen</span>, D. Raviv &middot; <span class="italic">ICML (2026)</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">SONAR: Spectral-Contrastive Audio Residuals for Generalizable Deepfake Detection</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2">I. N. Hidekel, G. Lifshitz, <span class="text-on-surface font-medium">K. Cohen</span>, D. Raviv &middot; <span class="italic">ICML (2026)</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-tertiary/10 text-tertiary uppercase tracking-widest">AI</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Experiment</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">AI</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2511.21325" target="_blank">arXiv</a>
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2511.21325" target="_blank">arXiv</a>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qo" data-type="theory experiment">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo" data-type="theory experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">2026</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Single Plane Spatial Mode Sorter</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-primary font-medium">K. Cohen</span>, Y. Yosif-Or, Y. Oz, A. Arie &middot; <span class="italic">Optics Express (2026)</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Single Plane Spatial Mode Sorter</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>, Y. Yosif-Or, Y. Oz, A. Arie &middot; <span class="italic">Optics Express (2026)</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Optics</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Theory</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Experiment</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Theory</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-34-2-1837" target="_blank">Paper</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/sorter.mp4','Single Plane Spatial Mode Sorter')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-34-2-1837" target="_blank">Paper</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/sorter.mp4','Single Plane Spatial Mode Sorter')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qi" data-type="theory">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qi" data-type="theory">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">2026</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Generalized Type II Fusion of Graph States</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2">N. Rimok, <span class="text-primary font-medium">K. Cohen</span>, Y. Oz &middot; <span class="italic">Phys. Rev. A (2026)</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Generalized Type II Fusion of Graph States</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2">N. Rimok, <span class="text-on-surface font-medium">K. Cohen</span>, Y. Oz &middot; <span class="italic">Phys. Rev. A (2026)</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Quantum Info</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Theory</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Quantum Info</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Theory</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://journals.aps.org/pra/abstract/10.1103/w9w5-2h7r" target="_blank">Paper</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/GeneralizedTypeIIFusion.mp4','Generalized Type II Fusion of Graph States')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://journals.aps.org/pra/abstract/10.1103/w9w5-2h7r" target="_blank">Paper</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/GeneralizedTypeIIFusion.mp4','Generalized Type II Fusion of Graph States')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qo qi" data-type="theory">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo qi" data-type="theory">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">2025</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Robust Photonic Quantum Gates With A Large Number of Waveguide Segments</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-primary font-medium">K. Cohen</span>, H. Suchowski, Y. Oz &middot; <span class="italic">Advanced Quantum Technologies (2025)</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Robust Photonic Quantum Gates With A Large Number of Waveguide Segments</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>, H. Suchowski, Y. Oz &middot; <span class="italic">Advanced Quantum Technologies (2025)</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Optics</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Quantum Info</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Theory</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Quantum Info</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Theory</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/qute.202500304" target="_blank">Paper</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/UWG.mp4','Robust Photonic Quantum Gates With A Large Number of Waveguide Segments')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/qute.202500304" target="_blank">Paper</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/UWG.mp4','Robust Photonic Quantum Gates With A Large Number of Waveguide Segments')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qo ai" data-type="experiment">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo ai" data-type="experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">2025</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">A Fiber-Optic Traffic Monitoring Network Trained with Video Inputs</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-primary font-medium">K. Cohen</span>, L. Hen, A. Lellouch &middot; <span class="italic">Scientific Reports (2025)</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">A Fiber-Optic Traffic Monitoring Network Trained with Video Inputs</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>, L. Hen, A. Lellouch &middot; <span class="italic">Scientific Reports (2025)</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Optics</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-tertiary/10 text-tertiary uppercase tracking-widest">AI</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Experiment</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">AI</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://doi.org/10.1038/s41598-025-14928-7" target="_blank">Paper</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/traffic.mp4','A Fiber-Optic Traffic Monitoring Network')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://doi.org/10.1038/s41598-025-14928-7" target="_blank">Paper</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/traffic.mp4','A Fiber-Optic Traffic Monitoring Network')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qi" data-type="theory">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qi" data-type="theory">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">2024</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Complexity Measure Diagnostic of Ergodic to Many-Body Localization Transition</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-primary font-medium">K. Cohen</span>, Y. Oz, D.-L. Zhong &middot; <span class="italic">Phys. Rev. B (2024)</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Complexity Measure Diagnostic of Ergodic to Many-Body Localization Transition</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>, Y. Oz, D.-L. Zhong &middot; <span class="italic">Phys. Rev. B (2024)</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Quantum Info</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Theory</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Quantum Info</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Theory</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.L180101" target="_blank">Paper</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/mblPT.mp4','Complexity Measure Diagnostic of MBL Transition')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.L180101" target="_blank">Paper</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/mblPT.mp4','Complexity Measure Diagnostic of MBL Transition')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qo" data-type="experiment">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo" data-type="experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">2024</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Temporal Super-Resolution using Multi-Channel Illumination Source</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-primary font-medium">K. Cohen</span>, D. Raviv, D. Mendlovic &middot; <span class="italic">MDPI Sensors (2024)</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Temporal Super-Resolution using Multi-Channel Illumination Source</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>, D. Raviv, D. Mendlovic &middot; <span class="italic">MDPI Sensors (2024)</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Optics</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Experiment</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://www.mdpi.com/1424-8220/24/3/857" target="_blank">Paper</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/TSR.mp4','Temporal Super-Resolution using Multi-Channel Illumination')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://www.mdpi.com/1424-8220/24/3/857" target="_blank">Paper</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/TSR.mp4','Temporal Super-Resolution using Multi-Channel Illumination')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qo" data-type="experiment">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo" data-type="experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">2023</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Illumination-Based Color Reconstruction for the Dynamic Vision Sensor</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-primary font-medium">K. Cohen</span>, H. Levy, O. Hershko, D. Mendlovic, D. Raviv &middot; <span class="italic">MDPI Sensors (2023)</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Illumination-Based Color Reconstruction for the Dynamic Vision Sensor</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>, H. Levy, O. Hershko, D. Mendlovic, D. Raviv &middot; <span class="italic">MDPI Sensors (2023)</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Optics</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Experiment</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://www.mdpi.com/1424-8220/23/19/8327" target="_blank">Paper</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/DVSCR.mp4','Illumination-Based Color Reconstruction for DVS')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://www.mdpi.com/1424-8220/23/19/8327" target="_blank">Paper</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/DVSCR.mp4','Illumination-Based Color Reconstruction for DVS')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qo" data-type="experiment">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo" data-type="experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">2022</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Hardware Analysis for Motion Estimation Task</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-primary font-medium">K. Cohen</span>, G. Hodeda, E. Almog, D. Raviv, D. Mendlovic &middot; <span class="italic">Applied Optics (2022)</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Hardware Analysis for Motion Estimation Task</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>, G. Hodeda, E. Almog, D. Raviv, D. Mendlovic &middot; <span class="italic">Applied Optics (2022)</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Optics</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Experiment</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://opg.optica.org/ao/abstract.cfm?uri=ao-61-15-4303" target="_blank">Paper</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/cfos.mp4','Hardware Analysis for Motion Estimation Task')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://opg.optica.org/ao/abstract.cfm?uri=ao-61-15-4303" target="_blank">Paper</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/cfos.mp4','Hardware Analysis for Motion Estimation Task')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
@@ -487,111 +492,111 @@ body { background-color: #0b1326; color: #dae2fd; }
 
   <!-- Under Review -->
   <div class="mb-16">
-    <div class="sticky top-20 z-10 py-3 mb-6 border-b border-outline-variant/10 bg-background/80 backdrop-blur-sm">
-      <h3 class="font-headline text-2xl italic tracking-tighter text-outline">Under Review</h3>
+    <div class="sticky top-20 z-10 py-3 mb-6 border-b border-outline-variant/40 bg-background/85 backdrop-blur-sm">
+      <h3 class="font-headline text-2xl font-medium tracking-tight text-outline">Under Review</h3>
     </div>
     <div class="space-y-0">
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qo qi" data-type="theory experiment">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo qi" data-type="theory experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">PRL</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">High-Fidelity Integrated Quantum Photonic Logic Via Robust Directional Couplers</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-primary font-medium">K. Cohen</span>*, J. Piasetzky*, Y. Drori, A. Rotem, Y. Warshavsky, Y. Oz, H. Suchowski &middot; <span class="italic">Submitted to PRL</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">High-Fidelity Integrated Quantum Photonic Logic Via Robust Directional Couplers</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>*, J. Piasetzky*, Y. Drori, A. Rotem, Y. Warshavsky, Y. Oz, H. Suchowski &middot; <span class="italic">Submitted to PRL</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Optics</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Quantum Info</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Theory</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Experiment</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Quantum Info</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Theory</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2502.20069" target="_blank">arXiv</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/robust.mp4','High-Fidelity Integrated Quantum Photonic Logic')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2502.20069" target="_blank">arXiv</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/robust.mp4','High-Fidelity Integrated Quantum Photonic Logic')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qo qi" data-type="theory experiment">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo qi" data-type="theory experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">Optica Q.</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">High Fidelity CNOT Gates in Photonic Integrated Circuits</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2">J. Piasetzky, A. Rotem, Y. Warshavsky, Y. Drori, <span class="text-primary font-medium">K. Cohen</span>, Y. Oz, H. Suchowski &middot; <span class="italic">Under review in Optica Quantum</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">High Fidelity CNOT Gates in Photonic Integrated Circuits</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2">J. Piasetzky, A. Rotem, Y. Warshavsky, Y. Drori, <span class="text-on-surface font-medium">K. Cohen</span>, Y. Oz, H. Suchowski &middot; <span class="italic">Under review in Optica Quantum</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Optics</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Quantum Info</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Theory</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Experiment</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Quantum Info</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Theory</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2509.25505" target="_blank">arXiv</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/RobustCNOT.mp4','High Fidelity CNOT Gates in Photonic Integrated Circuits')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2509.25505" target="_blank">arXiv</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/RobustCNOT.mp4','High Fidelity CNOT Gates in Photonic Integrated Circuits')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qo ai" data-type="experiment">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo ai" data-type="experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">IEEE TGRS</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Buried Fiber-Optic Geolocalization with Distributed Acoustic Sensing</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-primary font-medium">K. Cohen</span>, N. Nisan, O. Nissan, A. Lellouch &middot; <span class="italic">Under review in IEEE Trans. Geophysics &amp; Remote Sensing</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Buried Fiber-Optic Geolocalization with Distributed Acoustic Sensing</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>, N. Nisan, O. Nissan, A. Lellouch &middot; <span class="italic">Under review in IEEE Trans. Geophysics &amp; Remote Sensing</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Optics</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-tertiary/10 text-tertiary uppercase tracking-widest">AI</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Experiment</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">AI</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2604.10331" target="_blank">arXiv</a>
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2604.10331" target="_blank">arXiv</a>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="qo" data-type="experiment">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="qo" data-type="experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">Review</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Robust Characterization of Integrated Photonics Directional Couplers</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2">J. Piasetzky, Y. Drori, Y. Warshavski, A. Rotem, <span class="text-primary font-medium">K. Cohen</span>, Y. Oz, H. Suchowski &middot; <span class="italic">Under review</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Robust Characterization of Integrated Photonics Directional Couplers</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2">J. Piasetzky, Y. Drori, Y. Warshavski, A. Rotem, <span class="text-on-surface font-medium">K. Cohen</span>, Y. Oz, H. Suchowski &middot; <span class="italic">Under review</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Optics</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Experiment</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">Optics</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2412.11670" target="_blank">arXiv</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/robustmeasurement.mp4','Robust Characterization of Integrated Photonics Directional Couplers')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2412.11670" target="_blank">arXiv</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/robustmeasurement.mp4','Robust Characterization of Integrated Photonics Directional Couplers')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="ai" data-type="experiment">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="ai" data-type="experiment">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">JSTARS</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Short-Term Spatiotemporal Photo-Voltaic Power Generation Forecasting</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2">Y. Katz-Danan, <span class="text-primary font-medium">K. Cohen</span>, J. Ostrometzky &middot; <span class="italic">Submitted to JSTARS</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Short-Term Spatiotemporal Photo-Voltaic Power Generation Forecasting</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2">Y. Katz-Danan, <span class="text-on-surface font-medium">K. Cohen</span>, J. Ostrometzky &middot; <span class="italic">Submitted to JSTARS</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-tertiary/10 text-tertiary uppercase tracking-widest">AI</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-primary/10 text-primary uppercase tracking-widest">Experiment</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">AI</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Experiment</span>
           </div>
         </div>
         <div class="md:col-span-3"></div>
       </div>
 
-      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low px-4 md:px-8 transition-all duration-500" data-categories="ai" data-type="theory">
+      <div class="pub-row group py-8 flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-8 items-start hover:bg-surface-container-low rounded-lg px-4 md:px-6 transition-all duration-500" data-categories="ai" data-type="theory">
         <div class="md:col-span-2 font-label text-xs text-on-tertiary-container mt-1">Review</div>
         <div class="md:col-span-7">
-          <h4 class="font-headline text-xl md:text-2xl text-on-surface mb-2 group-hover:text-primary transition-colors italic">Classifying Overlapping Gaussian Mixtures in High Dimensions</h4>
-          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-primary font-medium">K. Cohen</span>, N. Levy, Y. Oz &middot; <span class="italic">Under review</span></p>
+          <h4 class="font-headline text-xl md:text-2xl font-medium text-on-surface mb-2 group-hover:text-secondary transition-colors">Classifying Overlapping Gaussian Mixtures in High Dimensions</h4>
+          <p class="font-body text-sm text-on-surface-variant mb-2"><span class="text-on-surface font-medium">K. Cohen</span>, N. Levy, Y. Oz &middot; <span class="italic">Under review</span></p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="font-label text-[9px] px-2 py-0.5 bg-tertiary/10 text-tertiary uppercase tracking-widest">AI</span>
-            <span class="font-label text-[9px] px-2 py-0.5 bg-secondary/10 text-secondary uppercase tracking-widest">Theory</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container uppercase tracking-widest">AI</span>
+            <span class="font-label text-[9px] px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant uppercase tracking-widest">Theory</span>
           </div>
         </div>
         <div class="md:col-span-3 flex flex-wrap md:justify-end gap-2">
-          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2405.18427" target="_blank">arXiv</a>
-          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 bg-surface-container-high border border-outline-variant/20 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/GaussianOverlapping.mp4','Classifying Overlapping Gaussian Mixtures in High Dimensions')">
+          <a class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all no-underline text-on-surface-variant" href="https://arxiv.org/abs/2405.18427" target="_blank">arXiv</a>
+          <button class="text-xs font-label uppercase tracking-widest px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40 hover:bg-primary hover:text-on-primary transition-all text-on-surface-variant flex items-center gap-1" onclick="openVideo('videos/GaussianOverlapping.mp4','Classifying Overlapping Gaussian Mixtures in High Dimensions')">
             <span class="material-symbols-outlined text-sm">play_arrow</span> Video
           </button>
         </div>
@@ -603,89 +608,98 @@ body { background-color: #0b1326; color: #dae2fd; }
   <!-- Patents -->
   <div>
     <div class="mb-8">
-      <span class="font-label text-primary text-xs tracking-[0.3em] uppercase mb-4 block">Intellectual Property</span>
-      <h3 class="font-headline text-3xl italic">Patents</h3>
+      <span class="font-label text-secondary text-xs tracking-[0.25em] uppercase mb-4 block">Intellectual Property</span>
+      <h3 class="font-headline text-2xl md:text-3xl font-medium tracking-tight">Patents</h3>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-primary mb-2 block">2026</span><h4 class="font-body font-medium text-on-surface mb-1">Universal Spatial Optical Mode Transformer</h4><span class="font-label text-xs text-outline">US Patent (pending)</span></div>
-      <div class="bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-primary mb-2 block">2025</span><h4 class="font-body font-medium text-on-surface mb-1">Single Plane Spatial Mode Sorter</h4><span class="font-label text-xs text-outline">US Patent (pending)</span></div>
-      <div class="bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-primary mb-2 block">2024</span><h4 class="font-body font-medium text-on-surface mb-1">Robust Coupled Waveguides for Quantum Gates</h4><span class="font-label text-xs text-outline">US 63/704,436</span></div>
-      <div class="bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-primary mb-2 block">2024</span><h4 class="font-body font-medium text-on-surface mb-1">Traffic Monitoring via CNN with Fiber-Optic Sensing</h4><span class="font-label text-xs text-outline">US 63/663,951</span></div>
-      <div class="bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-primary mb-2 block">2021</span><h4 class="font-body font-medium text-on-surface mb-1">Person Identification in Video</h4><a href="https://patents.google.com/patent/US12236713B2/en" target="_blank" class="font-label text-xs text-primary hover:underline">US12236713B2</a></div>
-      <div class="bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-primary mb-2 block">2021</span><h4 class="font-body font-medium text-on-surface mb-1">Dynamic Vision Sensor Color Camera</h4><a href="https://patents.google.com/patent/US12167153B2/en" target="_blank" class="font-label text-xs text-primary hover:underline">US12167153B2</a></div>
-      <div class="bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-primary mb-2 block">2021</span><h4 class="font-body font-medium text-on-surface mb-1">High-Frequency Sensitive Neural Network</h4><a href="https://patents.google.com/patent/US20240281642A1/en" target="_blank" class="font-label text-xs text-primary hover:underline">US20240281642A1</a></div>
-      <div class="bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-primary mb-2 block">2021</span><h4 class="font-body font-medium text-on-surface mb-1">Temporal Super-Resolution</h4><a href="https://patents.google.com/patent/US20240264308A1/en" target="_blank" class="font-label text-xs text-primary hover:underline">US20240264308A1</a></div>
-      <div class="bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-primary mb-2 block">2020</span><h4 class="font-body font-medium text-on-surface mb-1">Dynamic Identity Authentication</h4><a href="https://patents.google.com/patent/US20230306094A1/en" target="_blank" class="font-label text-xs text-primary hover:underline">US20230306094A1</a></div>
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-secondary mb-2 block">2026</span><h4 class="font-body font-medium text-on-surface mb-1">Universal Spatial Optical Mode Transformer</h4><span class="font-label text-xs text-outline">US Patent (pending)</span></div>
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-secondary mb-2 block">2025</span><h4 class="font-body font-medium text-on-surface mb-1">Single Plane Spatial Mode Sorter</h4><span class="font-label text-xs text-outline">US Patent (pending)</span></div>
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-secondary mb-2 block">2024</span><h4 class="font-body font-medium text-on-surface mb-1">Robust Coupled Waveguides for Quantum Gates</h4><span class="font-label text-xs text-outline">US 63/704,436</span></div>
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-secondary mb-2 block">2024</span><h4 class="font-body font-medium text-on-surface mb-1">Traffic Monitoring via CNN with Fiber-Optic Sensing</h4><span class="font-label text-xs text-outline">US 63/663,951</span></div>
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-secondary mb-2 block">2021</span><h4 class="font-body font-medium text-on-surface mb-1">Person Identification in Video</h4><a href="https://patents.google.com/patent/US12236713B2/en" target="_blank" class="font-label text-xs text-secondary underline underline-offset-2 hover:text-on-surface">US12236713B2</a></div>
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-secondary mb-2 block">2021</span><h4 class="font-body font-medium text-on-surface mb-1">Dynamic Vision Sensor Color Camera</h4><a href="https://patents.google.com/patent/US12167153B2/en" target="_blank" class="font-label text-xs text-secondary underline underline-offset-2 hover:text-on-surface">US12167153B2</a></div>
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-secondary mb-2 block">2021</span><h4 class="font-body font-medium text-on-surface mb-1">High-Frequency Sensitive Neural Network</h4><a href="https://patents.google.com/patent/US20240281642A1/en" target="_blank" class="font-label text-xs text-secondary underline underline-offset-2 hover:text-on-surface">US20240281642A1</a></div>
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-secondary mb-2 block">2021</span><h4 class="font-body font-medium text-on-surface mb-1">Temporal Super-Resolution</h4><a href="https://patents.google.com/patent/US20240264308A1/en" target="_blank" class="font-label text-xs text-secondary underline underline-offset-2 hover:text-on-surface">US20240264308A1</a></div>
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300"><span class="font-label text-xs text-secondary mb-2 block">2020</span><h4 class="font-body font-medium text-on-surface mb-1">Dynamic Identity Authentication</h4><a href="https://patents.google.com/patent/US20230306094A1/en" target="_blank" class="font-label text-xs text-secondary underline underline-offset-2 hover:text-on-surface">US20230306094A1</a></div>
     </div>
   </div>
 </section>
 
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant/40"></div>
+
 <!-- ═══ NEWS ═══ -->
-<section id="news" class="max-w-screen-xl mx-auto px-6 md:px-12 mb-32">
-  <div class="mb-12">
-    <span class="font-label text-primary text-xs tracking-[0.3em] uppercase mb-4 block">Media</span>
-    <h2 class="font-headline text-4xl md:text-5xl italic">In the News</h2>
+<section id="news" class="py-16 md:py-24">
+  <div class="mb-10">
+    <span class="font-label text-secondary text-xs tracking-[0.25em] uppercase mb-4 block">Media</span>
+    <h2 class="font-headline text-3xl md:text-4xl font-medium tracking-tight">In the News</h2>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <a href="https://www.tau.ac.il/research/seismic-tel-aviv" target="_blank" class="group bg-surface-container-low overflow-hidden hover:bg-surface-container transition-all duration-500 no-underline block">
+    <a href="https://www.tau.ac.il/research/seismic-tel-aviv" target="_blank" class="group bg-surface-container-low border border-outline-variant/30 rounded-xl organic-shadow overflow-hidden hover:-translate-y-1 transition-all duration-500 no-underline block">
       <div class="aspect-video overflow-hidden">
-        <img src="https://www.tau.ac.il/sites/default/files/styles/reaserch_main_image_580_x_330/public/tlv-cars580.jpg" alt="Seismic Tel Aviv" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"/>
+        <img src="https://www.tau.ac.il/sites/default/files/styles/reaserch_main_image_580_x_330/public/tlv-cars580.jpg" alt="Seismic Tel Aviv" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
       </div>
       <div class="p-8">
-        <span class="font-label text-[10px] text-primary uppercase tracking-widest mb-3 block">Tel Aviv University</span>
-        <h3 class="font-headline text-2xl text-on-surface group-hover:text-primary transition-colors italic mb-3">Feel Tel Aviv from Below: Seismic Traffic Monitoring</h3>
+        <span class="font-label text-[10px] text-secondary uppercase tracking-widest mb-3 block">Tel Aviv University</span>
+        <h3 class="font-headline text-2xl font-medium text-on-surface group-hover:text-secondary transition-colors mb-3">Feel Tel Aviv from Below: Seismic Traffic Monitoring</h3>
         <p class="font-body text-sm text-on-surface-variant leading-relaxed">TAU researchers use fiber-optic seismic sensors beneath city streets to anonymously monitor traffic &mdash; a "seismic Waze" that provides comprehensive data without cameras or personal identification.</p>
       </div>
     </a>
     <!-- Placeholder for future news -->
-    <div class="bg-surface-container-low p-12 flex flex-col items-center justify-center min-h-[320px] opacity-40">
+    <div class="bg-surface-container-low border border-dashed border-outline-variant/50 rounded-xl p-12 flex flex-col items-center justify-center min-h-[320px] opacity-50">
       <span class="material-symbols-outlined text-4xl text-outline mb-4">newspaper</span>
       <p class="font-label text-xs text-outline uppercase tracking-widest">More news coming soon</p>
     </div>
   </div>
 </section>
 
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant/40"></div>
+
 <!-- ═══ TALKS ═══ -->
-<section id="talks" class="max-w-screen-xl mx-auto px-6 md:px-12 mb-32">
-  <div class="mb-12">
-    <span class="font-label text-primary text-xs tracking-[0.3em] uppercase mb-4 block">Presentations</span>
-    <h2 class="font-headline text-4xl md:text-5xl italic">Talks &amp; Conferences</h2>
+<section id="talks" class="py-16 md:py-24">
+  <div class="mb-10">
+    <span class="font-label text-secondary text-xs tracking-[0.25em] uppercase mb-4 block">Presentations</span>
+    <h2 class="font-headline text-3xl md:text-4xl font-medium tracking-tight">Talks &amp; Conferences</h2>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div class="group bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-primary text-sm font-bold min-w-[40px]">2025</span><div><span class="font-label text-[10px] text-on-primary-fixed px-2 py-0.5 bg-primary/20 uppercase tracking-widest mb-2 inline-block">Oral</span><h4 class="font-body font-medium text-on-surface">QERNEL Quantum Conference</h4><p class="text-sm text-on-surface-variant">Bar Ilan University, Israel</p></div></div>
-    <div class="group bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-primary text-sm font-bold min-w-[40px]">2025</span><div><span class="font-label text-[10px] text-secondary px-2 py-0.5 bg-secondary/10 uppercase tracking-widest mb-2 inline-block">Poster</span><h4 class="font-body font-medium text-on-surface">Sensing with Quantum Light</h4><p class="text-sm text-on-surface-variant">Bad Honnef, Germany</p></div></div>
-    <div class="group bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-primary text-sm font-bold min-w-[40px]">2024</span><div><span class="font-label text-[10px] text-secondary px-2 py-0.5 bg-secondary/10 uppercase tracking-widest mb-2 inline-block">Poster</span><h4 class="font-body font-medium text-on-surface">ML Theory Summer School</h4><p class="text-sm text-on-surface-variant">Princeton University, USA</p></div></div>
-    <div class="group bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-primary text-sm font-bold min-w-[40px]">2024</span><div><span class="font-label text-[10px] text-secondary px-2 py-0.5 bg-secondary/10 uppercase tracking-widest mb-2 inline-block">Poster</span><h4 class="font-body font-medium text-on-surface">Frontiers in Physics Conference</h4><p class="text-sm text-on-surface-variant">LMU Munich, Germany</p></div></div>
-    <div class="group bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-primary text-sm font-bold min-w-[40px]">2024</span><div><span class="font-label text-[10px] text-tertiary px-2 py-0.5 bg-tertiary/10 uppercase tracking-widest mb-2 inline-block">Invited</span><h4 class="font-body font-medium text-on-surface">Global Young Scientists Summit</h4><p class="text-sm text-on-surface-variant">Singapore</p></div></div>
-    <div class="group bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-primary text-sm font-bold min-w-[40px]">2024</span><div><span class="font-label text-[10px] text-on-surface-variant px-2 py-0.5 bg-surface-container-highest uppercase tracking-widest mb-2 inline-block">Conference</span><h4 class="font-body font-medium text-on-surface">ML for Quantum Technology</h4><p class="text-sm text-on-surface-variant">Max Planck Institute, Germany</p></div></div>
-    <div class="group bg-surface-container-low p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-primary text-sm font-bold min-w-[40px]">2024</span><div><span class="font-label text-[10px] text-on-primary-fixed px-2 py-0.5 bg-primary/20 uppercase tracking-widest mb-2 inline-block">Oral</span><h4 class="font-body font-medium text-on-surface">Quantum Day &mdash; Cyber Week</h4><p class="text-sm text-on-surface-variant">Tel Aviv University, Israel</p></div></div>
+    <div class="group bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-secondary text-sm font-semibold min-w-[40px]">2025</span><div><span class="font-label text-[10px] text-on-secondary-container px-2.5 py-1 bg-secondary-container rounded-full uppercase tracking-widest mb-2 inline-block">Oral</span><h4 class="font-body font-medium text-on-surface">QERNEL Quantum Conference</h4><p class="text-sm text-on-surface-variant">Bar Ilan University, Israel</p></div></div>
+    <div class="group bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-secondary text-sm font-semibold min-w-[40px]">2025</span><div><span class="font-label text-[10px] text-on-surface-variant px-2.5 py-1 bg-surface-container-highest rounded-full uppercase tracking-widest mb-2 inline-block">Poster</span><h4 class="font-body font-medium text-on-surface">Sensing with Quantum Light</h4><p class="text-sm text-on-surface-variant">Bad Honnef, Germany</p></div></div>
+    <div class="group bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-secondary text-sm font-semibold min-w-[40px]">2024</span><div><span class="font-label text-[10px] text-on-surface-variant px-2.5 py-1 bg-surface-container-highest rounded-full uppercase tracking-widest mb-2 inline-block">Poster</span><h4 class="font-body font-medium text-on-surface">ML Theory Summer School</h4><p class="text-sm text-on-surface-variant">Princeton University, USA</p></div></div>
+    <div class="group bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-secondary text-sm font-semibold min-w-[40px]">2024</span><div><span class="font-label text-[10px] text-on-surface-variant px-2.5 py-1 bg-surface-container-highest rounded-full uppercase tracking-widest mb-2 inline-block">Poster</span><h4 class="font-body font-medium text-on-surface">Frontiers in Physics Conference</h4><p class="text-sm text-on-surface-variant">LMU Munich, Germany</p></div></div>
+    <div class="group bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-secondary text-sm font-semibold min-w-[40px]">2024</span><div><span class="font-label text-[10px] text-on-secondary-container px-2.5 py-1 bg-secondary-container rounded-full uppercase tracking-widest mb-2 inline-block">Invited</span><h4 class="font-body font-medium text-on-surface">Global Young Scientists Summit</h4><p class="text-sm text-on-surface-variant">Singapore</p></div></div>
+    <div class="group bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-secondary text-sm font-semibold min-w-[40px]">2024</span><div><span class="font-label text-[10px] text-on-surface-variant px-2.5 py-1 bg-surface-container-highest rounded-full uppercase tracking-widest mb-2 inline-block">Conference</span><h4 class="font-body font-medium text-on-surface">ML for Quantum Technology</h4><p class="text-sm text-on-surface-variant">Max Planck Institute, Germany</p></div></div>
+    <div class="group bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 hover:bg-surface-container transition-colors duration-300 flex gap-6 items-start"><span class="font-label text-secondary text-sm font-semibold min-w-[40px]">2024</span><div><span class="font-label text-[10px] text-on-secondary-container px-2.5 py-1 bg-secondary-container rounded-full uppercase tracking-widest mb-2 inline-block">Oral</span><h4 class="font-body font-medium text-on-surface">Quantum Day &mdash; Cyber Week</h4><p class="text-sm text-on-surface-variant">Tel Aviv University, Israel</p></div></div>
   </div>
 </section>
 
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant/40"></div>
+
 <!-- ═══ BACKGROUND ═══ -->
-<section id="background" class="max-w-screen-xl mx-auto px-6 md:px-12 mb-32">
+<section id="background" class="py-16 md:py-24">
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
     <div>
-      <h2 class="font-headline text-3xl mb-10 flex items-center gap-4"><span class="h-[1px] w-12 bg-primary"></span> Education</h2>
+      <h2 class="font-headline text-2xl md:text-3xl font-medium mb-10 flex items-center gap-4"><span class="h-px w-12 bg-secondary"></span> Education</h2>
       <div class="space-y-10">
-        <div><p class="font-label text-xs text-primary mb-1">2023 &mdash; Present</p><h3 class="text-xl font-bold">Ph.D. in Physics &mdash; Quantum Information &amp; Technology</h3><p class="text-on-surface-variant">Tel Aviv University &middot; Advisor: Prof. Yaron Oz</p><div class="flex flex-wrap gap-2 mt-3"><span class="font-label text-[10px] text-primary px-3 py-1 bg-primary/10 uppercase tracking-widest">VATAT Doctoral '25</span><span class="font-label text-[10px] text-primary px-3 py-1 bg-primary/10 uppercase tracking-widest">Milner '24</span><span class="font-label text-[10px] text-primary px-3 py-1 bg-primary/10 uppercase tracking-widest">GYSS Singapore '24</span><span class="font-label text-[10px] text-primary px-3 py-1 bg-primary/10 uppercase tracking-widest">Shmeltzer '24</span></div></div>
-        <div><p class="font-label text-xs text-primary mb-1">2022 &mdash; 2023</p><h3 class="text-xl font-bold">MBA &mdash; Coller School of Management</h3><p class="text-on-surface-variant">Tel Aviv University &middot; Summa Cum Laude</p><p class="text-sm text-on-tertiary-container mt-1 italic">Dean's List. San Diego Immersion Program.</p></div>
-        <div><p class="font-label text-xs text-primary mb-1">2019 &mdash; 2022</p><h3 class="text-xl font-bold">M.Sc. in Electrical Engineering</h3><p class="text-on-surface-variant">Tel Aviv University &middot; Summa Cum Laude &middot; Advisor: Prof. David Mendlovic</p><p class="text-sm text-on-tertiary-container mt-1 italic">Thesis: Hardware Analysis and Temporal Super Resolution for Motion Estimation.</p><div class="flex flex-wrap gap-2 mt-3"><span class="font-label text-[10px] text-primary px-3 py-1 bg-primary/10 uppercase tracking-widest">KLA Prize '22</span><span class="font-label text-[10px] text-primary px-3 py-1 bg-primary/10 uppercase tracking-widest">Electro-optics '21</span><span class="font-label text-[10px] text-primary px-3 py-1 bg-primary/10 uppercase tracking-widest">Weinstein '21</span></div></div>
-        <div><p class="font-label text-xs text-primary mb-1">2015 &mdash; 2019</p><h3 class="text-xl font-bold">B.Sc. in Electrical Engineering &amp; B.Sc. in Physics</h3><p class="text-on-surface-variant">Tel Aviv University &middot; Magna Cum Laude &middot; Top 3%</p><p class="text-sm text-on-tertiary-container mt-1 italic">Double degree. Research in silicon photonics at the Nano-Femto Lab (Prof. Haim Suchowski).</p><div class="flex flex-wrap gap-2 mt-3"><span class="font-label text-[10px] text-primary px-3 py-1 bg-primary/10 uppercase tracking-widest">Dean's List &times;4</span></div></div>
+        <div><p class="font-label text-xs text-secondary mb-1">2023 &mdash; Present</p><h3 class="text-xl font-semibold text-on-surface">Ph.D. in Physics &mdash; Quantum Information &amp; Technology</h3><p class="text-on-surface-variant">Tel Aviv University &middot; Advisor: Prof. Yaron Oz</p><div class="flex flex-wrap gap-2 mt-3"><span class="font-label text-[10px] text-on-secondary-container px-3 py-1 bg-secondary-container rounded-full uppercase tracking-widest">VATAT Doctoral '25</span><span class="font-label text-[10px] text-on-secondary-container px-3 py-1 bg-secondary-container rounded-full uppercase tracking-widest">Milner '24</span><span class="font-label text-[10px] text-on-secondary-container px-3 py-1 bg-secondary-container rounded-full uppercase tracking-widest">GYSS Singapore '24</span><span class="font-label text-[10px] text-on-secondary-container px-3 py-1 bg-secondary-container rounded-full uppercase tracking-widest">Shmeltzer '24</span></div></div>
+        <div><p class="font-label text-xs text-secondary mb-1">2022 &mdash; 2023</p><h3 class="text-xl font-semibold text-on-surface">MBA &mdash; Coller School of Management</h3><p class="text-on-surface-variant">Tel Aviv University &middot; Summa Cum Laude</p><p class="text-sm text-on-tertiary-container mt-1 italic">Dean's List. San Diego Immersion Program.</p></div>
+        <div><p class="font-label text-xs text-secondary mb-1">2019 &mdash; 2022</p><h3 class="text-xl font-semibold text-on-surface">M.Sc. in Electrical Engineering</h3><p class="text-on-surface-variant">Tel Aviv University &middot; Summa Cum Laude &middot; Advisor: Prof. David Mendlovic</p><p class="text-sm text-on-tertiary-container mt-1 italic">Thesis: Hardware Analysis and Temporal Super Resolution for Motion Estimation.</p><div class="flex flex-wrap gap-2 mt-3"><span class="font-label text-[10px] text-on-secondary-container px-3 py-1 bg-secondary-container rounded-full uppercase tracking-widest">KLA Prize '22</span><span class="font-label text-[10px] text-on-secondary-container px-3 py-1 bg-secondary-container rounded-full uppercase tracking-widest">Electro-optics '21</span><span class="font-label text-[10px] text-on-secondary-container px-3 py-1 bg-secondary-container rounded-full uppercase tracking-widest">Weinstein '21</span></div></div>
+        <div><p class="font-label text-xs text-secondary mb-1">2015 &mdash; 2019</p><h3 class="text-xl font-semibold text-on-surface">B.Sc. in Electrical Engineering &amp; B.Sc. in Physics</h3><p class="text-on-surface-variant">Tel Aviv University &middot; Magna Cum Laude &middot; Top 3%</p><p class="text-sm text-on-tertiary-container mt-1 italic">Double degree. Research in silicon photonics at the Nano-Femto Lab (Prof. Haim Suchowski).</p><div class="flex flex-wrap gap-2 mt-3"><span class="font-label text-[10px] text-on-secondary-container px-3 py-1 bg-secondary-container rounded-full uppercase tracking-widest">Dean's List &times;4</span></div></div>
       </div>
     </div>
     <div>
-      <div class="bg-surface-container-low p-10 lg:p-14 mb-12">
-        <h2 class="font-headline text-3xl mb-8">Experience</h2>
+      <div class="bg-surface-container-low border border-outline-variant/30 rounded-xl p-10 lg:p-12 mb-12">
+        <h2 class="font-headline text-2xl md:text-3xl font-medium mb-8">Experience</h2>
         <div class="space-y-8">
-          <div class="flex gap-6 items-start"><span class="font-label text-primary text-xl">01</span><div><h4 class="font-bold text-on-surface">DTect Vision Ltd.</h4><p class="text-sm text-on-surface-variant italic">Co-Founder &middot; Hardware &amp; Camera Team Lead &middot; 2020&ndash;2023</p><p class="text-sm text-on-surface-variant mt-2">Co-founded with Prof. David Mendlovic and Dr. Dan Raviv. Led hardware development and patent portfolio. TAU Ventures Accelerator.</p></div></div>
-          <div class="flex gap-6 items-start"><span class="font-label text-primary text-xl">02</span><div><h4 class="font-bold text-on-surface">Apple Inc.</h4><p class="text-sm text-on-surface-variant italic">Student Physical Design Engineer &middot; Herzliya &middot; 2017&ndash;2019</p><p class="text-sm text-on-surface-variant mt-2">High-performance chip design at Apple's Israel R&amp;D center.</p></div></div>
+          <div class="flex gap-6 items-start"><span class="font-headline text-secondary text-xl">01</span><div><h4 class="font-semibold text-on-surface">DTect Vision Ltd.</h4><p class="text-sm text-on-surface-variant italic">Co-Founder &middot; Hardware &amp; Camera Team Lead &middot; 2020&ndash;2023</p><p class="text-sm text-on-surface-variant mt-2">Co-founded with Prof. David Mendlovic and Dr. Dan Raviv. Led hardware development and patent portfolio. TAU Ventures Accelerator.</p></div></div>
+          <div class="flex gap-6 items-start"><span class="font-headline text-secondary text-xl">02</span><div><h4 class="font-semibold text-on-surface">Apple Inc.</h4><p class="text-sm text-on-surface-variant italic">Student Physical Design Engineer &middot; Herzliya &middot; 2017&ndash;2019</p><p class="text-sm text-on-surface-variant mt-2">High-performance chip design at Apple's Israel R&amp;D center.</p></div></div>
         </div>
       </div>
       <div>
-        <h2 class="font-headline text-3xl mb-8">Teaching &amp; Mentoring</h2>
+        <h2 class="font-headline text-2xl md:text-3xl font-medium mb-8">Teaching &amp; Mentoring</h2>
         <div class="space-y-4">
-          <div class="flex gap-4 items-center"><span class="font-label text-[10px] text-primary uppercase tracking-widest min-w-[80px]">Lecturer</span><div><h4 class="font-body font-medium text-on-surface text-sm">Imaging Systems and Optical Signal Processing</h4><p class="text-xs text-on-surface-variant">2025 &ndash; Present &middot; Tel Aviv University</p></div></div>
+          <div class="flex gap-4 items-center"><span class="font-label text-[10px] text-secondary uppercase tracking-widest min-w-[80px]">Lecturer</span><div><h4 class="font-body font-medium text-on-surface text-sm">Imaging Systems and Optical Signal Processing</h4><p class="text-xs text-on-surface-variant">2025 &ndash; Present &middot; Tel Aviv University</p></div></div>
           <div class="flex gap-4 items-center"><span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest min-w-[80px]">TA / Lect.</span><div><h4 class="font-body font-medium text-on-surface text-sm">Classical Optics</h4><p class="text-xs text-on-surface-variant">2021 &ndash; 2022</p></div></div>
           <div class="flex gap-4 items-center"><span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest min-w-[80px]">TA / Lect.</span><div><h4 class="font-body font-medium text-on-surface text-sm">Imaging Systems and Optical Signal Processing</h4><p class="text-xs text-on-surface-variant">2021 &ndash; 2025</p></div></div>
           <div class="flex gap-4 items-center"><span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest min-w-[80px]">TA</span><div><h4 class="font-body font-medium text-on-surface text-sm">Waves Transmission and Distributed Systems</h4><p class="text-xs text-on-surface-variant">2019 &ndash; 2020</p></div></div>
@@ -696,55 +710,60 @@ body { background-color: #0b1326; color: #dae2fd; }
   </div>
 </section>
 
-<!-- ═══ COLLABORATORS ═══ -->
-<section class="max-w-screen-xl mx-auto px-6 md:px-12 mb-32">
-  <h2 class="font-headline text-3xl mb-8 italic">Collaborators</h2>
-  <div class="flex flex-wrap gap-3">
-    <span class="px-5 py-2 bg-surface-container-low text-on-surface text-sm font-medium hover:bg-surface-container hover:text-primary transition-colors duration-300 cursor-default">Prof. Yaron Oz <span class="text-outline text-xs ml-1">TAU Physics</span></span>
-    <span class="px-5 py-2 bg-surface-container-low text-on-surface text-sm font-medium hover:bg-surface-container hover:text-primary transition-colors duration-300 cursor-default">Prof. Haim Suchowski <span class="text-outline text-xs ml-1">TAU Physics</span></span>
-    <span class="px-5 py-2 bg-surface-container-low text-on-surface text-sm font-medium hover:bg-surface-container hover:text-primary transition-colors duration-300 cursor-default">Prof. David Mendlovic <span class="text-outline text-xs ml-1">TAU EE</span></span>
-    <span class="px-5 py-2 bg-surface-container-low text-on-surface text-sm font-medium hover:bg-surface-container hover:text-primary transition-colors duration-300 cursor-default">Prof. Ady Arie <span class="text-outline text-xs ml-1">TAU EE</span></span>
-    <span class="px-5 py-2 bg-surface-container-low text-on-surface text-sm font-medium hover:bg-surface-container hover:text-primary transition-colors duration-300 cursor-default">Prof. Meir Feder <span class="text-outline text-xs ml-1">TAU EE</span></span>
-    <span class="px-5 py-2 bg-surface-container-low text-on-surface text-sm font-medium hover:bg-surface-container hover:text-primary transition-colors duration-300 cursor-default">Dr. Dan Raviv <span class="text-outline text-xs ml-1">TAU EE</span></span>
-    <span class="px-5 py-2 bg-surface-container-low text-on-surface text-sm font-medium hover:bg-surface-container hover:text-primary transition-colors duration-300 cursor-default">Dr. Ariel Lellouch <span class="text-outline text-xs ml-1">TAU Geophysics</span></span>
-    <span class="px-5 py-2 bg-surface-container-low text-on-surface text-sm font-medium hover:bg-surface-container hover:text-primary transition-colors duration-300 cursor-default">Dr. Itay Hen <span class="text-outline text-xs ml-1">USC / ISI</span></span>
-    <span class="px-5 py-2 bg-surface-container-low text-on-surface text-sm font-medium hover:bg-surface-container hover:text-primary transition-colors duration-300 cursor-default">Dr. De-Liang Zhong <span class="text-outline text-xs ml-1">TAU Physics</span></span>
-    <span class="px-5 py-2 bg-surface-container-low text-on-surface text-sm font-medium hover:bg-surface-container hover:text-primary transition-colors duration-300 cursor-default">Prof. Kwek Leong Chuan <span class="text-outline text-xs ml-1">NUS / CQT</span></span>
-    <span class="px-5 py-2 bg-surface-container-low text-on-surface text-sm font-medium hover:bg-surface-container hover:text-primary transition-colors duration-300 cursor-default">Prof. Alon Baabad <span class="text-outline text-xs ml-1">TAU</span></span>
-  </div>
-</section>
+<!-- Divider -->
+<div class="w-full h-px bg-outline-variant/40"></div>
 
-<!-- ═══ CONTACT ═══ -->
-<section id="contact" class="max-w-screen-xl mx-auto px-6 md:px-12 mb-16">
-  <div class="p-12 md:p-16 relative overflow-hidden bg-surface-container-lowest">
-    <div class="absolute inset-0 interference-pattern opacity-40"></div>
-    <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
-      <div class="max-w-md text-center md:text-left">
-        <h2 class="font-headline text-4xl italic mb-4">Get in touch</h2>
-        <p class="font-body text-on-surface-variant text-sm leading-relaxed">I'm always happy to chat about research, potential collaborations, or new opportunities.</p>
-      </div>
-      <div class="flex flex-wrap justify-center gap-3">
-        <a href="mailto:khencohen@mail.tau.ac.il" class="bg-primary text-on-primary font-label text-xs uppercase tracking-widest px-8 py-4 hover:opacity-90 transition-opacity no-underline flex items-center gap-2">
-          <span class="material-symbols-outlined text-sm">mail</span> khencohen@mail.tau.ac.il
-        </a>
-        <a href="mailto:cohenc3@gmail.com" class="bg-surface-container-highest text-on-surface font-label text-xs uppercase tracking-widest px-8 py-4 hover:bg-surface-bright transition-colors no-underline">cohenc3@gmail.com</a>
-        <a href="https://github.com/khencohen" target="_blank" class="bg-surface-container-highest text-on-surface font-label text-xs uppercase tracking-widest px-8 py-4 hover:bg-surface-bright transition-colors no-underline">GitHub</a>
-        <a href="https://orcid.org/0000-0002-1802-8146" target="_blank" class="bg-surface-container-highest text-on-surface font-label text-xs uppercase tracking-widest px-8 py-4 hover:bg-surface-bright transition-colors no-underline">ORCID</a>
-      </div>
-    </div>
+<!-- ═══ COLLABORATORS ═══ -->
+<section class="py-16 md:py-24">
+  <h2 class="font-headline text-2xl md:text-3xl font-medium mb-8">Collaborators</h2>
+  <div class="flex flex-wrap gap-3">
+    <span class="px-5 py-2.5 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface text-sm font-medium hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">Prof. Yaron Oz <span class="text-outline text-xs ml-1">TAU Physics</span></span>
+    <span class="px-5 py-2.5 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface text-sm font-medium hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">Prof. Haim Suchowski <span class="text-outline text-xs ml-1">TAU Physics</span></span>
+    <span class="px-5 py-2.5 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface text-sm font-medium hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">Prof. David Mendlovic <span class="text-outline text-xs ml-1">TAU EE</span></span>
+    <span class="px-5 py-2.5 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface text-sm font-medium hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">Prof. Ady Arie <span class="text-outline text-xs ml-1">TAU EE</span></span>
+    <span class="px-5 py-2.5 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface text-sm font-medium hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">Prof. Meir Feder <span class="text-outline text-xs ml-1">TAU EE</span></span>
+    <span class="px-5 py-2.5 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface text-sm font-medium hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">Dr. Dan Raviv <span class="text-outline text-xs ml-1">TAU EE</span></span>
+    <span class="px-5 py-2.5 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface text-sm font-medium hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">Dr. Ariel Lellouch <span class="text-outline text-xs ml-1">TAU Geophysics</span></span>
+    <span class="px-5 py-2.5 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface text-sm font-medium hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">Dr. Itay Hen <span class="text-outline text-xs ml-1">USC / ISI</span></span>
+    <span class="px-5 py-2.5 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface text-sm font-medium hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">Dr. De-Liang Zhong <span class="text-outline text-xs ml-1">TAU Physics</span></span>
+    <span class="px-5 py-2.5 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface text-sm font-medium hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">Prof. Kwek Leong Chuan <span class="text-outline text-xs ml-1">NUS / CQT</span></span>
+    <span class="px-5 py-2.5 bg-surface-container-low border border-outline-variant/30 rounded-full text-on-surface text-sm font-medium hover:border-secondary hover:text-secondary transition-colors duration-300 cursor-default">Prof. Alon Baabad <span class="text-outline text-xs ml-1">TAU</span></span>
   </div>
 </section>
 
 </main>
 
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="max-w-[1280px] mx-auto px-5 md:px-16 pb-20">
+  <div class="p-12 md:p-16 relative overflow-hidden bg-inverse-surface rounded-2xl">
+    <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
+      <div class="max-w-md text-center md:text-left">
+        <h2 class="font-headline text-3xl md:text-4xl font-medium text-inverse-on-surface mb-4">Get in touch</h2>
+        <p class="font-body text-inverse-on-surface/70 text-sm leading-relaxed">I'm always happy to chat about research, potential collaborations, or new opportunities.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="mailto:khencohen@mail.tau.ac.il" class="bg-surface-container-lowest text-on-surface font-label text-xs tracking-wide px-7 py-4 rounded-lg hover:bg-primary-fixed-dim transition-colors no-underline flex items-center gap-2">
+          <span class="material-symbols-outlined text-[18px]">mail</span> khencohen@mail.tau.ac.il
+        </a>
+        <a href="mailto:cohenc3@gmail.com" class="border border-inverse-on-surface/30 text-inverse-on-surface font-label text-xs tracking-wide px-7 py-4 rounded-lg hover:bg-inverse-on-surface/10 transition-colors no-underline">cohenc3@gmail.com</a>
+        <a href="https://github.com/khencohen" target="_blank" class="border border-inverse-on-surface/30 text-inverse-on-surface font-label text-xs tracking-wide px-7 py-4 rounded-lg hover:bg-inverse-on-surface/10 transition-colors no-underline">GitHub</a>
+        <a href="https://orcid.org/0000-0002-1802-8146" target="_blank" class="border border-inverse-on-surface/30 text-inverse-on-surface font-label text-xs tracking-wide px-7 py-4 rounded-lg hover:bg-inverse-on-surface/10 transition-colors no-underline">ORCID</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
-<footer class="bg-[#0b1326] py-12 px-6 md:px-12 mt-8">
-  <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-xl mx-auto opacity-60">
-    <div class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-400">&copy; 2026 Khen Cohen &middot; Tel Aviv University</div>
-    <div class="flex gap-8 mt-6 md:mt-0">
-      <a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300 no-underline" href="https://scholar.google.com/citations?user=XXXXXXXX" target="_blank">Google Scholar</a>
-      <a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300 no-underline" href="https://github.com/khencohen" target="_blank">GitHub</a>
-      <a class="font-sans text-[10px] tracking-[0.2em] uppercase text-slate-500 hover:text-[#2fd9f4] transition-colors duration-300 no-underline" href="https://orcid.org/0000-0002-1802-8146" target="_blank">ORCID</a>
+<footer class="border-t border-outline-variant/40 py-12 px-5 md:px-16 mt-8">
+  <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-[1280px] mx-auto gap-6">
+    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+      <span class="font-headline text-lg font-medium text-on-surface">Khen Cohen</span>
+      <span class="font-label text-xs text-on-tertiary-container">&copy; 2026 &middot; Tel Aviv University</span>
+    </div>
+    <div class="flex gap-6">
+      <a class="font-label text-xs text-on-surface-variant hover:text-on-surface underline underline-offset-4 transition-colors no-underline" href="https://scholar.google.com/citations?user=XXXXXXXX" target="_blank">Google Scholar</a>
+      <a class="font-label text-xs text-on-surface-variant hover:text-on-surface underline underline-offset-4 transition-colors no-underline" href="https://github.com/khencohen" target="_blank">GitHub</a>
+      <a class="font-label text-xs text-on-surface-variant hover:text-on-surface underline underline-offset-4 transition-colors no-underline" href="https://orcid.org/0000-0002-1802-8146" target="_blank">ORCID</a>
     </div>
   </div>
 </footer>
